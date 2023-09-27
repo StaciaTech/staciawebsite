@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Jost;
+  src: url(../fonts/Jost-VariableFont_wght.ttf);
+}
+
+/* prettier-ignore */
+
+@font-face {
+  font-family: Inter;
+  src: url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+  font-family: SanstionBold;
+  src: url(../fonts/Sansation.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
