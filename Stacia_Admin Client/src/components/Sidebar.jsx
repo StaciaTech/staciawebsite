@@ -1,11 +1,116 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import StaciaLogo from '../assets/staciaLogo.svg';
 import PowerLogo from '../assets/power.svg';
 
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const [isOverviewActive, setIsOverviewActive] = useState(false);
+  const [isServiceActive, setIsServiceActive] = useState(false);
+  const [isProductActive, setIsProductActive] = useState(false);
+  const [isProjectActive, setIsProjectActive] = useState(false);
+  const [isArticleActive, setisArticleActive] = useState(false);
+  const [isCareerActive, setIsCareerActive] = useState(false);
+  const [isCasestudyActive, setIsCasestudyActive] = useState(false);
+  const [isStaciawallActive, setIsStaciawallActive] = useState(false);
+
+  useEffect(() => {
+    setIsOverviewActive(true);
+  }, []);
+
+  const overviewHandler = () => {
+    setIsOverviewActive(true);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/');
+  };
+  const serviceHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(true);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/addservice');
+  };
+  const productHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(true);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/products');
+  };
+  const ProjectHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(true);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/project');
+  };
+  const careerHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(true);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/career');
+  };
+  const articleHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(true);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(false);
+    navigate('/article');
+  };
+  const casestudyHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(true);
+    setIsStaciawallActive(false);
+    navigate('/casestudy');
+  };
+  const staciawallHandler = () => {
+    setIsOverviewActive(false);
+    setIsServiceActive(false);
+    setIsProductActive(false);
+    setIsProjectActive(false);
+    setIsCareerActive(false);
+    setisArticleActive(false);
+    setIsCasestudyActive(false);
+    setIsStaciawallActive(true);
+    navigate('/staciawall');
+  };
+
   return (
     <>
       <div
@@ -17,40 +122,104 @@ function Sidebar() {
             <img src={StaciaLogo} alt='Logo' />
           </div>
           <div className=' p-2 w-full'>
-            <NavLink
-              to='/'
-              className={({ isActive }) =>
-                isActive
+            <button
+              onClick={overviewHandler}
+              className={
+                isOverviewActive
                   ? 'text-black bg-white  py-2 w-full rounded-md flex justify-center'
-                  : 'text-white bg-none w-full block text-center py-2 '
+                  : 'text-white bg-none w-full  py-2 flex justify-center'
               }
             >
               <div className='w-1/2'>
                 <span className='font-[Jost] text-xl font-bold'>Overview</span>
               </div>
-            </NavLink>
+            </button>
           </div>
-          <div className=' text-white p-2 w-full'>
-            <NavLink
-              to='/addservice'
-              className={({ isActive }) =>
-                isActive
-                  ? 'text-black bg-white py-2 w-full rounded-md block text-center  '
-                  : 'text-white bg-none w-full block text-center py-2 '
+          <div className=' m-2 w-full'>
+            <button
+              onClick={serviceHandler}
+              className={
+                isServiceActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
               }
-            ><span className='font-[Jost] text-xl font-bold'>Services</span>
-              
-            </NavLink>
+            >
+              <span className='font-[Jost] text-xl font-bold'>Services</span>
+            </button>
           </div>
-          <div className=' text-white  p-3'><span className=' font-[Jost] text-xl font-bold'>Products</span> </div>
-          <div className=' text-white  p-3'><span className='font-[Jost] text-xl font-bold'>Projects</span> </div>
-          <div className=' text-white  p-3'><span className='font-[Jost] text-xl font-bold'>Articles</span> </div>
-          <div className=' text-white  p-3'><span className='font-[Jost] text-xl font-bold'>Careers</span> </div>
-          <div className=' text-white  p-3'>
-           <span className='font-[Jost] text-xl font-bold'>Case Studies</span> 
+          <div className='w-full  m-2'>
+            <button
+              onClick={productHandler}
+              className={
+                isProductActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className=' font-[Jost] text-xl font-bold'>Products</span>
+            </button>
           </div>
-          <div className=' text-white  p-3'>
-            <span className='font-[Jost] text-xl font-bold'>Stacia Wall</span>
+          <div className='w-full  m-2'>
+            <button
+              onClick={ProjectHandler}
+              className={
+                isProjectActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className='font-[Jost] text-xl font-bold'>Projects</span>
+            </button>
+          </div>
+          <div className='w-full  m-2'>
+            <button
+              onClick={articleHandler}
+              className={
+                isArticleActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className='font-[Jost] text-xl font-bold'>Articles</span>
+            </button>
+          </div>
+          <div className='w-full  m-2'>
+            <button
+              onClick={careerHandler}
+              className={
+                isCareerActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className='font-[Jost] text-xl font-bold'>Careers</span>
+            </button>
+          </div>
+          <div className='w-full  m-2'>
+            <button
+              onClick={casestudyHandler}
+              className={
+                isCasestudyActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className='font-[Jost] text-xl font-bold'>
+                Case Studies
+              </span>
+            </button>
+          </div>
+          <div className='w-full  m-2'>
+            <button
+              onClick={staciawallHandler}
+              className={
+                isStaciawallActive
+                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
+                  : 'text-white bg-none w-full flex justify-center py-2 '
+              }
+            >
+              <span className='font-[Jost] text-xl font-bold'>Stacia Wall</span>
+            </button>
           </div>
         </div>
         <div className=' self-center'>

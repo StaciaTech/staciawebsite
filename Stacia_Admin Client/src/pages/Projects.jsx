@@ -1,18 +1,17 @@
 import React from 'react';
-
 import Sidebar from '../components/Sidebar';
 
-function AddService() {
+function Projects() {
   return (
     <>
       <div className='px-3 flex'>
         <div className='flex items-center' style={{ height: '100vh' }}>
           <Sidebar />
         </div>
-        <div>service</div>
+        <div>project</div>
       </div>
     </>
   );
 }
 
-export default AddService;
+export default Projects;
