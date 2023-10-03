@@ -10,12 +10,14 @@ import ApplicantProfileImage from '../assets/applicantProfile.jpg';
 import { Jobdata } from '../Data/JobData';
 
 import ReactEcharts from 'echarts-for-react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import AllJobIcon from '../assets/alljobsIcon.png';
 
 const Jobcontainer = ({ data }) => {
   const { title, experience, jobType, natureOfJob, pay } = data;
-  console.log(Jobdata);
+  // console.log(Jobdata);
   return (
     <div className='border-2 border-black mx-2 p-3 rounded-lg  font-[Inter]'>
       <div className='flex'>
@@ -52,6 +54,26 @@ const Jobcontainer = ({ data }) => {
 };
 
 function Careers() {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   const [jobs] = useState(Jobdata);
 
   const option = {
@@ -263,13 +285,21 @@ function Careers() {
             </div>
           </div>
           <div className='my-2 font-[Sansation] font-semibold'>Job roles</div>
-          <div className='flex'>
-            <div className='flex'>
-              {jobs.map((eachjob, index) => {
-                return <Jobcontainer key={index} data={eachjob} />;
-              })}
+          <div className='flex w-full'>
+            <div style={{ width: '1000px' }}>
+              <Carousel
+                responsive={responsive}
+                draggable={true}
+                showDots={false}
+                removeArrowOnDeviceType={['tablet', 'mobile', '']}
+                swipeable={true}
+              >
+                {jobs.map((eachjob, index) => {
+                  return <Jobcontainer key={index} data={eachjob} />;
+                })}
+              </Carousel>
             </div>
-            <div className='px-8 rounded-lg text-white bg-black text-7xl flex items-center justify-center'>
+            <div className=' w-1/2 px-8 rounded-lg text-white bg-black text-7xl flex items-center justify-center'>
               +
             </div>
           </div>

@@ -1,26 +1,64 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import StaciaLogo from '../assets/staciaLogo.svg';
 import PowerLogo from '../assets/power.svg';
 
+//sidebar logos
+
+import ArticleBlack from '../assets/articleBlack.svg';
+import ArticleWhite from '../assets/articleWhite.svg';
+import CareerBlack from '../assets/careerBlack.svg';
+import Careerwhite from '../assets/careerWhite.svg';
+import CasestudyBlack from '../assets/casestudyBlack.svg';
+import CasestudyWhite from '../assets/casestudyWhite.svg';
+import OverviewWhite from '../assets/overviewWhite.svg';
+import OverviewBlack from '../assets/overviewLogo.svg';
+import ProductBlack from '../assets/productBlack.svg';
+import ProdcutWhite from '../assets/productsWhite.svg';
+import ProjectBlack from '../assets/projectBlack.svg';
+import ProjectWhite from '../assets/projectWhite.svg';
+import ServiceBlack from '../assets/serviceBlack.svg';
+import ServiceWhite from '../assets/serviceWhite.svg';
+import Staciawallblack from '../assets/staciawallBlack.svg';
+import StaciawallWhite from '../assets/staciawalWhite.svg';
+
+import { Context } from '../provider/Provider';
+
 function Sidebar() {
   const navigate = useNavigate();
 
-  const [isOverviewActive, setIsOverviewActive] = useState(false);
-  const [isServiceActive, setIsServiceActive] = useState(false);
-  const [isProductActive, setIsProductActive] = useState(false);
-  const [isProjectActive, setIsProjectActive] = useState(false);
-  const [isArticleActive, setisArticleActive] = useState(false);
-  const [isCareerActive, setIsCareerActive] = useState(false);
-  const [isCasestudyActive, setIsCasestudyActive] = useState(false);
-  const [isStaciawallActive, setIsStaciawallActive] = useState(false);
+  const sidebarStates = useContext(Context);
 
-  useEffect(() => {
-    setIsOverviewActive(true);
-  }, []);
+  const {
+    isOverviewActive,
+    setIsOverviewActive,
+    isServiceActive,
+    setIsServiceActive,
+    isProductActive,
+    setIsProductActive,
+    isProjectActive,
+    setIsProjectActive,
+    isArticleActive,
+    setisArticleActive,
+    isCareerActive,
+    setIsCareerActive,
+    isCasestudyActive,
+    setIsCasestudyActive,
+    isStaciawallActive,
+    setIsStaciawallActive,
+  } = sidebarStates;
+
+  // const [isOverviewActive, setIsOverviewActive] = useState(false);
+  // const [isServiceActive, setIsServiceActive] = useState(false);
+  // const [isProductActive, setIsProductActive] = useState(false);
+  // const [isProjectActive, setIsProjectActive] = useState(false);
+  // const [isArticleActive, setisArticleActive] = useState(false);
+  // const [isCareerActive, setIsCareerActive] = useState(false);
+  // const [isCasestudyActive, setIsCasestudyActive] = useState(false);
+  // const [isStaciawallActive, setIsStaciawallActive] = useState(false);
 
   const overviewHandler = () => {
     setIsOverviewActive(true);
@@ -126,11 +164,16 @@ function Sidebar() {
               onClick={overviewHandler}
               className={
                 isOverviewActive
-                  ? 'text-black bg-white  py-2 w-full rounded-md flex justify-center'
-                  : 'text-white bg-none w-full  py-2 flex justify-center'
+                  ? 'text-black bg-white  py-2 w-full rounded-md flex '
+                  : 'text-white bg-none w-full  py-2 flex '
               }
             >
-              <div className='w-1/2'>
+              <div className='flex justify-between ml-10'>
+                <img
+                  src={isOverviewActive ? OverviewBlack : OverviewWhite}
+                  alt=''
+                  className='pr-2'
+                />
                 <span className='font-[Jost] text-xl font-bold'>Overview</span>
               </div>
             </button>
@@ -140,11 +183,18 @@ function Sidebar() {
               onClick={serviceHandler}
               className={
                 isServiceActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex   '
+                  : 'text-white bg-none w-full flex  py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>Services</span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isServiceActive ? ServiceBlack : ServiceWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>Services</span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -152,11 +202,18 @@ function Sidebar() {
               onClick={productHandler}
               className={
                 isProductActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex '
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className=' font-[Jost] text-xl font-bold'>Products</span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isProductActive ? ProductBlack : ProdcutWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className=' font-[Jost] text-xl font-bold'>Products</span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -164,11 +221,18 @@ function Sidebar() {
               onClick={ProjectHandler}
               className={
                 isProjectActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex'
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>Projects</span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isProjectActive ? ProjectBlack : ProjectWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>Projects</span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -176,11 +240,18 @@ function Sidebar() {
               onClick={articleHandler}
               className={
                 isArticleActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex'
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>Articles</span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isArticleActive ? ArticleBlack : ArticleWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>Articles</span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -188,11 +259,18 @@ function Sidebar() {
               onClick={careerHandler}
               className={
                 isCareerActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex'
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>Careers</span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isCareerActive ? CareerBlack : Careerwhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>Careers</span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -200,13 +278,20 @@ function Sidebar() {
               onClick={casestudyHandler}
               className={
                 isCasestudyActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex'
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>
-                Case Studies
-              </span>
+              <div className='flex justify-between ml-12'>
+                <img
+                  src={isCasestudyActive ? CasestudyBlack : CasestudyWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>
+                  Case Studies
+                </span>
+              </div>
             </button>
           </div>
           <div className='w-full  m-2'>
@@ -214,11 +299,20 @@ function Sidebar() {
               onClick={staciawallHandler}
               className={
                 isStaciawallActive
-                  ? 'text-black bg-white py-2 w-full rounded-md flex justify-center  '
-                  : 'text-white bg-none w-full flex justify-center py-2 '
+                  ? 'text-black bg-white py-2 w-full rounded-md flex'
+                  : 'text-white bg-none w-full flex py-2 '
               }
             >
-              <span className='font-[Jost] text-xl font-bold'>Stacia Wall</span>
+              <div className='flex justify-start ml-12'>
+                <img
+                  src={isStaciawallActive ? Staciawallblack : StaciawallWhite}
+                  alt=''
+                  className='pr-2'
+                />
+                <span className='font-[Jost] text-xl font-bold'>
+                  Stacia Wall
+                </span>
+              </div>
             </button>
           </div>
         </div>
