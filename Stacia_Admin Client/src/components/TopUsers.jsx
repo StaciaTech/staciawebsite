@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import DefaultIcon from '../assets/defaulticon.svg';
 import correct from '../assets/correct.svg';
@@ -7,10 +8,12 @@ import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
+
 const theme = createTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
+
       // light: will be calculated from palette.primary.main,
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
@@ -20,6 +23,7 @@ const theme = createTheme({
       light: '#F5EBFF',
       // dark: will be calculated from palette.secondary.main,
       contrastText: '#47008F',
+
     },
   },
 });
@@ -68,11 +72,13 @@ const TopUsers = ({ topUser }) => {
                     </div>
                     <div className='flex flex-col justify-center ps-8'>
                       <div className='text-base font-bold font-[Inter]'>
+
                         {element.name}
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div className=' flex justify-center items-center'>
                   {
                     <img
@@ -88,21 +94,26 @@ const TopUsers = ({ topUser }) => {
                   {element.responces}
                 </div>
                 <button className='border-2 rounded-full w-32 border-black font-[Jost] font-medium text-base'>
+
                   Views details
                 </button>
               </div>
             </div>
           );
         })}
+
         <div className='float-right w-38 bg-[#FFFFFF] rounded-xl py-1 my-2'>
           <Button
             variant='primary'
             onClick={() => history('/users')}
+
             endIcon={<ArrowRightAltIcon />}
           >
             Click More
           </Button>
+
         </div>
+
         {/* <button className="float-right w-36 bg-[#EDEDED] rounded-2" onClick={()=>history("/users")} >Click More </button> */}
       </div>
     </ThemeProvider>

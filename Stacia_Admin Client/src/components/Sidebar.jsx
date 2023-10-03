@@ -3,8 +3,10 @@ import { useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
+
 import StaciaLogo from '../assets/staciaLogo.svg';
 import PowerLogo from '../assets/power.svg';
+
 
 //sidebar logos
 
@@ -149,6 +151,8 @@ function Sidebar() {
     navigate('/staciawall');
   };
 
+function Sidebar() {
+
   return (
     <>
       <div
@@ -160,6 +164,7 @@ function Sidebar() {
             <img src={StaciaLogo} alt='Logo' />
           </div>
           <div className=' p-2 w-full'>
+
             <button
               onClick={overviewHandler}
               className={
@@ -314,6 +319,7 @@ function Sidebar() {
                 </span>
               </div>
             </button>
+
           </div>
         </div>
         <div className=' self-center'>
