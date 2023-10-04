@@ -87,7 +87,7 @@ const TopUsers = ({ topUser }) => {
                 <div className=" flex justify-center items-center text-base font-bold font-[Inter]">
                   {element.responces}
                 </div>
-                <button className="border-2 rounded-full w-32 border-black">
+                <button className="border-2 rounded-full w-32 border-black" onClick={()=> history("/userProfile")}>
                   Views details
                 </button>
               </div>

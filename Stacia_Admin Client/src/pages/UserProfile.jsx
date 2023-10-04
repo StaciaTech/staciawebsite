@@ -14,14 +14,14 @@ import status from "../assets/status.svg";
 import shearicon from "../assets/shearIcon.svg";
 import location from "../assets/location.svg";
 import bin from "../assets/bin.svg";
-
 import MoreIcon from "../assets/MoreIcon.png";
-import { Box, CardHeader } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import BackBtn from "../assets/vikramVarmaButton.png";
 
 export default function RecipeReviewCard() {
-
-  const [show , setShow] = useState(false)
+  const history = useNavigate();
+  const [show, setShow] = useState(false);
   console.log(post);
   const theme = createTheme({
     typography: {
@@ -29,12 +29,29 @@ export default function RecipeReviewCard() {
       fontSize: 10,
     },
   });
+  // pl-96 ml-20 overflow-y-scroll
+  const style = {
+    paddingLeft: "450px",
+    marginLeft: "15px",
+    "@media (min-width: 1280px)": {
+      height: "40px",
+    },
+  };
   return (
     <ThemeProvider theme={theme}>
-      <div className=" font-[Inter]">
-        <div>
-          <img src={backGroungImage} alt="" />
-          <div className=" absolute 2xl:top-36 xl:top-20 left-96 pl-24 right-80">
+      <div className=" font-[Inter] ">
+        <button className=" absolute top-5 left-5 bg-transparent mx-3 my-4">
+          <img
+            src={BackBtn}
+            alt=""
+            onClick={() => {
+              history("/users");
+            }}
+          />
+        </button>
+        <div className=" w-full">
+          <img src={backGroungImage} alt="" className=" w-full " />
+          <div className=" absolute 2xl:top-40 xl:top-20 left-96 pl-24 right-80">
             <p className="font-bold pt-5" style={{ fontSize: "32px" }}>
               Vikram Varma
             </p>
@@ -58,9 +75,11 @@ export default function RecipeReviewCard() {
               <div className=" h-8 w-44 flex items-center justify-center border-2 border-black rounded-full bg-black text-white ">
                 Subscriber
               </div>
-              <div 
-              className="cursor-pointer h-8 ml-4 w-8 flex items-center justify-center border-2 border-slate-950 rounded-full bg-transparent text-white" 
-              onClick={()=>{setShow(!show)}}
+              <div
+                className="cursor-pointer h-8 ml-4 w-8 flex items-center justify-center border-2 border-slate-950 rounded-full bg-transparent text-white"
+                onClick={() => {
+                  setShow(!show);
+                }}
               >
                 <img src={MoreIcon} alt="" />
               </div>
@@ -91,33 +110,33 @@ export default function RecipeReviewCard() {
             </CardContent>
           </Card>
         </div>
-        {show && 
-        <div className=" absolute left-96 top-40">
-          <div className=" bg-white h-72 w-64 flex justify-center rounded-t-lg rounded-r-lg">
-            <CardContent>
-              <p className=" font-bold">@Vikram123 </p>
-              <p className=" text-[10px]">Joined Jan-10/2023</p>
-              <div className=" flex space-y-3 font-bold mt-3">
-                <div className="mt-3 pr-8 flex flex-col gap-3 ">
-                  <p>Total Views</p>
-                  <p>Total Likes</p>
-                  <p>Total Shares</p>
-                  <p>Total Responses</p>
-                  <p>Total Responsed</p>
+        {show && (
+          <div className=" absolute left-96 top-40">
+            <div className=" bg-white h-72 w-64 flex justify-center rounded-t-lg rounded-r-lg">
+              <CardContent>
+                <p className=" font-bold">@Vikram123 </p>
+                <p className=" text-[10px]">Joined Jan-10/2023</p>
+                <div className=" flex space-y-3 font-bold mt-3">
+                  <div className="mt-3 pr-8 flex flex-col gap-3 ">
+                    <p>Total Views</p>
+                    <p>Total Likes</p>
+                    <p>Total Shares</p>
+                    <p>Total Responses</p>
+                    <p>Total Responsed</p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <p>20</p>
+                    <p>25</p>
+                    <p>26</p>
+                    <p>59</p>
+                    <p>55</p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-3"> 
-                  <p>20</p>
-                  <p>25</p>
-                  <p>26</p>
-                  <p>59</p>
-                  <p>55</p>
-                </div>
-              </div>
-            </CardContent>
+              </CardContent>
+            </div>
           </div>
-        </div>
-        }
-        <div className=" max-w-screen pl-96 ml-20 overflow-y-scroll h-96">
+        )}
+        <div style={style}>
           {post.map((items, id) => {
             return (
               <div className="" key={id}>
