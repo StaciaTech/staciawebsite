@@ -21,7 +21,7 @@ import Staciawallblack from '../assets/staciawallBlack.svg';
 import StaciawallWhite from '../assets/staciawalWhite.svg';
 import { Context } from '../provider/Provider';
 
-function Sidebar() {
+export default function Sidebar() {
   const navigate = useNavigate();
 
   const sidebarStates = useContext(Context);
@@ -143,7 +143,7 @@ function Sidebar() {
     navigate('/staciawall');
   };
 
-export default function Sidebar() {
+
 
   return (
     <>
@@ -331,4 +331,4 @@ export default function Sidebar() {
   );
 }
 
-export default Sidebar;
+
