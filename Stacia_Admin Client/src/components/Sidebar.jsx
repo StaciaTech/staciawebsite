@@ -151,7 +151,7 @@ function Sidebar() {
     navigate('/staciawall');
   };
 
-function Sidebar() {
+
 
   return (
     <>
