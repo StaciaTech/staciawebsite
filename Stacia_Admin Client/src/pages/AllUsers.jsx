@@ -45,8 +45,9 @@ function AllUsers() {
             </div>
           </div>
         </div>
-        <div className="shadow-sm py-3 rounded-md border">
-          <div className="grid grid-cols-6 justify-between ">
+        
+        <div className="shadow-sm pt-3 rounded-md border">
+          <div className="grid grid-cols-6 justify-between pb-3">
             <div className=" grid justify-center text-base font-normal font-[Inter]">
               User
             </div>
@@ -64,6 +65,7 @@ function AllUsers() {
             </div>
             <div className=" flex justify-center "></div>
           </div>
+          <hr/> 
           <div>
             {data.map((eachUser, id) => {
               return (
@@ -80,7 +82,7 @@ function AllUsers() {
 }
 function UserContainer({ eachUser, key }) {
   const history = useNavigate();
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const { user, subscription, posts, image, responces, Email, name } = eachUser;
 
   return (
@@ -88,14 +90,14 @@ function UserContainer({ eachUser, key }) {
       <div className="grid grid-cols-6 justify-between py-3">
         <div className=" grid justify-start pl-10  ">
           <div className="flex ">
-            <div className="w-10 h-10 flex items-center">
+            <div className="w-10 h-10 flex items-center ">
               <img
                 src={image ? image : DefaultImage}
                 alt="user"
-                className="rounded-full"
+                className="rounded-full "
               />
             </div>
-            <div className="flex flex-col justify-center px-2">
+            <div className="flex flex-col justify-center px-2 pl-9">
               <div className="text-base font-normal font-[Inter]">{name}</div>
               <div className="text-sm font-normal font-[Inter]">{user}</div>
             </div>
@@ -121,29 +123,35 @@ function UserContainer({ eachUser, key }) {
         <div className=" flex justify-center items-center text-base font-normal font-[Inter]">
           {responces}
         </div>
-        <div
-          className=" flex justify-center items-center text-base font-normal "
-          onMouseOver={() => setShowMenu(true)}
-          onMouseOut={() => setShowMenu(false)}
-        >
-          {showMenu ? (
-            <img src={MoreIcon} alt="" />
-          ) : (
-            <div>
-              <div className="flex items-center p-2">
-                <img src={ProfileIcon} alt="" srcset="" />
-                <span
-                  className="font-[Inter] text-xs font-medium px-1"
-                  onClick={() => {
-                    history("/userProfile");
-                  }}
-                >
+        <div className=" flex justify-center items-center text-base font-normal">
+          <img
+            src={showMenu? "":MoreIcon}
+            className="image"
+            alt=""
+            onMouseOver={() => setShowMenu(true)}
+            onMouseOut={() => setShowMenu(false)}
+          />
+          {showMenu && (
+            <div
+              className="shadow px-3 absolute"
+              // style={showMenu ? { visibility: "hidden" }:" "}
+              onMouseOver={() => setShowMenu(true)}
+              onMouseOut={() => setShowMenu(false)}
+            >
+              <div
+                className="flex items-center p-2"
+                onClick={() => {
+                  history("/userProfile");
+                }}
+              >
+                <img src={ProfileIcon} alt="" srcSet="" />
+                <span className="font-[Inter] text-xs font-medium px-1 cursor-pointer">
                   View
                 </span>
               </div>
-              <div className="flex items-center  p-2">
+              <div className="flex items-center p-2">
                 <img src={BinIcon} alt="" />
-                <span className="font-[Inter] text-xs font-medium px-1">
+                <span className="font-[Inter] text-xs font-medium px-1 cursor-pointer">
                   Delete
                 </span>
               </div>
