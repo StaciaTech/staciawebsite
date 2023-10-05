@@ -14,7 +14,7 @@ export const users = [
     name: ' shimi',
     user: 'user0002',
     subscription: true,
-    Email: 'user@mail.com',
+    Email: 'shimiyon21@mail.com',
     posts: 4,
     responces: 6,
   },
