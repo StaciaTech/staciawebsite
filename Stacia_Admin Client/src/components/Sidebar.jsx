@@ -1,13 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
-
 import { useNavigate } from 'react-router-dom';
-
 import StaciaLogo from '../assets/staciaLogo.svg';
 import PowerLogo from '../assets/power.svg';
-
-//sidebar logos
-
 import ArticleBlack from '../assets/articleBlack.svg';
 import ArticleWhite from '../assets/articleWhite.svg';
 import CareerBlack from '../assets/careerBlack.svg';
@@ -24,10 +19,9 @@ import ServiceBlack from '../assets/serviceBlack.svg';
 import ServiceWhite from '../assets/serviceWhite.svg';
 import Staciawallblack from '../assets/staciawallBlack.svg';
 import StaciawallWhite from '../assets/staciawalWhite.svg';
-
 import { Context } from '../provider/Provider';
 
-function Sidebar() {
+export default function Sidebar() {
   const navigate = useNavigate();
 
   const sidebarStates = useContext(Context);
@@ -149,6 +143,8 @@ function Sidebar() {
     navigate('/staciawall');
   };
 
+
+
   return (
     <>
       <div
@@ -160,6 +156,7 @@ function Sidebar() {
             <img src={StaciaLogo} alt='Logo' />
           </div>
           <div className=' p-2 w-full'>
+
             <button
               onClick={overviewHandler}
               className={
@@ -314,6 +311,7 @@ function Sidebar() {
                 </span>
               </div>
             </button>
+
           </div>
         </div>
         <div className=' self-center'>
@@ -333,4 +331,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+

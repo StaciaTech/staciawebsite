@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SubscribeLogo from '../assets/subscriberLogo.svg';
 import RiseArrow from '../assets/RiseArrow.svg';
@@ -66,6 +67,7 @@ function Dashboard() {
 
   return (
     <>
+
       <div className='flex px-3  '>
         <div className='flex items-center' style={{ height: '100vh' }}>
           <Sidebar />
@@ -91,9 +93,11 @@ function Dashboard() {
               </div>
               <div className='ml-3  bg-[#ededed] px-2 py-2  rounded-md'>
                 <img src={UserLogo} alt='' />
+
               </div>
             </div>
           </div>
+
 
           <div className='px-2'>
             <div className='flex py-2 justify-center' style={{ height: '40%' }}>
@@ -177,13 +181,16 @@ function Dashboard() {
                     DATE
                   </div>
                   <div className='text-white text-lg font-medium font-[Inter]'>
+
                     05/23
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <p className='font-[Jost] font-bold'>TOP USERS</p>
+
           <div>{<TopUsers topUser={data} />}</div>
         </div>
       </div>
