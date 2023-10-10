@@ -8,45 +8,45 @@ import TotalApplications from '../assets/totalapplicationIcon.svg';
 import Shortlisted from '../assets/shotlistedIcon.svg';
 import ApplicantProfileImage from '../assets/applicantProfile.jpg';
 import { Jobdata } from '../Data/JobData';
-
+import Search from '../assets/Search.svg';
 import ReactEcharts from 'echarts-for-react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Stats from '../assets/chart-button.svg';
+import AllJobIcon from '../assets/Toothbrush.svg';
 
-import AllJobIcon from '../assets/alljobsIcon.png';
+import '../index.css';
 
 const Jobcontainer = ({ data }) => {
   const { title, experience, jobType, natureOfJob, pay } = data;
   // console.log(Jobdata);
   return (
-    <div className='border-2 border-black mx-2 p-3 rounded-lg  font-[Inter]'>
+    <div className='border-2 border-black mx-2 p-3 2xl:p-4 rounded-lg font-[Inter]'>
       <div className='flex'>
-        <div className='bg-black p-3 rounded-md mx-1'>
+        <div className='bg-black  h-10 w-10 flex justify-center items-center rounded-md mr-2 mb-2'>
           <img src={AllJobIcon} alt='' />
         </div>
         <div>
           <div className='font-bold text-base'>{title}</div>
-          <div className='font-medium text-xs'>
-            <span className='p-1'>Required</span>
+          <div className='font-medium text-xs mt-px ml-1'>
+            <span>Required</span>
             <span className='p-1'>{experience}</span>
-            <span className='p-1'>
-              {experience === 'Fresher' ? '' : 'Experience'}
-            </span>
+            <span>{experience === 'Fresher' ? '' : 'Experience'}</span>
           </div>
         </div>
       </div>
       <div className='m-1'>
         <div className='font-medium text-xs'>
           <span className='p-1'>JobType:</span>
-          <span className='p-1'>{jobType}</span>
+          <span className='text-xs'>{jobType}</span>
         </div>
-        <div className='font-medium text-xs'>
+        <div className='font-medium text-xs my-1'>
           <span className='p-1'>Nature of job:</span>
-          <span className='p-1'>{natureOfJob}</span>
+          <span>{natureOfJob}</span>
         </div>
         <div className='font-medium text-xs'>
-          <span className='p-1'>Pay: </span>
-          <span className='p-1'>{pay}</span>
+          <span className='p-1'>Pay:</span>
+          <span>{pay}</span>
         </div>
       </div>
     </div>
@@ -60,8 +60,12 @@ function Careers() {
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
+    largeDesktop: {
+      breakpoint: { max: 3000, min: 1600 },
+      items: 4,
+    },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1600, min: 1024 },
       items: 3,
     },
     tablet: {
@@ -77,31 +81,44 @@ function Careers() {
   const [jobs] = useState(Jobdata);
 
   const option = {
-    xAxis: {
-      type: 'category',
-      data: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Arl',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ],
-      splitLine: {
-        show: false,
+    xAxis: [
+      {
+        type: 'category',
+        data: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Arl',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+        splitLine: {
+          show: false,
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#fff',
+          },
+          show: false,
+        },
+        axisTick: {
+          show: false,
+        },
       },
-    },
+    ],
+
     yAxis: {
       type: 'value',
       splitLine: {
         show: false,
       },
+      show: false,
     },
 
     series: [
@@ -170,15 +187,27 @@ function Careers() {
 
         <div className='w-full ml-3'>
           <div className='flex justify-between w-full py-5'>
-            <div className='text-4xl font-bold font-[Sansation]'>Career</div>
+            <div className='text-4xl font-bold font-[Jost]'>Careers</div>
             <div className='flex items-center'>
-              <div>
+              <div
+                className='h-full'
+                style={{
+                  backgroundColor: '#EDEDED',
+                  padding: '5px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  borderRadius: '5px',
+                  // width: '50%',
+                }}
+              >
+                <img src={Search} alt='' />
                 <input
                   type='text'
                   name=''
                   id=''
-                  className='bg-[#EDEDED] rounded-md h-10 w-72 mx-3  focus:outline-none placeholder:px-6'
-                  placeholder='searching...'
+                  style={{ outline: 'none', backgroundColor: '#ededed' }}
+                  className=' placeholder:font-[Inter]'
+                  placeholder='Search'
                 />
               </div>
               <div className='mx-3 bg-[#ededed] px-2 py-2  rounded-md'>
@@ -195,7 +224,7 @@ function Careers() {
           <div className='flex w-full'>
             <div style={{ width: '75%' }}>
               <div className='flex w-full'>
-                <div className='bg-[#FF8433] w-1/3 p-4 rounded-lg'>
+                <div className='bg-[#FF8433] flex flex-col justify-between 2xl:h-52 2xl:p-8  p-4 w-1/3 rounded-lg'>
                   <div className='font-[inter] font-medium text-md'>
                     Total Jobs
                   </div>
@@ -206,7 +235,7 @@ function Careers() {
                     </div>
                   </div>
                 </div>
-                <div className='bg-[#D1E4FF] w-1/3 p-4 rounded-lg mx-3'>
+                <div className='bg-[#D1E4FF] w-1/3 flex flex-col justify-between 2xl:h-52 2xl:p-8 p-4 rounded-lg mx-3'>
                   <div className='font-[inter] font-medium text-md'>
                     Total Application
                   </div>
@@ -217,9 +246,9 @@ function Careers() {
                     </div>
                   </div>
                 </div>
-                <div className='bg-[#F6DB29] w-1/3 p-4 rounded-lg'>
+                <div className='bg-[#F6DB29] w-1/3 flex flex-col justify-between 2xl:h-52 2xl:p-8 p-4 rounded-lg'>
                   <div className='font-[inter] font-medium text-md'>
-                    ShortListed
+                    Shortlisted
                   </div>
                   <div className='flex justify-between items-center  mt-5'>
                     <div className='text-5xl font-[Inter] font-bold'>23</div>
@@ -229,10 +258,25 @@ function Careers() {
                   </div>
                 </div>
               </div>
-              <div className='bg-[#581EE7] mt-3 rounded-lg'>
+              <div className='bg-[#581EE7] mt-3 h-80 2xl:h-96  rounded-lg w-full'>
+                <div className='flex justify-between items-center mx-24 pt-3 2xl:pt-5'>
+                  <div className='font-[Inter] text-2xl font-bold text-white'>
+                    64
+                  </div>
+                  <img src={Stats} alt='' className='w-8 h-8' />
+                </div>
+                <div className='flex justify-center items-center w-full relative top-10 '>
+                  <div
+                    className='h-px border-t-2 border-[#F2853D] border-dashed'
+                    style={{ width: '75%' }}
+                  />
+                  <div className='text-[#F6DB29] font-[Inter] font-medium'>
+                    Max
+                  </div>
+                </div>
                 <ReactEcharts
                   option={option}
-                  className='text-[#F2853D] font-[Inter]'
+                  className='text-[#F2853D] font-[Inter] h-full w-full'
                 />
               </div>
             </div>
@@ -240,19 +284,17 @@ function Careers() {
               className=' bg-[#1C1D22] ml-3 rounded-lg'
               style={{ width: '25%' }}
             >
-              <div className='text-center text-white font-[Inter] p-3 my-4 font-medium'>
+              <div className='text-center text-white font-[Inter] p-3 my-4 2xl:my-6 font-medium'>
                 Recent Application
               </div>
               <div className='flex justify-center'>
                 <img
                   src={ApplicantProfileImage}
                   alt=''
-                  width={100}
-                  height={100}
-                  className='bg-[#D0B712] rounded-full border-8 border-white'
+                  className='bg-[#D0B712] rounded-full border-8 border-white w-24 2xl:w-36'
                 />
               </div>
-              <div className='my-8'>
+              <div className='my-8 2xl:my-16'>
                 <div className='font-[Inter] text-white text-center text-2xl font-semibold p-1'>
                   Huma Querishi
                 </div>
@@ -284,9 +326,11 @@ function Careers() {
               </div>
             </div>
           </div>
-          <div className='my-2 font-[Sansation] font-semibold'>Job roles</div>
-          <div className='flex w-full'>
-            <div style={{ width: '1000px' }}>
+          <div className='my-2 2xl:my-8 font-[Sansation] 2xl:text-2xl font-semibold'>
+            Job roles
+          </div>
+          <div className='flex jobsContainer'>
+            <div className='w-11/12'>
               <Carousel
                 responsive={responsive}
                 draggable={true}
@@ -299,7 +343,7 @@ function Careers() {
                 })}
               </Carousel>
             </div>
-            <div className=' w-1/2 px-8 rounded-lg text-white bg-black text-7xl flex items-center justify-center'>
+            <div className='w-1/12  px-8 rounded-lg text-white bg-black text-7xl flex items-center justify-center'>
               +
             </div>
           </div>

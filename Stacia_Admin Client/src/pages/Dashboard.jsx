@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import SubscribeLogo from '../assets/subscriberLogo.svg';
 import RiseArrow from '../assets/RiseArrow.svg';
@@ -6,6 +5,7 @@ import ArrowRigntCircle from '../assets/arrow-right-circle.svg';
 import LigntBulb from '../assets/lightbulb.svg';
 import UserLogo from '../assets/User.svg';
 import Settings from '../assets/settings.svg';
+import Search from '../assets/Search.svg';
 import Sidebar from '../components/Sidebar';
 
 import ReactEcharts from 'echarts-for-react';
@@ -18,11 +18,21 @@ function Dashboard() {
   const option = {
     xAxis: {
       data: ['Jan', 'Feb', 'Mar', 'Apl', 'May', 'Jun'],
+      axisLine: {
+        lineStyle: {
+          color: '#fff',
+        },
+        show: false,
+      },
+      axisTick: {
+        show: false,
+      },
     },
     yAxis: {
       splitLine: {
         show: false,
       },
+      show: false,
     },
     series: [
       {
@@ -67,7 +77,6 @@ function Dashboard() {
 
   return (
     <>
-
       <div className='flex px-3  '>
         <div className='flex items-center' style={{ height: '100vh' }}>
           <Sidebar />
@@ -76,13 +85,25 @@ function Dashboard() {
           <div className='flex justify-between w-full'>
             <div className='text-4xl font-bold font-[Inter]'>Hello, User</div>
             <div className='flex items-center'>
-              <div>
+              <div
+                className=' h-full'
+                style={{
+                  backgroundColor: '#EDEDED',
+                  padding: '5px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  borderRadius: '5px',
+                  // width: '50%',
+                }}
+              >
+                <img src={Search} alt='' />
                 <input
                   type='text'
                   name=''
                   id=''
-                  className='bg-[#EDEDED] rounded-md h-10 w-72 mx-3  focus:outline-none placeholder:px-6'
-                  placeholder='searching...'
+                  style={{ outline: 'none', backgroundColor: '#ededed' }}
+                  className=' placeholder:font-[Inter]'
+                  placeholder='Search'
                 />
               </div>
               <div className='mx-3 bg-[#ededed] px-2 py-2  rounded-md'>
@@ -93,15 +114,13 @@ function Dashboard() {
               </div>
               <div className='ml-3  bg-[#ededed] px-2 py-2  rounded-md'>
                 <img src={UserLogo} alt='' />
-
               </div>
             </div>
           </div>
 
-
           <div className='px-2'>
-            <div className='flex py-2 justify-center' style={{ height: '40%' }}>
-              <div className='bg-[#581EE7] rounded-2xl w-2/5 p-5'>
+            <div className='flex h-full py-2 justify-center'>
+              <div className='bg-[#581EE7] rounded-2xl w-2/5 p-5 xl:h-96 2xl:h-auto'>
                 <div className='flex justify-between'>
                   <div className='text-white text-lg font-medium font-[Inter]'>
                     Traffic
@@ -110,12 +129,12 @@ function Dashboard() {
                     <img src={RiseArrow} alt='' />
                   </div>
                 </div>
-                <div className='mt-10'>
+                <div className='mt-10 2xl:mt-20'>
                   <ReactEcharts option={option} />
                 </div>
               </div>
               <div className='mx-4 flex flex-col w-2/5'>
-                <div className='bg-[#D1E4FF] rounded-2xl p-5  flex flex-col justify-between'>
+                <div className='bg-[#D1E4FF] rounded-2xl p-5 2xl:h-96  flex flex-col justify-between'>
                   <div className='flex justify-between pb-2'>
                     <div className='text-xl font-medium font-[Inter]'>
                       Total Subscribers
@@ -145,22 +164,22 @@ function Dashboard() {
                     </div>
                     <div className='text-7xl font-bold font-[Inter]'>+80%</div>
                   </div>
-                  <div className='w-1/3 h-full rounded-2xl border-2 border-black flex justify-center items-center '>
+                  <div className='w-1/3  rounded-2xl border-2 border-black flex justify-center items-center '>
                     <img src={ArrowRigntCircle} alt='' />
                   </div>
                 </div>
               </div>
-              <div className='bg-[#000] rounded-2xl w-1/5 p-3 '>
+              <div className='bg-[#1C1D22] rounded-2xl w-1/5 p-3 xl:h-96 2xl:h-full'>
                 <div className='text-white font-medium text-lg font-[Inter]'>
-                  Stastics
+                  Statistics
                 </div>
-                <div className='h-48 flex items-center my-5'>
+                <div className=' h-40 2xl:h-80 flex items-center my-5'>
                   <ReactEcharts
                     option={donughtoption}
                     className='h-full w-full'
                   />
                 </div>
-                <div className='flex justify-center '>
+                <div className='flex justify-center'>
                   <div>
                     <div className='text-white text-lg font-medium font-[Inter]'>
                       <span className='px-2 mr-1 rounded-sm bg-[#581EE7]'></span>
@@ -181,8 +200,7 @@ function Dashboard() {
                     DATE
                   </div>
                   <div className='text-white text-lg font-medium font-[Inter]'>
-
-                    05/23
+                    SEP/05/23
                   </div>
                 </div>
               </div>

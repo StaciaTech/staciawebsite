@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StaciaLogo from '../assets/staciaLogo.svg';
@@ -143,8 +142,6 @@ export default function Sidebar() {
     navigate('/staciawall');
   };
 
-
-
   return (
     <>
       <div
@@ -155,8 +152,7 @@ export default function Sidebar() {
           <div className='p-4'>
             <img src={StaciaLogo} alt='Logo' />
           </div>
-          <div className=' p-2 w-full'>
-
+          <div className='m-2 w-full'>
             <button
               onClick={overviewHandler}
               className={
@@ -165,7 +161,7 @@ export default function Sidebar() {
                   : 'text-white bg-none w-full  py-2 flex '
               }
             >
-              <div className='flex justify-between ml-10'>
+              <div className='flex justify-between ml-12'>
                 <img
                   src={isOverviewActive ? OverviewBlack : OverviewWhite}
                   alt=''
@@ -184,7 +180,10 @@ export default function Sidebar() {
                   : 'text-white bg-none w-full flex  py-2 '
               }
             >
-              <div className='flex justify-between ml-12'>
+              <div
+                className='flex justify-between '
+                style={{ marginLeft: '51px' }}
+              >
                 <img
                   src={isServiceActive ? ServiceBlack : ServiceWhite}
                   alt=''
@@ -311,11 +310,10 @@ export default function Sidebar() {
                 </span>
               </div>
             </button>
-
           </div>
         </div>
         <div className=' self-center'>
-          <button className='bg-[#343434] px-5 py-2 rounded-md'>
+          <button className='bg-[#343434] hover:bg-[#666] px-5 py-2 rounded-md'>
             <div className='flex'>
               <div className='pr-2 flex items-center'>
                 <img src={PowerLogo} alt='' />
@@ -330,5 +328,3 @@ export default function Sidebar() {
     </>
   );
 }
-
-

@@ -1,13 +1,11 @@
-
 import React, { useEffect, useState } from 'react';
 import DefaultIcon from '../assets/defaulticon.svg';
 import correct from '../assets/correct.svg';
 import wrong from '../assets/worng.svg';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-
+import RightArrow from '../assets/rightArrow.svg';
 
 const theme = createTheme({
   palette: {
@@ -23,7 +21,6 @@ const theme = createTheme({
       light: '#F5EBFF',
       // dark: will be calculated from palette.secondary.main,
       contrastText: '#47008F',
-
     },
   },
 });
@@ -41,17 +38,17 @@ const TopUsers = ({ topUser }) => {
     <ThemeProvider theme={theme}>
       <div className='px-10 w-full'>
         <div className='grid grid-cols-5 justify-between '>
-          <div className=' grid justify-center text-base font-bold font-[Inter] '>
+          <div className=' flex justify-center text-base font-semibold font-[Jost] '>
             User
           </div>
-          <div className=' flex justify-center text-base font-bold font-[Inter]'>
-            Status
+          <div className=' flex justify-center text-base font-semibold font-[Jost]'>
+            Subscription
           </div>
-          <div className=' flex justify-center text-base font-bold font-[Inter]'>
+          <div className=' flex justify-center text-base font-semibold font-[Jost]'>
             Posts
           </div>
-          <div className=' flex justify-center text-base font-bold font-[Inter]'>
-            Responces
+          <div className=' flex justify-center text-base font-semibold font-[Jost]'>
+            Responses
           </div>
           <div className=' flex justify-center '></div>
         </div>
@@ -71,15 +68,14 @@ const TopUsers = ({ topUser }) => {
                       />
                     </div>
                     <div className='flex flex-col justify-center ps-8'>
-                      <div className='text-base font-bold font-[Inter]'>
-
+                      <div className='text-base font-semibold font-[Jost]'>
                         {element.name}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className=' flex justify-center items-center'>
+                <div className=' flex justify-center ml-4 items-center'>
                   {
                     <img
                       src={element.subscription ? correct : wrong}
@@ -87,32 +83,34 @@ const TopUsers = ({ topUser }) => {
                     />
                   }
                 </div>
-                <div className=' flex justify-center items-center text-base font-bold font-[Inter]'>
+                <div className=' flex justify-center items-center text-base font-semibold font-[Inter]'>
                   {element.posts}
                 </div>
-                <div className=' flex justify-center items-center text-base font-bold font-[Inter]'>
+                <div className=' flex justify-center mr-8 items-center text-base font-semibold font-[Inter]'>
                   {element.responces}
                 </div>
 
-                <button className="border-2 rounded-full w-32 border-black" onClick={()=> history("/userProfile")}>
-
-                  Views details
+                <button
+                  className='border-2 rounded-full w-32 border-black font-medium text-sm font-[Jost]'
+                  onClick={() => history('/userProfile')}
+                >
+                  View details
                 </button>
               </div>
             </div>
           );
         })}
 
-        <div className='float-right w-38 bg-[#FFFFFF] rounded-xl py-1 my-2'>
-          <Button
+        <div>
+          <button
             variant='primary'
             onClick={() => history('/users')}
-
             endIcon={<ArrowRightAltIcon />}
+            className='float-right w-38 bg-[#EDEDED] hover:bg-[#999] rounded-xl py-2 px-6 my-2 font-[Jost] font-medium text-base'
           >
-            Click More
-          </Button>
-
+            Show More
+            <img src={RightArrow} alt='right-arrow' className=' inline ml-2' />
+          </button>
         </div>
 
         {/* <button className="float-right w-36 bg-[#EDEDED] rounded-2" onClick={()=>history("/users")} >Click More </button> */}

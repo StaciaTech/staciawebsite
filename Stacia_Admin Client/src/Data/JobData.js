@@ -27,4 +27,18 @@ export const Jobdata = [
     natureOfJob: 'Fulltime/employee',
     pay: '4.2L',
   },
+  {
+    title: 'App Developer',
+    experience: '1 year',
+    jobType: '1 Year',
+    natureOfJob: 'Fulltime/employee',
+    pay: '4.2L',
+  },
+  {
+    title: 'App Developer',
+    experience: '1 year',
+    jobType: '1 Year',
+    natureOfJob: 'Fulltime/employee',
+    pay: '4.2L',
+  },
 ];
