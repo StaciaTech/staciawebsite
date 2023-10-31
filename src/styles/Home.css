@@ -1,0 +1,262 @@
+:root {
+    --cards: 4;
+    --cardHeight: 75vh;
+    --cardTopPadding: 1.5em;
+    --cardMargin: 4vw;
+}
+
+/* hero */
+
+.texts {
+    margin: 0 120px;
+}
+
+/*  style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} */
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    background-color: #0d0225;
+}
+
+.homeSection {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    margin-bottom: 10%;
+}
+
+.heroText,
+.changingText {
+    font-size: 8rem;
+    font-weight: 800;
+}
+
+.changingText {
+    margin-top: 20px;
+    color: #0047FF;
+}
+
+
+/* products */
+
+.productPage {
+    width: 100%;
+    background-color: #0d0225;
+}
+
+.products {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.productName {
+    font-size: 20px;
+
+}
+
+#cards {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), var(--cardHeight));
+    gap: var(--cardMargin);
+    padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+    margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+    --index: 1;
+}
+
+#card2 {
+    --index: 2;
+}
+
+#card3 {
+    --index: 3;
+}
+
+#card4 {
+    --index: 4;
+}
+
+.card {
+    position: sticky;
+    top: 10%;
+    padding-top: calc(var(--index) * var(--cardTopPadding));
+    color: aliceblue;
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
+    border-bottom: 30px;
+}
+
+.card-body>.home-pro-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-pro-image2 {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-pro-image2>img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.home-pro-details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.home-pro-title {
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.home-pro-box {
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+}
+
+#card1 .card-body {
+    border-radius: 62px;
+    background: linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%);
+    box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
+}
+
+#card2 .card-body {
+    border-radius: 62px;
+    background: linear-gradient(259deg, #2A35B3 4.78%, #1485CB 94.3%);
+    box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+#card3 .card-body {
+    border-radius: 62px;
+    background: linear-gradient(259deg, #7AA00C -8.27%, #FCDF00 86.58%);
+    box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+
+#card4 .card-body {
+    border-radius: 62px;
+    background: linear-gradient(259deg, #003362 -8.27%, #81497B 95.27%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.card-body {
+    height: var(--cardHeight);
+}
+
+/* clients */
+
+.clientWrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: #dd5341; */
+}
+
+.clients {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.clientText {
+    -webkit-text-stroke: 1px;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.allClients {
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.clientPara {
+    width: 70%;
+    text-align: center;
+    color: #6B6084;
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.one {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.line1 {
+    width: 85%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+/* our services */
+
+.ourServices {
+    background-color: #68c7c1;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.ourServicesLeft {
+    width: 50%;
+    height: 100%;
+    background-color: #6B6084;
+}
+
+.ourServicesRight {
+    width: 50%;
+    height: 100%;
+    background-color: #dd5341;
+}
+
+/* case study */

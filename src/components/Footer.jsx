@@ -80,7 +80,7 @@ function Footer() {
       </div>
       <div className="footer-others">
         <div>
-          Copyright Stacia<span style={{ color: "#0047FF" }}>Corp</span>. All
+        ©Copyright Stacia<span style={{ color: "#0047FF" }}>Corp</span>. All
           Rights Reserved
         </div>
         <div

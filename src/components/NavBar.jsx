@@ -22,9 +22,12 @@ function NavBar() {
           <NavLink to={"/project"} className="nav-items">
             Projects
           </NavLink>
-          <div className="nav-items" style={{ opacity: 0.5 }}>
+          <NavLink to={"/resource"} className="nav-items">
+            Resource
+          </NavLink>
+          {/* <div className="nav-items" style={{ opacity: 0.5 }}>
             Resources
-          </div>
+          </div> */}
           <NavLink to={"/career"} className="nav-items">
             Careers
           </NavLink>
