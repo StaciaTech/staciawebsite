@@ -4,6 +4,9 @@
   background-color: #0d0225;
   color: white;
 }
+.fixed {
+  position: fixed;
+}
 .career-hero-contents {
   display: flex;
   justify-content: space-between;
@@ -27,7 +30,7 @@
   margin-top: 70px;
 }
 .opportunities-container {
-  margin: 100px 200px;
+  margin: 0px 200px;
 }
 .line-style {
   width: 100%;
@@ -35,6 +38,18 @@
 }
 .opportunity-items {
   margin: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.job-arrow {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #6b6084;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .opportunity-titles {
   font-size: 26px;
@@ -70,6 +85,161 @@
   font-size: 22px;
   color: #6b6084;
 }
+.career-seperator {
+  height: 42px;
+  width: 2px;
+  background: #cadbea;
+  margin: 0px 30px;
+}
+.job-description {
+  color: #6b6084;
+  line-height: 180%;
+  font-size: 20px;
+  margin: 20px 0px;
+}
+.responsibility-title {
+  color: #212529;
+  font-size: 28px;
+  font-weight: 500px;
+  line-height: 32px;
+  margin: 12px 0px;
+}
+.responsibility-list {
+  color: #6b6084;
+  line-height: 32px;
+  font-size: 20px;
+  margin: 24px 0px;
+}
+.job-details {
+  color: #6b6084;
+  margin: 0px 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.career-apply {
+  color: #0047ff;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 50px 0px;
+  cursor: pointer;
+}
+.application-overlay {
+  border: 1px solid black;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0009;
+  backdrop-filter: blur(5px);
+}
+.application-box {
+  background-color: white;
+  height: 75%;
+  width: 45%;
+  opacity: 1;
+  padding: 0px 50px;
+  backdrop-filter: blur(10px);
+  margin: 2px;
+  border-radius: 30px;
+}
+.application-job-title {
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.application-info {
+  color: #6b6084;
+  font-size: 20px;
+}
+.application-title {
+  font-size: 22px;
+  color: #0d0225;
+  font-weight: 600;
+}
+.application-question {
+  font-size: 20px;
+  color: #0d0225;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="radio"],
+input[type="checkbox"],
+input[type="date"] {
+  width: 100%;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #cadbea;
+}
+input:focus {
+  outline: none;
+}
+.input-overlay {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #cadbea;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-file::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  border: none;
+  border-radius: 10px;
+}
+
+.file-logo {
+  z-index: 5;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+}
+
+.application-btn {
+  height: 40px;
+  width: 150px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.application-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.application-scroll {
+  height: 55%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.application-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+.application-scroll::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+.application-option {
+  margin: 0px 10px;
+  color: #6b6084;
+  font-size: 16px;
+}
 @media screen and (min-width: 800px) and (max-width: 1600px) {
   .career-hero-info {
     width: 600px;
@@ -96,5 +266,27 @@
   }
   .culture-contents {
     width: 600px;
+  }
+  .application-job-title {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .application-question {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="radio"],
+  input[type="checkbox"],
+  input[type="date"] {
+    width: 100%;
+    height: 35px;
+  }
+  .input-overlay {
+    height: 80px;
   }
 }

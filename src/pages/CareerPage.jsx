@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { useState } from "react";
 import "../styles/career.css";
 import CareerComponent from "../components/CareerComponent";
 import LifeStaciaImg1 from "../assets/life@staciaImg1.png";
@@ -8,9 +9,14 @@ import LifeStaciaImg2 from "../assets/life@staciaImg2.png";
 import LifeStaciaImg3 from "../assets/life@staciaImg3.png";
 import LifeStaciaImg4 from "../assets/life@staciaImg4.png";
 
+import { allJobs } from "../data/JobsData";
+
 function CareerPage() {
+  const [Jobs] = useState(allJobs);
+  const [showApplication, setShowApplication] = useState(false);
+  // console.log(showApplication);
   return (
-    <>
+    <div className={showApplication ? "fixed" : ""}>
       <NavBar />
       <div className="career-hero-section">
         <div className="career-hero-contents">
@@ -35,7 +41,22 @@ function CareerPage() {
         </div>
       </div>
       <div>
-        <CareerComponent />
+        <div
+          style={{
+            textAlign: "center",
+          }}
+          className="career-headings"
+        >
+          Opportunities
+        </div>
+        {Jobs.map((eachJob, index) => (
+          <CareerComponent
+            key={index}
+            data={eachJob}
+            showApplication={showApplication}
+            setShowApplication={setShowApplication}
+          />
+        ))}
       </div>
       <div style={{ marginLeft: "80px", marginRight: "80px" }}>
         <div className="career-headings">Life @ Stacia Corp</div>
@@ -114,7 +135,7 @@ function CareerPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
