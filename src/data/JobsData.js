@@ -30,6 +30,7 @@ export const allJobs = [
             _id: 22,
             questionName: "Are you working in an onsite setting",
             type: "radio",
+            name: "name1",
             options: ["Yes", "No"],
           },
           {
@@ -55,6 +56,7 @@ export const allJobs = [
             questionName:
               "We must fill this position urgently, can you start immediately",
             type: "radio",
+            name: "name2",
             options: ["Yes", "No"],
           },
         ],
@@ -188,6 +190,7 @@ export const allJobs = [
             _id: 29,
             questionName: "Are you working in an onsite setting",
             type: "radio",
+            name: "name3",
             options: ["yes", "no"],
           },
           {
@@ -201,6 +204,7 @@ export const allJobs = [
             questionName:
               "We must fill this position urgently, can you start immediately",
             type: "radio",
+            name: "name4",
             options: ["yes", "no"],
           },
         ],
@@ -256,6 +260,7 @@ export const allJobs = [
             _id: 36,
             questionName: "Are you working in an onsite setting",
             type: "radio",
+            name: "name5",
             options: ["yes", "no"],
           },
           {
@@ -269,6 +274,7 @@ export const allJobs = [
             questionName:
               "We must fill this position urgently, can you start immediately",
             type: "radio",
+            name: "name6",
             options: ["yes", "no"],
           },
         ],
@@ -324,6 +330,7 @@ export const allJobs = [
             _id: 43,
             questionName: "Are you working in an onsite setting",
             type: "radio",
+            name: "name7",
             options: ["yes", "no"],
           },
           {
@@ -337,6 +344,7 @@ export const allJobs = [
             questionName:
               "We must fill this position urgently, can you start immediately",
             type: "radio",
+            name: "name8",
             options: ["yes", "no"],
           },
         ],
@@ -392,6 +400,7 @@ export const allJobs = [
             _id: 50,
             questionName: "Are you working in an onsite setting",
             type: "radio",
+            name: "name9",
             options: ["yes", "no"],
           },
           {
@@ -405,6 +414,7 @@ export const allJobs = [
             questionName:
               "We must fill this position urgently, can you start immediately",
             type: "radio",
+            name: "name10",
             options: ["yes", "no"],
           },
         ],

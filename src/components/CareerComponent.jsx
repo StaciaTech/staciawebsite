@@ -141,7 +141,7 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
                         </div>
                         {sectionDetails[slideNumber].questionDetails.map(
                           (eachQuestion, index) => {
-                            const { questionName, type, options, _id } =
+                            const { questionName, type, options, _id, name } =
                               eachQuestion;
                             return (
                               <div key={index}>
@@ -167,7 +167,7 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
                                           <div>
                                             <input
                                               type={type}
-                                              name="same"
+                                              name={name}
                                               id=""
                                               value={eachOption}
                                               onChange={(e) => {
