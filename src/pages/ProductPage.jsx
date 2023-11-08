@@ -20,7 +20,7 @@ const productData = [
   {
     id: 1,
     img: chililanding,
-    color: '#F9F6FF',
+    color: '#F0F3FD',
     bigText1: 'chili ladling',
     productName: 'Chilli Ladling Machine',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
@@ -28,7 +28,7 @@ const productData = [
   {
     id: 2,
     img: slicing,
-    color: '#F3EDFF',
+    color: '#EAEFFC',
     bigText1: 'precision',
     bigText2: 'slicing',
     productName: 'Precision Slicing Machine',
@@ -37,7 +37,7 @@ const productData = [
   {
     id: 3,
     img: spinach,
-    color: '#ECE3FF',
+    color: '#E5EAFA',
     bigText1: 'spinach',
     bigText2: 'cleaning',
     productName: 'Spinach Cleaning Machine',
@@ -46,7 +46,7 @@ const productData = [
   {
     id: 4,
     img: baling,
-    color: '#E5DAFF',
+    color: '#E0E5F8',
     bigText1: 'stacia baling',
     productName: 'Stacia Baling Machine',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
@@ -54,7 +54,7 @@ const productData = [
   {
     id: 5,
     img: child,
-    color: '#DFD0FF',
+    color: '#DBE1F7',
     bigText1: 'child tracking',
     productName: 'Stacia Child Tracking System',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
@@ -62,7 +62,7 @@ const productData = [
   {
     id: 6,
     img: speaker,
-    color: '#D9C6FF',
+    color: '#D5DCF5',
     bigText1: 'connect s',
     productName: 'Connect S',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
@@ -70,7 +70,7 @@ const productData = [
   {
     id: 7,
     img: stove,
-    color: '#D2BDFF',
+    color: '#D0D7F3',
     bigText1: 'burner stove',
     productName: 'Butterfly 3-burner Stove',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
@@ -145,7 +145,7 @@ function ProductPage() {
 
         {
           productData.map((data) => (
-            <ProductComponent2 bigText1={data.bigText1} productName={data.productName} 
+            <ProductComponent2 bigText1={data.bigText1} productName={data.productName}
               productImg={data.img} bigText2={data.bigText2} bgColor={data.color}
             />
           ))

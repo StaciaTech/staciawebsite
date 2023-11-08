@@ -14,6 +14,8 @@ import slicing from "../../assets/slicing.png";
 import baling from "../../assets/baling.png";
 import speaker from "../../assets/speaker.png";
 import stove from "../../assets/stove.png";
+import Model from './Model'
+import Box1 from '../../pages/Box1'
 
 export default function SingleProduct() {
     const productDetails = [
@@ -65,7 +67,7 @@ export default function SingleProduct() {
             productImg: stove,
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem fugit animi ad ea aliquid eius porro harum fugiat, repellendus nulla a vel officia tempore alias? Ipsa similique quam temporibus id. Delectus optio, quia velit saepe, tempora in rerum ad illo beatae reprehenderit veniam sed labore! Debitis sunt similique esse consectetur vitae architecto ullam perspiciatis delectus, magnam molestiae iusto voluptatum quidem? Atque ipsam, expedita beatae quae exercitationem commodi culpa! Culpa voluptatem, distinctio fugit accusantium totam veritatis? Asperiores nihil nostrum consequuntur eius quae, veniam neque. Exercitationem tenetur, qui saepe nemo obcaecati fuga!'
         },
-        
+
     ];
 
     const slides = [
@@ -117,10 +119,16 @@ export default function SingleProduct() {
                     </div>
                 </div>
             </div>
-            <div className="product-3d-img">
+            {/* <div className="product-3d-img">
                 <div className="img-box">
                     <img src={thisProduct.productImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
+                <div style={{ width: '100%', textAlign: 'end', fontSize: '18px', fontWeight: '900', color: 'rgba(13, 2, 37, 0.20)' }}>Rotate the Object for Real Experience</div>
+            </div> */}
+
+
+            <Model />
+            <div className='rotate-text'>
                 <div style={{ width: '100%', textAlign: 'end', fontSize: '18px', fontWeight: '900', color: 'rgba(13, 2, 37, 0.20)' }}>Rotate the Object for Real Experience</div>
             </div>
 
@@ -152,6 +160,7 @@ export default function SingleProduct() {
 
                 </div>
             </div>
+
 
             <div className="full-desc">
                 <div className="pro-title">{thisProduct.name}</div>

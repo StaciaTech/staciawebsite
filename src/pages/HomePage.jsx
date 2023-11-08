@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/Home.css"
@@ -27,6 +27,10 @@ import reverse from "../assets/reverse.png";
 import HomeCaseStudy from "../components/Home/HomeCaseStudy";
 import Four from "../components/Home/Four";
 import Testimonials from "../components/Home/Testimonials";
+import ServiceDisplay from "../components/Home/ServiceDisplay";
+
+
+import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
 
 const clients = [
   client1, client2, client3, client4, client5, client6, client7, client8, client9,
@@ -37,23 +41,31 @@ const clients = [
 const proDetails = [
   {
     id: 1,
-    background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
+    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
   },
   {
     id: 2,
-    background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
+    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
   },
   {
     id: 3,
-    background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
+    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
   },
   {
     id: 4,
-    background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
+    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
   },
 ]
 
 function HomePage() {
+
+  useEffect(() => {
+    console.log("home useEffect rendered!!!");
+    console.log(process.env.REACT_APP_API);
+    // graphcms.request(QUERY_SLUG_CATEGORIES)
+    //   .then((res) => console.log(res.data))
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -79,29 +91,33 @@ function HomePage() {
             <div className="productName">Product Name</div> */}
           </div>
           <ul id="cards">
-            <li class="card" id="card1">
-              <div class="card-body" style={{background: proDetails[0].background}}>
-                <div className="home-pro-image">
-                  <div className="home-pro-image2">
-                    <img src={reverse} alt="" />
+            {
+              proDetails.map((data) => (
+                <li class="card" id={`card${data.id}`}>
+                  <div class="card-body">
+                    <div className="home-pro-image">
+                      <div className="home-pro-image2">
+                        <img src={reverse} alt="" />
+                      </div>
+                    </div>
+                    <div className="home-pro-details">
+                      <div>
+                        <div className="home-pro-title">Water Heating & Cooling Kettle</div>
+                        <p>Domain Name {data.id}</p>
+                      </div>
+                      <div className="home-pro-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
+                      </div>
+                      <div className="home-pro-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
+                      </div>
+                      <div className="home-pro-learn">Learn more</div>
+                    </div>
                   </div>
-                </div>
-                <div className="home-pro-details">
-                  <div>
-                    <div className="home-pro-title">Water Heating & Cooling Kettle</div>
-                    <p>Domain Name</p>
-                  </div>
-                  <div className="home-pro-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
-                  </div>
-                  <div className="home-pro-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
-                  </div>
-                  <div className="home-pro-learn">Learn more</div>
-                </div>
-              </div>
-            </li>
-            <li class="card" id="card2">
+                </li>
+              ))
+            }
+            {/* <li class="card" id="card2">
               <div class="card-body">
                 <h3>product 2</h3>
               </div>
@@ -115,7 +131,7 @@ function HomePage() {
               <div class="card-body">
                 <h3>product 4</h3>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -149,6 +165,8 @@ function HomePage() {
       </div>
 
       {/* our services */}
+
+      <ServiceDisplay />
 
       {/* <div className="ourServices">
         <div style={{width: '90%', height: '100%', display: 'flex', margin: '0 auto', alignItems: 'center', }}>

@@ -14,17 +14,20 @@
 }
 
 .testimonial-card {
-    width: 530px;
-    min-height: 280px;
+    width: 480px;
+    min-height: 180px;
     border: 1px solid #DA06FF;
     padding: 20px;
     position: relative;
     border-radius: 30px;
-    margin-left: 30px;
+    /* margin-left: 5px; */
     color: #B8B3C3;
+    transform: scale(0.9);
+    transition: 0.3s all ease-out;
 }
 
 .testimonial-card:hover {
+    transform: scale(1);
     cursor: pointer;
     color: #0D0225;
     background: linear-gradient(252deg, rgba(133, 1, 255, 0.20) 1.68%, rgba(255, 109, 3, 0.20) 44.44%, rgba(218, 6, 255, 0.20) 100%);

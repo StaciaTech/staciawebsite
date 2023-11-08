@@ -44,7 +44,6 @@
 /* products */
 
 .productPage {
-    width: 100%;
     background-color: #0d0225;
 }
 
@@ -93,7 +92,7 @@
 
 .card {
     position: sticky;
-    top: 10%;
+    top: 12%;
     padding-top: calc(var(--index) * var(--cardTopPadding));
     color: aliceblue;
 }
@@ -158,14 +157,12 @@
     border-radius: 62px;
     background: linear-gradient(259deg, #2A35B3 4.78%, #1485CB 94.3%);
     box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
-    text-align: center;
 }
 
 #card3 .card-body {
     border-radius: 62px;
     background: linear-gradient(259deg, #7AA00C -8.27%, #FCDF00 86.58%);
     box-shadow: 0px 32px 95px 0px rgba(0, 0, 0, 0.08);
-    text-align: center;
 }
 
 
@@ -173,7 +170,6 @@
     border-radius: 62px;
     background: linear-gradient(259deg, #003362 -8.27%, #81497B 95.27%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-align: center;
 }
 
 .card-body {
@@ -240,7 +236,7 @@
 }
 
 /* our services */
-
+/* 
 .ourServices {
     background-color: #68c7c1;
     min-height: 100vh;
@@ -257,6 +253,143 @@
     width: 50%;
     height: 100%;
     background-color: #dd5341;
+} */
+
+.service-display {
+    width: 100%;
+}
+
+.service-display1 {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 90vh;
+    display: flex;
+    /* background-color: #003362; */
+}
+
+.our-service-display-title {
+    color: #E0E0E0;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0px 5%;
+    margin-bottom: 40px;
+}
+
+.service-left {
+    width: 50%;
+    height: 100%;
+    /* min-height: 100vh; */
+    /* background-color: #81497B; */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;     */
+    margin-top: 5%;
+}
+
+.service-img-box {
+    /* background-color: #0047FF; */
+    position: absolute;
+    transform: scale(0.9);
+    transition: 0.3s ease-in-out;
+    transform: scale(0.9);
+}
+
+.service-img-box>img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.service-right {
+    width: 50%;
+    /* background-color: #0047FF; */
+    height: 100%;
+    margin-top: 5%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.service-text-box {
+    /* border-bottom: 1px solid #0D022566; */
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #003362; */
+    /* position: relative; */
+    justify-content: center;
+    gap: 20px;
+}
+
+.box-line{
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background-color: #0D022566;
+}
+
+.box-line1{
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background-color: #0D022566;
+}
+
+.box-line::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 70%;
+    background-color: #0D0225;
+    transition: .5s ease-in-out;
+    animation: line 5s linear infinite;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/* .service-text-box::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid red;   
+    height: 100%;
+    width: 100%;
+} */
+
+.service-text {
+    color: #0D0225;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+.service-text1 {
+    color: #BCBCBC;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 /* case study */
+
+@keyframes line {
+    0% {
+        transform: scaleX(0.2);
+    }
+
+    50% {
+        transform: scaleX(0.8);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}

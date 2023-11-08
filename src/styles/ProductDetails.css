@@ -25,6 +25,12 @@
     color: rgba(255, 255, 255, 0.60);
 }
 
+.rotate-text{
+    /* background-color: red; */
+    width: 90%;
+    margin: 0 auto;
+}
+
 .desc{
     line-height: 30px;
     font-size: 18px;

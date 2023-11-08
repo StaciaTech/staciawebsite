@@ -40,7 +40,7 @@ function NavBar() {
             style={{
               height: "48px",
               width: "2px",
-              backgroundColor: "white",
+              backgroundColor: "#fff",
               marginRight: "20px",
               marginLeft: "20px",
             }}
