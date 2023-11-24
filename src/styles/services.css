@@ -1,0 +1,116 @@
+.service-hero-container {
+  height: 891px;
+  background-color: #0d0225;
+  color: white;
+}
+.service-hero-secton {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+  margin: 0px 80px;
+}
+.service-title {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 152px;
+  margin-bottom: 80px;
+}
+.service-overview-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 22px 0px;
+}
+.service-hero-content {
+  width: 1022px;
+  opacity: 0.6;
+  font-size: 20px;
+  line-height: 179%;
+}
+.service-hero-img {
+  margin-right: 80px;
+  margin-top: 120px;
+}
+.component-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.component-map-container {
+  width: 40%;
+  margin: 83px 0px;
+}
+.component-image-container {
+  width: 800px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.component-title {
+  font-size: 40px;
+  line-height: 160%;
+  font-weight: 600;
+  margin: 30px 0px;
+}
+.component-heading {
+  color: #6b6084;
+  font-size: 22px;
+  line-height: 180%;
+  line-break: 1.5px;
+  width: 790px;
+}
+.component-btn {
+  height: 48px;
+  width: 261px;
+  display: flex;
+  align-items: center;
+  color: #0047ff;
+  margin: 40px 0px;
+}
+.feature-btn {
+  justify-content: end;
+}
+.feature-image-container {
+  margin-top: 100px;
+  border-radius: 21px;
+  width: 100%;
+  height: 520px;
+}
+.component-btn:hover {
+  color: white;
+  background: #0047ff;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1600px) {
+  .service-hero-container {
+    height: 650px;
+  }
+  .service-hero-content {
+    width: 800px;
+    line-height: 150%;
+  }
+  .service-title {
+    font-size: 100px;
+  }
+  .service-hero-secton {
+    padding-top: 50px;
+  }
+  .service-hero-img {
+    width: 350px;
+  }
+  .component-image-container {
+    width: 650px;
+    height: 420px;
+  }
+  .component-heading {
+    width: 590px;
+  }
+  /* .feature-image-container {
+    margin-top: 100px;
+    border-radius: 21px;
+    width: 100%;
+    height: 420px;
+  } */
+}
