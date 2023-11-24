@@ -38,6 +38,10 @@ export default function HomeCaseStudy() {
             <p>More Case Studys</p>
         </div>
 
+        <div className="more-case-mobile">
+            <p>More Case Studys</p>
+        </div>
+
         </div>
     </div>
   )

@@ -72,9 +72,9 @@ export default function Box1() {
           transform: "translateY(-50%)",
           height: "30vw",
           overflow: "hidden",
-          // backgroundColor: 'pink'
+          backgroundColor: 'pink'
         },
-        
+
         "& section": {
           position: 'relative',
           height: '100vh',

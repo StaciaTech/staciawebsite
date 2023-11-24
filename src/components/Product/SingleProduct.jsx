@@ -16,6 +16,7 @@ import speaker from "../../assets/speaker.png";
 import stove from "../../assets/stove.png";
 import Model from './Model'
 import Box1 from '../../pages/Box1'
+import MobileFooter from '../MobileFooter'
 
 export default function SingleProduct() {
     const productDetails = [
@@ -111,9 +112,9 @@ export default function SingleProduct() {
                         <div className="single-product-name">{thisProduct.name}</div>
                         <div className="product-category">Product category</div>
                     </div>
-                    <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: '70px' }}>
-                        <div style={{ width: '60%' }}>
-                            <div style={{ color: '#fff', fontSize: '30px', fontWeight: '900' }}>Overview</div>
+                    <div className='single-pro-container'>
+                        <div className='single-pro-container2'>
+                            <div className='single-pro-overview'>Overview</div>
                             <p className='desc'>{thisProduct.description}</p>
                         </div>
                     </div>
@@ -129,7 +130,7 @@ export default function SingleProduct() {
 
             <Model />
             <div className='rotate-text'>
-                <div style={{ width: '100%', textAlign: 'end', fontSize: '18px', fontWeight: '900', color: 'rgba(13, 2, 37, 0.20)' }}>Rotate the Object for Real Experience</div>
+                <div className='mobile-rotate-text'>Rotate the Object for Real Experience</div>
             </div>
 
             <div style={{ minHeight: '100vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -144,7 +145,7 @@ export default function SingleProduct() {
                                 <p>{slides[currentSlide].title}</p>
                                 <p> {slides[currentSlide].text}</p>
                             </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div className='' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <p className='skip'>Skip</p>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                                     <div onClick={previousSlide} style={{ width: '40px', height: '40px', cursor: 'pointer' }}>
@@ -168,6 +169,7 @@ export default function SingleProduct() {
             </div>
 
             <Footer />
+            <MobileFooter />
         </>
     )
 }

@@ -60,3 +60,38 @@
     font-weight: 400;
     line-height: 30px;
 }
+
+.four-grid{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 480px){
+    .four{
+        margin-bottom: auto;
+    }
+
+    .four-text{
+        font-size: 24px;
+    }
+
+    .four-grid{
+        flex-direction: column;
+    }
+
+    .four-card{
+        width: 100%;
+    }
+
+    .four-pos{
+        font-size: 12px;
+    }
+
+    .four-name{
+        font-size: 15px;
+    }
+
+    .four-para>p{
+        font-size: 12px;
+    }
+}

@@ -13,11 +13,14 @@ import StackingAndResizingCards from "./components/Home/ImageSlider";
 import CaseStudy from "./pages/CaseStudy";
 import CaseTechnology from "./components/CaseStudy/CaseTechnology";
 import Box1 from "./pages/Box1";
+import SpecificService from "./components/Services/SpecificService";
+import StackScroll from "./pages/StackScroll";
 
 
 function App() {
   return (
     <div className="App">
+      {/* <StackScroll /> */}
       {/* <Box1 /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -26,11 +29,12 @@ function App() {
         <Route path="/product" element={<ProductPage />} />
         <Route path="/product/:productName" element={<SingleProduct />} />
         <Route path="/project" element={<ProjectPage />} />
-        <Route path="/resource" element={<ResourcePage />} />
+        <Route path="/case-study" element={<CaseStudy />} />
         <Route path="case-study" element={<CaseStudy />} />
         <Route path="case-study/" element={<CaseStudy />} />
         <Route path="/service" element={<ServicePage />} />
-        <Route path="/whatsnew" element={<WhatsNewPage />} />
+        <Route path="service/:serviceName" element={<SpecificService />} />
+        {/* <Route path="/whatsnew" element={<WhatsNewPage />} /> */}
       </Routes>
     </div>
   );

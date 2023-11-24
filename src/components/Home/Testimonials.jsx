@@ -14,7 +14,7 @@ export default function Testimonials() {
                 </Marquee>
             </div>
 
-            <div>
+            <div className='right-marquee'>
                 <Marquee speed={120} pauseOnHover direction='right'>
                     <AllTestimonials />
                 </Marquee>

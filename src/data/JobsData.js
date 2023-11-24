@@ -45,12 +45,12 @@ export const allJobs = [
             type: "number",
             options: [],
           },
-          // {
-          //   _id: 24,
-          //   questionName: "Date of Birth",
-          //   type: "date",
-          //   options: [],
-          // },
+          {
+            _id: 24,
+            questionName: "Date of Birth",
+            type: "date",
+            options: [],
+          },
           {
             _id: 241,
             questionName:

@@ -1,6 +1,6 @@
 .testimonials {
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,4 +74,22 @@
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
+}
+
+@media (max-width: 480px) {
+    .testimonials{
+        margin-top: 40px;
+    }
+    .right-marquee{
+        display: none;
+    }
+
+    .testimonial-card{
+        width: 260px;
+    }
+
+    .test-img{
+        width: 39px;
+        height: 39px;
+    }
 }

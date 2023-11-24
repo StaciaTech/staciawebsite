@@ -4,9 +4,11 @@
   background-color: #0d0225;
   color: white;
 }
+
 .fixed {
   position: fixed;
 }
+
 .career-hero-contents {
   display: flex;
   justify-content: space-between;
@@ -14,14 +16,17 @@
   margin: 0px 80px;
   padding-top: 100px;
 }
+
 .career-title {
   font-size: 120px;
   font-weight: 800;
 }
+
 .career-hero-info {
   width: 1022px;
   font-size: 20px;
 }
+
 .career-headings {
   font-size: 60px;
   font-weight: 600;
@@ -29,18 +34,22 @@
   margin-bottom: 70px;
   margin-top: 70px;
 }
+
 .opportunities-container {
   margin: 0px 200px;
 }
+
 .line-style {
   width: 100%;
   border: 1px solid #cadbea;
 }
+
 .opportunity-items {
   margin: 40px 0px;
   display: flex;
   justify-content: space-between;
 }
+
 .job-arrow {
   width: 50px;
   height: 50px;
@@ -51,52 +60,62 @@
   align-items: center;
   cursor: pointer;
 }
+
 .opportunity-titles {
   font-size: 26px;
   font-weight: 600;
 }
+
 .Life-Img1 {
   border-radius: 30px;
   width: 840px;
   height: 840px;
 }
+
 .Life-Img2 {
   border-radius: 30px;
   width: 440px;
   height: 440px;
 }
+
 .Life-Img3 {
   border-radius: 30px;
   width: 440px;
   height: 440px;
 }
+
 .Life-Img4 {
   border-radius: 30px;
   width: 899px;
   height: 380px;
 }
+
 .culture-titles {
   font-size: 40px;
   font-weight: 600;
   margin: 60px 0px;
 }
+
 .culture-contents {
   width: 800px;
   font-size: 22px;
   color: #6b6084;
 }
+
 .career-seperator {
   height: 42px;
   width: 2px;
   background: #cadbea;
   margin: 0px 30px;
 }
+
 .job-description {
   color: #6b6084;
   line-height: 180%;
   font-size: 20px;
   margin: 20px 0px;
 }
+
 .responsibility-title {
   color: #212529;
   font-size: 28px;
@@ -104,18 +123,21 @@
   line-height: 32px;
   margin: 12px 0px;
 }
+
 .responsibility-list {
   color: #6b6084;
   line-height: 32px;
   font-size: 20px;
   margin: 24px 0px;
 }
+
 .job-details {
   color: #6b6084;
   margin: 0px 10px;
   font-weight: 500;
   font-size: 16px;
 }
+
 .career-apply {
   color: #0047ff;
   font-weight: 700;
@@ -123,6 +145,7 @@
   margin: 50px 0px;
   cursor: pointer;
 }
+
 .application-overlay {
   border: 1px solid black;
   position: fixed;
@@ -139,6 +162,7 @@
   background-color: #0009;
   backdrop-filter: blur(5px);
 }
+
 .application-box {
   background-color: white;
   height: 75%;
@@ -149,27 +173,32 @@
   margin: 2px;
   border-radius: 30px;
 }
+
 .application-job-title {
   font-size: 30px;
   margin-top: 60px;
   margin-bottom: 30px;
   font-weight: 700;
 }
+
 .application-info {
   color: #6b6084;
   font-size: 20px;
 }
+
 .application-title {
   font-size: 22px;
   color: #0d0225;
   font-weight: 600;
 }
+
 .application-question {
   font-size: 20px;
   color: #0d0225;
   margin-top: 40px;
   margin-bottom: 30px;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -181,9 +210,11 @@ input[type="date"] {
   border-radius: 10px;
   border: 1px solid #cadbea;
 }
+
 input:focus {
   outline: none;
 }
+
 .input-overlay {
   width: 100%;
   height: 150px;
@@ -194,6 +225,7 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
+
 .input-file::after {
   content: "";
   position: absolute;
@@ -219,64 +251,78 @@ input:focus {
   margin-left: 20px;
   border-radius: 5px;
 }
+
 .application-scroll::-webkit-scrollbar {
   width: 5px;
 }
+
 .application-scroll {
   height: 55%;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .application-scroll::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
+
 .application-scroll::-webkit-scrollbar-thumb {
   background: #000;
   border-radius: 10px;
 }
+
 .application-option {
   margin: 0px 10px;
   color: #6b6084;
   font-size: 16px;
 }
+
 @media screen and (min-width: 800px) and (max-width: 1600px) {
   .career-hero-info {
     width: 600px;
   }
+
   .Life-Img1 {
     border-radius: 15px;
     width: 645px;
     height: 540px;
   }
+
   .Life-Img2 {
     border-radius: 15px;
     width: 345px;
     height: 280px;
   }
+
   .Life-Img3 {
     border-radius: 15px;
     width: 345px;
     height: 280px;
   }
+
   .Life-Img4 {
     border-radius: 15px;
     width: 700px;
     height: 250px;
   }
+
   .culture-contents {
     width: 600px;
   }
+
   .application-job-title {
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
+
   .application-question {
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: 10px;
   }
+
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -286,6 +332,7 @@ input:focus {
     width: 100%;
     height: 35px;
   }
+
   .input-overlay {
     height: 80px;
   }

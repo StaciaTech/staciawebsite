@@ -56,7 +56,7 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
               }}
             >
               <img src={showMore ? ArrowUp : ArrowDown} alt="" />
-              {}
+              { }
             </div>
           </div>
           {showMore && (
@@ -146,7 +146,7 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
                             return (
                               <div key={index}>
                                 <div className="application-question">
-                                  {questionName}
+                                  {questionName} {_id}
                                 </div>
                                 <div
                                   style={{

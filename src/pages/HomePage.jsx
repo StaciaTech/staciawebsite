@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/Home.css"
@@ -31,6 +31,10 @@ import ServiceDisplay from "../components/Home/ServiceDisplay";
 
 
 import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
+import StackScroll from "./StackScroll";
+import CardStackScroll from "../components/Home/CardStackScroll";
+import MobileStackScroll from "../components/Home/MobileStackScroll";
+import MobileFooter from "../components/MobileFooter";
 
 const clients = [
   client1, client2, client3, client4, client5, client6, client7, client8, client9,
@@ -82,59 +86,12 @@ function HomePage() {
 
       {/* product */}
 
-      <div className="productPage">
-        <div className="products">
-          <div className="product card">
-            {/* <div className="productName">Product Name</div>
-            <div className="productName">Product Name</div>
-            <div className="productName">Product Name</div>
-            <div className="productName">Product Name</div> */}
-          </div>
-          <ul id="cards">
-            {
-              proDetails.map((data) => (
-                <li class="card" id={`card${data.id}`}>
-                  <div class="card-body">
-                    <div className="home-pro-image">
-                      <div className="home-pro-image2">
-                        <img src={reverse} alt="" />
-                      </div>
-                    </div>
-                    <div className="home-pro-details">
-                      <div>
-                        <div className="home-pro-title">Water Heating & Cooling Kettle</div>
-                        <p>Domain Name {data.id}</p>
-                      </div>
-                      <div className="home-pro-box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
-                      </div>
-                      <div className="home-pro-box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque exercitationem quae animi saepe, libero, laudantium tenetur odio corrupti eos distinctio excepturi nesciunt recusandae reiciendis qui autem a reprehenderit commodi?</p>
-                      </div>
-                      <div className="home-pro-learn">Learn more</div>
-                    </div>
-                  </div>
-                </li>
-              ))
-            }
-            {/* <li class="card" id="card2">
-              <div class="card-body">
-                <h3>product 2</h3>
-              </div>
-            </li>
-            <li class="card" id="card3">
-              <div class="card-body">
-                <h3>product 3</h3>
-              </div>
-            </li>
-            <li class="card" id="card4">
-              <div class="card-body">
-                <h3>product 4</h3>
-              </div>
-            </li> */}
-          </ul>
-        </div>
+      <div className="stack-scroll-container">
+        <StackScroll />
       </div>
+
+      <MobileStackScroll />
+
 
       {/* client */}
 
@@ -144,11 +101,11 @@ function HomePage() {
 
           <div className="one">
             <div className="line"><div className="line1"></div></div>
-            <Marquee style={{ overflow: 'hidden' }} gradient={true} gradientWidth={400}>
+            <Marquee style={{ overflow: 'hidden' }} gradient={true} >
               {
                 clients.map((img, index) => (
-                  <div style={{ height: '60px', marginLeft: '55px', }} key={index}>
-                    <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+                  <div className="marquee-margin" style={{ height: '60px', marginLeft: '50px', }} key={index}>
+                    <img src={img} alt="" className="client-marquee" />
                   </div>
                 ))
               }
@@ -166,7 +123,9 @@ function HomePage() {
 
       {/* our services */}
 
-      <ServiceDisplay />
+      <div>
+        <ServiceDisplay />
+      </div>
 
       {/* <div className="ourServices">
         <div style={{width: '90%', height: '100%', display: 'flex', margin: '0 auto', alignItems: 'center', }}>
@@ -195,6 +154,9 @@ function HomePage() {
       <Testimonials />
 
       <Footer />
+
+      <MobileFooter />
+
     </>
   );
 }

@@ -15,6 +15,8 @@ import stove from "../assets/stove.png";
 import ProductComponent1 from "../components/Product/ProductComponent1";
 import ProductComponent2 from "../components/Product/ProductComponent2";
 import { Link, useNavigate } from "react-router-dom";
+import MobileFooter from "../components/MobileFooter";
+import MobileProduct from "../components/Product/MobileProduct";
 
 const productData = [
   {
@@ -55,7 +57,7 @@ const productData = [
     id: 5,
     img: child,
     color: '#DBE1F7',
-    bigText1: 'child tracking',
+    bigText1: 'child',
     productName: 'Stacia Child Tracking System',
     productDescription: 'Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. '
   },
@@ -98,7 +100,7 @@ function ProductPage() {
           <div className="p-top">
             <div className="p-name">One Dril</div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro repellendus laudantium commodi? Culpa fuga velit ipsam qui voluptates unde illum nulla praesentium consectetur eligendi a, pariatur hic aspernatur magni nemo!</p>
-            <Link to={`/product/One Drill`} target="_blank" className="learn-more-btn">Learn more</Link>
+            <Link to={`/product/One Drill`} onClick={() => window.scrollTo(0, 0)} className="learn-more-btn">Learn more</Link>
           </div>
           <div className="p-bottom">
             <div className="p-mask">
@@ -151,8 +153,12 @@ function ProductPage() {
           ))
         }
 
+
+
       </div>
+      <MobileProduct />
       <Footer />
+      <MobileFooter />
     </>
   );
 }

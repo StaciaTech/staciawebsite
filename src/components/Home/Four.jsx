@@ -42,7 +42,7 @@ export default function Four() {
     <div className='four'>
       <div className="four2">
         <div className="four-text">Foundation Four</div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className='four-grid'>
           {
             fourData.map((data) => (
               <FourCard data={data} />
