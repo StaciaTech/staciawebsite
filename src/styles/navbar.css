@@ -308,4 +308,8 @@ a.active {
     width: 25px;
     height: 25px;
   }
+
+  .mobile-whatsnew{
+    display: none;
+  }
 }

@@ -54,7 +54,7 @@ function NavBar() {
             Careers
           </NavLink>
 
-          <div style={{ marginLeft: '25px' }} onClick={() => setOpenWhatsNew(!openWhatsNew)}>
+          <div className="mobile-whatsnew" style={{ marginLeft: '25px' }} onClick={() => setOpenWhatsNew(!openWhatsNew)}>
             {
               openWhatsNew ? <div
                 style={{

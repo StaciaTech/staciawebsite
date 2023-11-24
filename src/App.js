@@ -16,7 +16,6 @@ import Box1 from "./pages/Box1";
 import SpecificService from "./components/Services/SpecificService";
 import StackScroll from "./pages/StackScroll";
 
-
 function App() {
   return (
     <div className="App">
