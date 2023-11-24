@@ -35,6 +35,7 @@ import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
 import CardStackScroll from "../components/Home/CardStackScroll";
 import MobileStackScroll from "../components/Home/MobileStackScroll";
 import MobileFooter from "../components/MobileFooter";
+import StackScroll from "./StackScroll";
 
 const clients = [
   client1, client2, client3, client4, client5, client6, client7, client8, client9,
@@ -87,7 +88,7 @@ function HomePage() {
       {/* product */}
 
       <div className="stack-scroll-container">
-        {/* <StackScroll /> */}
+        <StackScroll />
       </div>
 
       <MobileStackScroll />
