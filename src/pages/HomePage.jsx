@@ -31,7 +31,7 @@ import ServiceDisplay from "../components/Home/ServiceDisplay";
 
 
 import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
-import StackScroll from "./StackScroll";
+// import StackScroll from "./StackScroll";
 import CardStackScroll from "../components/Home/CardStackScroll";
 import MobileStackScroll from "../components/Home/MobileStackScroll";
 import MobileFooter from "../components/MobileFooter";
@@ -87,7 +87,7 @@ function HomePage() {
       {/* product */}
 
       <div className="stack-scroll-container">
-        <StackScroll />
+        {/* <StackScroll /> */}
       </div>
 
       <MobileStackScroll />

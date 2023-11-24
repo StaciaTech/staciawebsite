@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { scroll, animate } from 'https://cdn.skypack.dev/motion@10.13.1';
 import reverse from "../assets/reverse.png"
 
+
 const StackScroll = () => {
 
     const proDetails = [
