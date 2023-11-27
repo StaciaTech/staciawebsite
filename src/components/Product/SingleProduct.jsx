@@ -14,7 +14,7 @@ import slicing from "../../assets/slicing.png";
 import baling from "../../assets/baling.png";
 import speaker from "../../assets/speaker.png";
 import stove from "../../assets/stove.png";
-import Model from './Model'
+// import Model from './Model'
 import Box1 from '../../pages/Box1'
 import MobileFooter from '../MobileFooter'
 
@@ -128,7 +128,7 @@ export default function SingleProduct() {
             </div> */}
 
 
-            <Model />
+            {/* <Model /> */}
             <div className='rotate-text'>
                 <div className='mobile-rotate-text'>Rotate the Object for Real Experience</div>
             </div>
