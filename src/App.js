@@ -14,7 +14,7 @@ import CaseStudy from "./pages/CaseStudy";
 import CaseTechnology from "./components/CaseStudy/CaseTechnology";
 import Box1 from "./pages/Box1";
 import SpecificService from "./components/Services/SpecificService";
-import StackScroll from "./pages/StackScroll";
+// import StackScroll from "./pages/StackScroll";
 
 function App() {
   return (
