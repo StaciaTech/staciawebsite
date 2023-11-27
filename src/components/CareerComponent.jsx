@@ -38,6 +38,7 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
     ((slideNumber + 1) / sectionDetails.length) * 100
   );
   const handleInputChange = (queId, e) => {
+    console.log(queId, e.target.value);
     setFormValues({ ...formValues, [queId]: e.target.value });
   };
   const handleOptionsChange = (queId, e) => {

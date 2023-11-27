@@ -33,7 +33,7 @@
     width: 100%;
     /* background-color: red; */
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .product_description>p {
