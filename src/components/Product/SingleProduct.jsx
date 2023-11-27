@@ -15,7 +15,7 @@ import baling from "../../assets/baling.png";
 import speaker from "../../assets/speaker.png";
 import stove from "../../assets/stove.png";
 // import Model from './Model'
-import Box1 from '../../pages/Box1'
+// import Box1 from '../../pages/Box1'
 import MobileFooter from '../MobileFooter'
 
 export default function SingleProduct() {
