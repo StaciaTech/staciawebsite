@@ -1,0 +1,86 @@
+.articles-title {
+    color: #E0E0E0;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 90%;
+    margin: 2rem auto;
+}
+.article-outline-holder{
+    height: 579px;
+    align-items: flex-end;
+    display: flex;
+}
+
+.single-article-card-image {
+    background-image: linear-gradient(to bottom, #0D022500, #0D0225CC), url("../../assets/Article1.png");
+    height: 376px;
+    width: 547px;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    font-family: "Euclid";
+    filter: grayscale(100%);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-self: flex-end;
+    transition: all 0.3s ease;
+    
+}
+
+.article-text-container {
+    display: none;
+    /* Hide the text container by default */
+}
+
+.single-article-card-image:hover .article-text-container {
+    display: block;
+    /* Show the text container when hovering over the image */
+}
+
+.article-slider {
+    display: flex;
+    align-items: flex-end;
+    height: 579px;
+    /* background-color: pink; */
+    width: 100%;
+}
+
+.single-article-card-image:hover {
+    filter: grayscale(0);
+    height: 579px;  
+
+}
+
+.article-text-container {
+    padding: 0 3rem 2rem 2rem;
+}
+
+.article-author-name {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.card-article-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.card-article-body {
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    line-height: 2.2rem;
+}
+
+.article-learn-more-link {
+    color: #0047FF;
+}

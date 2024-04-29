@@ -35,7 +35,10 @@ import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
 import CardStackScroll from "../components/Home/CardStackScroll";
 import MobileStackScroll from "../components/Home/MobileStackScroll";
 import MobileFooter from "../components/MobileFooter";
-// import StackScroll from "./StackScroll";
+import EventsHosted from "../components/Home/EventsHosted";
+import OurProjects from "../components/Home/OurProjects";
+import Articles from "../components/Home/Articles";
+import StackScroll from "./StackScroll";
 
 const clients = [
   client1, client2, client3, client4, client5, client6, client7, client8, client9,
@@ -91,7 +94,7 @@ function HomePage() {
         {/* <StackScroll /> */}
       </div>
 
-      {/* <MobileStackScroll /> */}
+      <MobileStackScroll />
 
 
       {/* client */}
@@ -142,11 +145,16 @@ function HomePage() {
         </div>
       </div> */}
 
+      <EventsHosted/>
+
       {/* case study */}
 
       <HomeCaseStudy />
 
+      <OurProjects/>
+
       {/* foundation four */}
+      <Articles/>
 
       <Four />
 
