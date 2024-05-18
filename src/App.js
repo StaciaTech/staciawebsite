@@ -14,29 +14,28 @@ import CaseStudy from "./pages/CaseStudy";
 import CaseTechnology from "./components/CaseStudy/CaseTechnology";
 // import Box1 from "./pages/Box1";
 import SpecificService from "./components/Services/SpecificService";
+import ArticlesPage from "./pages/ArticlesPage";
 // import StackScroll from "./pages/StackScroll";
 
 function App() {
   return (
     <div className="App">
-    {/* Lwdnkjgkufefkl */}
-    {/* <StackScroll /> */}
-    {/* <Box1 /> */}
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/career" element={<CareerPage />} />
-      <Route path="/community" element={<CommunityPage />} />
-      <Route path="/product" element={<ProductPage />} />
-      <Route path="/product/:productName" element={<SingleProduct />} />
-      <Route path="/project" element={<ProjectPage />} />
-      <Route path="/case-study" element={<CaseStudy />} />
-      <Route path="case-study" element={<CaseStudy />} />
-      <Route path="case-study/" element={<CaseStudy />} />
-      <Route path="/service" element={<ServicePage />} />
-      <Route path="service/:serviceName" element={<SpecificService />} />
-      <Route path="/whatsnew" element={<WhatsNewPage />} />
-    </Routes>
-  
+      {/* Lwdnkjgkufefkl */}
+      {/* <StackScroll /> */}
+      {/* <Box1 /> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route path="/community" element={<CommunityPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/product/:productName" element={<SingleProduct />} />
+        <Route path="/project" element={<ProjectPage />} />
+        <Route path="/case-study" element={<CaseStudy />} />
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="service/:serviceName" element={<SpecificService />} />
+        <Route path="/whatsnew" element={<WhatsNewPage />} />
+        <Route path="/article" element={<ArticlesPage />} />
+      </Routes>
     </div>
   );
 }
