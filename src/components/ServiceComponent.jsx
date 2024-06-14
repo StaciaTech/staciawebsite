@@ -19,7 +19,6 @@ function ServiceComponent() {
                   <img
                     src={image ? image : ServiceDefaultImg}
                     alt={title}
-                    srcset=""
                     className="component-image-container"
                   />
                 </div>

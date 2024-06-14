@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../NavBar";
 import Footer from "../Footer";
 import "../../styles/ProductDetails.css";
@@ -17,8 +17,21 @@ import stove from "../../assets/stove.png";
 // import Model from './Model'
 // import Box1 from '../../pages/Box1'
 import MobileFooter from "../MobileFooter";
+import SideBar from "../SideBar";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../redux/slice/productSlice";
+import LoadingStar from "../LoadingStar";
 
 export default function SingleProduct() {
+  const dispatch = useDispatch();
+  const singleProductData = useSelector((state) => state.product);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+  console.log();
+  const eachProductData = singleProductData.data.productBasedPosition;
+
   const productDetails = [
     {
       id: 1,
@@ -99,8 +112,7 @@ export default function SingleProduct() {
     },
   ];
 
-  const { productName } = useParams();
-  const thisProduct = productDetails.find((prod) => prod.name === productName);
+  const { id } = useParams();
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
@@ -110,103 +122,132 @@ export default function SingleProduct() {
   const previousSlide = () => {
     setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
   };
+
   return (
     <>
       <NavBar />
-      <div className="product-details">
-        <div className="product-details2">
-          <div style={{ marginTop: "40px" }}>
-            <div className="single-product-name">{thisProduct.name}</div>
-            <div className="product-category">Product category</div>
-          </div>
-          <div className="single-pro-container">
-            <div className="single-pro-container2">
-              <div className="single-pro-overview">Overview</div>
-              <p className="desc">{thisProduct.description}</p>
-            </div>
-          </div>
+      <SideBar />
+      {singleProductData.isLoading ? (
+        <div>
+          <LoadingStar />
         </div>
-      </div>
-      {/* <div className="product-3d-img">
+      ) : (
+        <div>
+          {eachProductData.map(
+            (reqProduct) =>
+              reqProduct._id === id && (
+                <div>
+                  <div className="product-details">
+                    <div className="product-details2">
+                      <div style={{ marginTop: "40px" }}>
+                        <div className="single-product-name">
+                          {reqProduct.title}
+                        </div>
+                        <div className="product-category">
+                          {reqProduct.domainName}
+                        </div>
+                      </div>
+                      <div className="single-pro-container">
+                        <div className="single-pro-container2">
+                          <div className="single-pro-overview">Overview</div>
+                          <p className="desc">{reqProduct.des}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <div className="product-3d-img">
                 <div className="img-box">
                     <img src={thisProduct.productImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ width: '100%', textAlign: 'end', fontSize: '18px', fontWeight: '900', color: 'rgba(13, 2, 37, 0.20)' }}>Rotate the Object for Real Experience</div>
             </div> */}
-
-      {/* <Model /> */}
-      <div className="rotate-text">
-        <div className="mobile-rotate-text">
-          Rotate the Object for Real Experience
-        </div>
-      </div>
-
-      <div
-        style={{
-          minHeight: "100vh",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="split-screen-carousel">
-          <div className="split">
-            <div className="image-area">
-              <img
-                src={slides[currentSlide].image}
-                alt={slides[currentSlide].alt}
-              />
-            </div>
-            <div className="text-area">
-              <div className="paras">
-                <p>{slides[currentSlide].title}</p>
-                <p> {slides[currentSlide].text}</p>
-              </div>
-              <div
-                className=""
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <p className="skip">Skip</p>
-                <div
-                  style={{ display: "flex", alignItems: "center", gap: "20px" }}
-                >
-                  <div
-                    onClick={previousSlide}
-                    style={{ width: "40px", height: "40px", cursor: "pointer" }}
-                  >
-                    <img
-                      src={prev}
-                      alt=""
-                      style={{ width: "100%", height: "100%" }}
-                    />
+                  {/* <Model /> */}
+                  <div className="rotate-text">
+                    <div className="mobile-rotate-text">
+                      Rotate the Object for Real Experience
+                    </div>
                   </div>
                   <div
-                    onClick={nextSlide}
-                    style={{ width: "40px", height: "40px", cursor: "pointer" }}
+                    style={{
+                      minHeight: "100vh",
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                   >
-                    <img
-                      src={next}
-                      alt=""
-                      style={{ width: "100%", height: "100%" }}
-                    />
+                    <div className="split-screen-carousel">
+                      <div className="split">
+                        <div className="image-area">
+                          <img
+                            src={slides[currentSlide].image}
+                            alt={slides[currentSlide].alt}
+                          />
+                        </div>
+                        <div className="text-area">
+                          <div className="paras">
+                            <p>{slides[currentSlide].title}</p>
+                            <p> {slides[currentSlide].text}</p>
+                          </div>
+                          <div
+                            className=""
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <p className="skip">Skip</p>
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "20px",
+                              }}
+                            >
+                              <div
+                                onClick={previousSlide}
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                <img
+                                  src={prev}
+                                  alt=""
+                                  style={{ width: "100%", height: "100%" }}
+                                />
+                              </div>
+                              <div
+                                onClick={nextSlide}
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                <img
+                                  src={next}
+                                  alt=""
+                                  style={{ width: "100%", height: "100%" }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="full-desc">
+                    <div className="pro-title">{reqProduct.title}</div>
+                    <div className="prodesc">{reqProduct.des}</div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              )
+          )}
         </div>
-      </div>
-
-      <div className="full-desc">
-        <div className="pro-title">{thisProduct.name}</div>
-        <div className="prodesc">{thisProduct.description}</div>
-      </div>
-
+      )}
       <Footer />
       <MobileFooter />
     </>

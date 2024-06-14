@@ -14,7 +14,7 @@ import s6 from "../../assets/study6.png";
 const data = [
   {
     type: "technology",
-    img: s1,
+    img: "https://media.cnn.com/api/v1/images/stellar/prod/211227135008-02-the-batman-trailer.jpg?q=h_1406,w_2500,x_0,y_0",
     title: "Lorem ipsum dolor sit omet",
     tags: ["Lorem", "Loading", "Loading"],
     content:
@@ -162,7 +162,14 @@ function ArticleNavBar() {
         <div className="article-nav-links">
           <div
             style={
-              technologyActive ? { borderBottom: "5px solid #0047FF" } : {}
+              technologyActive
+                ? {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "10px",
+                    textDecorationColor: "#0047FF",
+                    textDecorationThickness: "3px",
+                  }
+                : {}
             }
             className="article-link"
             onClick={technologyHandler}
@@ -171,7 +178,14 @@ function ArticleNavBar() {
           </div>
           <div
             style={
-              agricultureActive ? { borderBottom: "5px solid #0047FF" } : {}
+              agricultureActive
+                ? {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "10px",
+                    textDecorationColor: "#0047FF",
+                    textDecorationThickness: "3px",
+                  }
+                : {}
             }
             className="article-link"
             onClick={agricultureHandler}
@@ -179,7 +193,16 @@ function ArticleNavBar() {
             Agriculture
           </div>
           <div
-            style={cultureActive ? { borderBottom: "5px solid #0047FF" } : {}}
+            style={
+              cultureActive
+                ? {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "10px",
+                    textDecorationColor: "#0047FF",
+                    textDecorationThickness: "3px",
+                  }
+                : {}
+            }
             className="article-link"
             onClick={cultureHandler}
           >
@@ -187,7 +210,14 @@ function ArticleNavBar() {
           </div>
           <div
             style={
-              entertainmentActive ? { borderBottom: "5px solid #0047FF" } : {}
+              entertainmentActive
+                ? {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "10px",
+                    textDecorationColor: "#0047FF",
+                    textDecorationThickness: "3px",
+                  }
+                : {}
             }
             className="article-link"
             onClick={entertainmentHandler}

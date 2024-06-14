@@ -1,149 +1,140 @@
-import React, { useEffect, useRef } from 'react';
-import { scroll, animate } from 'https://cdn.skypack.dev/motion@10.13.1';
-import reverse from "../assets/reverse.png"
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeProducts } from "../redux/slice/HomeSlices/homeProductSlice";
+import { useNavigate } from "react-router-dom";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const StackScroll = () => {
+  const proDetails = [
+    {
+      id: 1,
+      background: "linear-gradient(259deg, #003362 -8.27%, #81497B 95.27%)",
+    },
+    {
+      id: 2,
+      background: "linear-gradient(259deg, #7AA00C -8.27%, #FCDF00 86.58%)",
+    },
+    {
+      id: 3,
+      background: "linear-gradient(259deg, #2A35B3 4.78%, #1485CB 94.3%)",
+    },
+    {
+      id: 4,
+      background: "linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)",
+    },
+  ];
 
-    const proDetails = [
-        {
-            id: 1,
-            background: 'linear-gradient(259deg, #003362 -8.27%, #81497B 95.27%)'
-        },
-        {
-            id: 2,
-            background: 'linear-gradient(259deg, #7AA00C -8.27%, #FCDF00 86.58%)'
-        },
-        {
-            id: 3,
-            background: 'linear-gradient(259deg, #2A35B3 4.78%, #1485CB 94.3%)'
-        },
-        {
-            id: 4,
-            background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
-        },
-    ]
-    const cardsWrapperRef = useRef(null);
-    const cardsRef = useRef([]);
+  const navigateTo = useNavigate();
 
-    useEffect(() => {
-        const $cardsWrapper = cardsWrapperRef.current;
-        const $cards = cardsRef.current;
-        const numCards = $cards.length;
+  const dispatch = useDispatch();
+  const homeData = useSelector((state) => state.homeProduct);
+  useEffect(() => {
+    dispatch(fetchHomeProducts());
+  }, [dispatch]);
+  console.log(homeData.isLoading);
 
-        $cards.forEach(($card, index0) => {
-            const index = index0 + 1;
-            const reverseIndex0 = numCards - index;
+  const homeProductData = homeData.data.data;
+  console.log(homeProductData);
 
-            $card.style.paddingTop = `calc(${index} * var(--card-top-offset))`;
-
-            scroll(
-                animate($card, {
-                    scale: [1, 1 - 0.1 * reverseIndex0],
-                }),
-                {
-                    target: $cardsWrapper,
-                    offset: [`${(index0 / numCards) * 100}%`, `${(index / numCards) * 100}%`],
-                }
-            );
-        });
-    }, []);
-
-    return (
-        <div className='stack-scroll'>
-            <ul id="cards" ref={cardsWrapperRef}>
-                <li className="card" id="card_1" ref={(el) => (cardsRef.current[0] = el)}>
-                    <div className="card__content" style={{ background: proDetails[0].background }}>
-                        <div className="card-img-box">
-                            <div className="card-img-cover">
-                                <img src={reverse} alt="" />
-                            </div>
-                        </div>
-                        <div className="card-content-box">
-                            <h1>Water Heating & Cooling Kettle</h1>
-                            <h3>Domain name</h3>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="learn-more">Learn more</div>
-                        </div>
+  return (
+    <>
+      {homeData.isLoading ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div className="stack-scroll" style={{ width: "90%" }}>
+            <ul style={{ paddingRight: "40px" }}>
+              <li className="card1" id="card_1">
+                <div
+                  className="card__content"
+                  style={{
+                    background: proDetails[1 % proDetails.length].background,
+                  }}
+                >
+                  <div className="card-img-box">
+                    <div
+                      style={{ backgroundColor: "#fff3" }}
+                      className="card-img-cover loading"
+                    >
+                      <Skeleton />
                     </div>
-                </li>
-                <li className="card" id="card_1" ref={(el) => (cardsRef.current[1] = el)}>
-                    <div className="card__content" style={{ background: proDetails[1].background }}>
-                        <div className="card-img-box">
-                            <div className="card-img-cover">
-                                <img src={reverse} alt="" />
-                            </div>
-                        </div>
-                        <div className="card-content-box">
-                            <h1>Water Heating & Cooling Kettle</h1>
-                            <h3>Domain name</h3>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="learn-more">Learn more</div>
-                        </div>
-
+                  </div>
+                  <div className="card-content-box">
+                    <h1
+                      style={{ backgroundColor: "#fff3", borderRadius: "10px" }}
+                      className="loading"
+                    >
+                      <Skeleton count={1} />
+                    </h1>
+                    <h3
+                      style={{ backgroundColor: "#fff3", borderRadius: "10px" }}
+                      className="loading"
+                    >
+                      <Skeleton count={2} />
+                    </h3>
+                    <div className="content1">
+                      <p className="loading">
+                        <Skeleton count={2} />
+                      </p>
                     </div>
-                </li>
-                <li className="card" id="card_1" ref={(el) => (cardsRef.current[2] = el)}>
-
-                    <div className="card__content" style={{ background: proDetails[2].background }}>
-                        <div className="card-img-box">
-                            <div className="card-img-cover">
-                                <img src={reverse} alt="" />
-
-                            </div>
-                        </div>
-                        <div className="card-content-box">
-                            <h1>Water Heating & Cooling Kettle</h1>
-                            <h3>Domain name</h3>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="learn-more">Learn more</div>
-                        </div>
-
+                    <div className="content1">
+                      <p className="loading">
+                        <Skeleton count={2} />
+                      </p>
                     </div>
-                </li>
-                <li className="card" id="card_1" ref={(el) => (cardsRef.current[3] = el)}>
-
-                    <div className="card__content" style={{ background: proDetails[3].background }}>
-                        <div className="card-img-box">
-                            <div className="card-img-cover">
-                                <img src={reverse} alt="" />
-
-                            </div>
-                        </div>
-                        <div className="card-content-box">
-                            <h1>Water Heating & Cooling Kettle</h1>
-                            <h3>Domain name</h3>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="content1">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet provident ex doloremque laboriosam </p>
-                            </div>
-                            <div className="learn-more">Learn more</div>
-                        </div>
-                    </div>
-                </li>
-
-
-                {/* Repeat similar blocks for other cards */}
+                  </div>
+                </div>
+              </li>
             </ul>
+          </div>
         </div>
-    );
+      ) : (
+        <div className="stack-scroll">
+          <ul id="cards">
+            {homeProductData.map((eachHomeProduct, index) => (
+              <li className="card" id="card_1" key={index}>
+                <div
+                  className="card__content"
+                  style={{
+                    background:
+                      proDetails[index % proDetails.length].background,
+                  }}
+                >
+                  <div className="card-img-box">
+                    <div className="card-img-cover">
+                      <img src={eachHomeProduct.image} alt="" />
+                    </div>
+                  </div>
+                  <div className="card-content-box">
+                    <h1>{eachHomeProduct.title}</h1>
+                    <h3>{eachHomeProduct.domainName}</h3>
+                    <div className="content1">
+                      <p>{eachHomeProduct.pDes1}</p>
+                    </div>
+                    <div className="content1">
+                      <p>{eachHomeProduct.pDes2}</p>
+                    </div>
+                    <div
+                      className="learn-more"
+                      onClick={() =>
+                        navigateTo(`/product/${eachHomeProduct._id}`)
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      Learn more
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default StackScroll;

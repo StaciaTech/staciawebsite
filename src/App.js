@@ -16,6 +16,7 @@ import CaseTechnology from "./components/CaseStudy/CaseTechnology";
 import SpecificService from "./components/Services/SpecificService";
 import ArticlesPage from "./pages/ArticlesPage";
 // import StackScroll from "./pages/StackScroll";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
         <Route path="/career" element={<CareerPage />} />
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/product" element={<ProductPage />} />
-        <Route path="/product/:productName" element={<SingleProduct />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/case-study" element={<CaseStudy />} />
-        <Route path="/service" element={<ServicePage />} />
-        <Route path="service/:serviceName" element={<SpecificService />} />
+        <Route path="/services" element={<ServicePage />} />
+        <Route path="/services/:title/:id" element={<SpecificService />} />
         <Route path="/whatsnew" element={<WhatsNewPage />} />
         <Route path="/article" element={<ArticlesPage />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

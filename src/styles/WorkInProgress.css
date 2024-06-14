@@ -1,0 +1,11 @@
+.working-text {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 600px) {
+  .working-text {
+    font-size: 0.75rem;
+  }
+  .working-illustrate {
+    width: 100%;
+  }
+}

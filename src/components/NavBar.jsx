@@ -18,30 +18,71 @@ function NavBar() {
           <div className="mobile-nav">
             <img src={MobileNav} alt="" />
           </div>
-          <Link to={"/"}>
+          <Link
+            to={"/"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             <img src={StaciaLogo} alt="Home" className="nav-logo" />
           </Link>
 
-          <NavLink to={"/service"} className="nav-items">
+          <NavLink
+            to={"/services"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="nav-items"
+          >
             Services
           </NavLink>
-          <NavLink to={"/product"} className="nav-items">
+          <NavLink
+            to={"/product"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="nav-items"
+          >
             Products
           </NavLink>
-          <NavLink to={"/project"} className="nav-items">
+          <NavLink
+            to={"/project"}
+            className="nav-items"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Projects
           </NavLink>
           <div className="dropdown">
             <input type="checkbox" name="" id="btn" className="check" />
             <div className="dropdown-name">Resource</div>
             <div className="dropdown-links">
-              <NavLink to={"/resource"} className="drop-items">
+              <NavLink
+                to={"/resource"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Community
               </NavLink>
-              <NavLink to={"/article"} className="drop-items">
+              <NavLink
+                to={"/article"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Articles
               </NavLink>
-              <NavLink to={"/case-study"} className="drop-items">
+              <NavLink
+                to={"/case-study"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Case studies
               </NavLink>
             </div>
@@ -49,7 +90,13 @@ function NavBar() {
           {/* <div className="nav-items" style={{ opacity: 0.5 }}>
             Resources
           </div> */}
-          <NavLink to={"/career"} className="nav-items">
+          <NavLink
+            to={"/career"}
+            className="nav-items"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Careers
           </NavLink>
 

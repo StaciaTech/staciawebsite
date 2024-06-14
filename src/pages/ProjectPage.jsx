@@ -5,16 +5,19 @@ import "../styles/projects.css";
 import ProductDefault from "../assets/projectDefaultImage.png";
 import { ProjectData } from "../data/projectData";
 import { useState } from "react";
+import WorkInProgress from "../components/WorkInProgress";
 
 function ProjectPage() {
   const [projectData] = useState(ProjectData);
   const firstproduct = projectData.Projects[0];
-  console.log(firstproduct);
+  // console.log(firstproduct);
   const { title, Image1 } = firstproduct;
+
   return (
     <div>
       <NavBar />
-      <div>
+      <WorkInProgress />
+      {/* <div>
         <div>
           <div className="project-hero-section">
             <div className="project-hero-title">{title}</div>
@@ -28,7 +31,7 @@ function ProjectPage() {
           </div>
           <div></div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
