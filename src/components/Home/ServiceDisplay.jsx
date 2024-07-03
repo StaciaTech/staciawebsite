@@ -20,6 +20,7 @@ export default function ServiceDisplay() {
 
   // console.log(homeServData.isLoading);
   const homeServiceData = homeServData.data.data;
+  console.log(homeServiceData);
   // console.log(homeServiceData);
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -71,8 +72,8 @@ export default function ServiceDisplay() {
               <div className="service-left">
                 <div className="service-img-box">
                   <img
-                    src={homeServiceData[currentSlide].image}
-                    alt={homeServiceData[currentSlide].title}
+                    src={homeServiceData[currentSlide]?.image}
+                    alt={homeServiceData[currentSlide]?.title}
                   />
                 </div>
               </div>
