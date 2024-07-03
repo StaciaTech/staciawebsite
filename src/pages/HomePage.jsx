@@ -30,7 +30,6 @@ import Testimonials from "../components/Home/Testimonials";
 import ServiceDisplay from "../components/Home/ServiceDisplay";
 import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
 import StackScroll from "./StackScroll";
-import CardStackScroll from "../components/Home/CardStackScroll";
 import MobileStackScroll from "../components/Home/MobileStackScroll";
 import MobileFooter from "../components/MobileFooter";
 import EventsHosted from "../components/Home/EventsHosted";

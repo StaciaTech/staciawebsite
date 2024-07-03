@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import Astronaut from "../assets/NotFountImg.svg";
+import Astronaut from "../assets/NotFoundImage.png";
 import "../styles/pageNotFound.css";
 import { useNavigate } from "react-router-dom";
 
