@@ -106,12 +106,6 @@ function ServicePage() {
               </div>
             </div>
           </div>
-          {/* <div style={{ marginLeft: "80px", marginRight: "80px" }}>
-            <ServiceFeatureComponent />
-            <div>
-              <ServiceComponent />
-            </div>
-          </div> */}
 
           <div className="all-services">
             {servData.map(
@@ -154,36 +148,31 @@ function ServicePage() {
             {/* <AllServiceCard data={servData} /> */}
             <div className="all-service-box">
               {servData.map(
-                (data) =>
+                (data, i) =>
                   data.position !== 1 && (
-                    <>
-                      <div className="service-card">
-                        <div className="service-card-img-box">
-                          <img src={data.image} alt="" />
-                        </div>
-                        <div className="service-content-box">
-                          <div className="feature-title">{data.title}</div>
-
-                          <div
-                            className="feature-para"
-                            style={{ width: "100%" }}
-                          >
-                            {data.des.split(/\s+/, 20).join(" ")}
-                          </div>
-                          <Link
-                            to={`${data.title}/${data._id}`}
-                            onClick={() => window.scrollTo(0, 0)}
-                          >
-                            <div
-                              className="know-more"
-                              style={{ marginTop: "30px" }}
-                            >
-                              Know-more
-                            </div>
-                          </Link>
-                        </div>
+                    <div className="service-card" key={i}>
+                      <div className="service-card-img-box">
+                        <img src={data.image} alt="" />
                       </div>
-                    </>
+                      <div className="service-content-box">
+                        <div className="feature-title">{data.title}</div>
+
+                        <div className="feature-para" style={{ width: "100%" }}>
+                          {data.des.split(/\s+/, 20).join(" ")}
+                        </div>
+                        <Link
+                          to={`${data.title}/${data._id}`}
+                          onClick={() => window.scrollTo(0, 0)}
+                        >
+                          <div
+                            className="know-more"
+                            style={{ marginTop: "30px" }}
+                          >
+                            Know-more
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
                   )
               )}
             </div>

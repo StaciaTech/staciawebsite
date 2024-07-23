@@ -4,24 +4,21 @@ import activearrow from "../../assets/active-arrow.png";
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeServices } from "../../redux/slice/HomeSlices/homeServiceSlice";
+// import { fetchHomeServices } from "../../redux/slice/HomeSlices/homeServiceSlice";
+import { fetchServices } from "../../redux/slice/serviceSlice";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export default function ServiceDisplay() {
-  // console.log("rendered!!!");
   const navigateTo = useNavigate();
 
   const dispatch = useDispatch();
 
-  const homeServData = useSelector((state) => state.homeService);
+  const homeServData = useSelector((state) => state.service);
   useEffect(() => {
-    dispatch(fetchHomeServices());
+    dispatch(fetchServices());
   }, [dispatch]);
 
-  // console.log(homeServData.isLoading);
-  const homeServiceData = homeServData.data.data;
-  console.log(homeServiceData);
-  // console.log(homeServiceData);
+  const homeServiceData = homeServData.data.servicePSPosition;
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -35,7 +32,6 @@ export default function ServiceDisplay() {
         countRef.current += 1;
       }
       setCurrentSlide(countRef.current);
-      // console.log("Count:", countRef.current);
     }, 2000);
 
     return () => clearInterval(timer);

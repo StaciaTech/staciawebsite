@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeProducts } from "../redux/slice/HomeSlices/homeProductSlice";
 import { useNavigate } from "react-router-dom";
+import { fetchProducts } from "../redux/slice/productSlice";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const StackScroll = () => {
@@ -27,14 +27,13 @@ const StackScroll = () => {
   const navigateTo = useNavigate();
 
   const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.homeProduct);
-  useEffect(() => {
-    dispatch(fetchHomeProducts());
-  }, [dispatch]);
-  console.log(homeData.isLoading);
 
-  const homeProductData = homeData.data.data;
-  console.log(homeProductData);
+  const homeData = useSelector((state) => state.product);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  const homeProductData = homeData.data.productPSPosition;
 
   return (
     <>

@@ -3,21 +3,21 @@ import reverse from "../../assets/reverse.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchHomeProducts } from "../../redux/slice/HomeSlices/homeProductSlice";
+import { fetchProducts } from "../../redux/slice/productSlice";
 
 export default function MobileStackScroll() {
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
 
-  const homeMobileProducts = useSelector((state) => state.homeProduct);
+  const homeMobileProducts = useSelector((state) => state.product);
 
   useEffect(() => {
-    dispatch(fetchHomeProducts());
+    dispatch(fetchProducts());
   }, []);
 
   // console.log(homeMobileProducts.isLoading);
 
-  const homeMobileProductData = homeMobileProducts.data.data;
+  const homeMobileProductData = homeMobileProducts.data.productPSPosition;
   // console.log(homeMobileProductData);
 
   return (

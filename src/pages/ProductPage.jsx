@@ -44,6 +44,7 @@ function ProductPage() {
   // console.log("re-rendred");
 
   const proData = data.data.productBasedPosition;
+  console.log(data.data);
   return (
     <>
       <div className="nav_style">
@@ -110,7 +111,7 @@ function ProductPage() {
 
             <div>
               {proData.map((data, index) => (
-                <div style={{ position: "sticky", top: "14%" }}>
+                <div style={{ position: "sticky", top: "11%" }}>
                   {data.position !== 1 && (
                     <ProductComponent2
                       bigText1={data.title}
