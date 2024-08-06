@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../redux/slice/productSlice";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
+import StackCard from "../components/Home/StackCard";
+import { useScroll } from "framer-motion";
 
 const StackScroll = () => {
   const proDetails = [
@@ -24,8 +25,6 @@ const StackScroll = () => {
     },
   ];
 
-  const navigateTo = useNavigate();
-
   const dispatch = useDispatch();
 
   const homeData = useSelector((state) => state.product);
@@ -34,6 +33,13 @@ const StackScroll = () => {
   }, [dispatch]);
 
   const homeProductData = homeData.data.productPSPosition;
+  // console.log(homeProductData);
+
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
 
   return (
     <>
@@ -91,46 +97,44 @@ const StackScroll = () => {
           </div>
         </div>
       ) : (
-        <div className="stack-scroll">
-          <ul id="cards">
-            {homeProductData.map((eachHomeProduct, index) => (
-              <li className="card" id="card_1" key={index}>
-                <div
-                  className="card__content"
-                  style={{
-                    background:
-                      proDetails[index % proDetails.length].background,
-                  }}
-                >
-                  <div className="card-img-box">
-                    <div className="card-img-cover">
-                      <img src={eachHomeProduct.image} alt="" />
-                    </div>
-                  </div>
-                  <div className="card-content-box">
-                    <h1>{eachHomeProduct.title}</h1>
-                    <h3>{eachHomeProduct.domainName}</h3>
-                    <div className="content1">
-                      <p>{eachHomeProduct.pDes1}</p>
-                    </div>
-                    <div className="content1">
-                      <p>{eachHomeProduct.pDes2}</p>
-                    </div>
-                    <div
-                      className="learn-more"
-                      onClick={() =>
-                        navigateTo(`/product/${eachHomeProduct._id}`)
-                      }
-                      style={{ cursor: "pointer" }}
-                    >
-                      Learn more
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className="stack-scroll">
+            <ul id="cards">
+              <div
+                style={{
+                  display: "flex",
+                  columnGap: "8rem",
+                  color: "#fff",
+                  // marginTop: "1rem",
+                  // marginBottom: "3rem",
+                  justifyContent: "center",
+                  position: "sticky",
+                  top: "14%",
+                }}
+              >
+                {homeProductData.map((eachHomeProduct, i) => {
+                  // console.log(eachHomeProduct.title);
+                  return <div>{eachHomeProduct.title}</div>;
+                })}
+              </div>
+              {homeProductData.map((eachHomeProduct, i) => {
+                // console.log(homeProductData);
+                const targetScale = 1 - (homeProductData.length - i) * 0.05;
+                return (
+                  <StackCard
+                    eachHomeProduct={eachHomeProduct}
+                    key={i}
+                    i={i}
+                    proDetails={proDetails}
+                    range={[i * 0.16, 1]}
+                    targetScale={targetScale}
+                    progress={scrollYProgress}
+                  />
+                );
+              })}
+            </ul>
+          </div>
+        </>
       )}
     </>
   );

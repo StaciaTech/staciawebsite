@@ -26,7 +26,7 @@ export default function ServiceDisplay() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (countRef.current === 3) {
+      if (countRef.current === homeServiceData.length - 1) {
         countRef.current = 0;
       } else {
         countRef.current += 1;
@@ -35,7 +35,7 @@ export default function ServiceDisplay() {
     }, 2000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [homeServiceData]);
 
   return (
     <>
@@ -82,8 +82,8 @@ export default function ServiceDisplay() {
                     marginBottom: "10px",
                   }}
                 ></div>
-                {homeServiceData.map((data) => (
-                  <div className="service-text-box">
+                {homeServiceData.map((data, i) => (
+                  <div className="service-text-box" key={i}>
                     <div
                       style={{
                         display: "flex",
