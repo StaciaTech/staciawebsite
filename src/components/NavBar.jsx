@@ -3,11 +3,10 @@ import "../styles/navbar.css";
 import StaciaLogo from "../assets/StaciaLogo.svg";
 import ContactIcon from "../assets/ContactIcon.svg";
 import { NavLink, Link } from "react-router-dom";
-import droparrow from "../assets/droparrow.png"
-import MobileNav from "../assets/MobileNav.png"
-import ActiveStar from "../assets/ActiveStar.png"
+import droparrow from "../assets/droparrow.png";
+import MobileNav from "../assets/MobileNav.png";
+import ActiveStar from "../assets/ActiveStar.png";
 import WhatsNew from "./WhatsNew";
-
 
 function NavBar() {
   const [openWhatsNew, setOpenWhatsNew] = useState(0);
@@ -19,30 +18,71 @@ function NavBar() {
           <div className="mobile-nav">
             <img src={MobileNav} alt="" />
           </div>
-          <Link to={"/"}>
+          <Link
+            to={"/"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             <img src={StaciaLogo} alt="Home" className="nav-logo" />
           </Link>
 
-          <NavLink to={"/service"} className="nav-items">
+          <NavLink
+            to={"/services"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="nav-items"
+          >
             Services
           </NavLink>
-          <NavLink to={"/product"} className="nav-items">
+          <NavLink
+            to={"/product"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="nav-items"
+          >
             Products
           </NavLink>
-          <NavLink to={"/project"} className="nav-items">
+          <NavLink
+            to={"/project"}
+            className="nav-items"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Projects
           </NavLink>
           <div className="dropdown">
             <input type="checkbox" name="" id="btn" className="check" />
             <div className="dropdown-name">Resource</div>
             <div className="dropdown-links">
-              <NavLink to={"/resource"} className="drop-items">
+              <NavLink
+                to={"/resource"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Community
               </NavLink>
-              <NavLink to={"/resource"} className="drop-items">
-                What's new
+              <NavLink
+                to={"/article"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Articles
               </NavLink>
-              <NavLink to={"/case-study"} className="drop-items">
+              <NavLink
+                to={"/case-study"}
+                className="drop-items"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Case studies
               </NavLink>
             </div>
@@ -50,28 +90,44 @@ function NavBar() {
           {/* <div className="nav-items" style={{ opacity: 0.5 }}>
             Resources
           </div> */}
-          <NavLink to={"/career"} className="nav-items">
+          <NavLink
+            to={"/career"}
+            className="nav-items"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Careers
           </NavLink>
 
-          <div className="mobile-whatsnew" style={{ marginLeft: '25px' }} onClick={() => setOpenWhatsNew(!openWhatsNew)}>
-            {
-              openWhatsNew ? <div
+          <div
+            className="mobile-whatsnew"
+            style={{ marginLeft: "25px" }}
+            onClick={() => setOpenWhatsNew(!openWhatsNew)}
+          >
+            {openWhatsNew ? (
+              <div
                 style={{
-                  color: '#fff',
-                  cursor: 'pointer',
-                  fontWeight: '600',
-                  fontSize: '16px',
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontWeight: "600",
+                  fontSize: "16px",
                 }}
-              >What' New</div> : <div
+              >
+                What' New
+              </div>
+            ) : (
+              <div
                 style={{
-                  color: 'rgba(255, 255, 255, 0.50)',
-                  fontSize: '16px',
-                  cursor: 'pointer',
-                  fontWeight: '600',
+                  color: "rgba(255, 255, 255, 0.50)",
+                  fontSize: "16px",
+                  cursor: "pointer",
+                  fontWeight: "600",
                 }}
-              >What' New</div>
-            }
+              >
+                What' New
+              </div>
+            )}
           </div>
         </div>
         <div className="nav-right">
@@ -90,10 +146,7 @@ function NavBar() {
           <img src={ContactIcon} alt="" />
         </div>
       </div>
-      {
-        openWhatsNew ? <WhatsNew /> : ''
-      }
-
+      {openWhatsNew ? <WhatsNew /> : ""}
     </div>
   );
 }

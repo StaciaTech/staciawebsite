@@ -1,0 +1,33 @@
+.sidebar-container {
+  display: none;
+  color: #000;
+  position: sticky;
+  top: 0px;
+  z-index: 5;
+  padding: 1rem;
+  max-width: 100%;
+  background-color: white;
+  /* width: 100%; */
+}
+.horizontal-line {
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+}
+.side-bar-items {
+  padding: 20px 0px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.side-bar-item-containers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arrow {
+  transform: rotate(90deg);
+}
+@media screen and (max-width: 600px) {
+  .sidebar-container {
+    display: block;
+  }
+}

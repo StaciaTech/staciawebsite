@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import "../styles/Home.css"
+import "../styles/Home.css";
 import Marquee from "react-fast-marquee";
 import client1 from "../assets/client1.png";
 import client2 from "../assets/client2.png";
@@ -28,55 +28,47 @@ import HomeCaseStudy from "../components/Home/HomeCaseStudy";
 import Four from "../components/Home/Four";
 import Testimonials from "../components/Home/Testimonials";
 import ServiceDisplay from "../components/Home/ServiceDisplay";
-
-
 import { graphcms, QUERY_SLUG_CATEGORIES } from "../Graphql/Queries";
-// import StackScroll from "./StackScroll";
-import CardStackScroll from "../components/Home/CardStackScroll";
+import StackScroll from "./StackScroll";
 import MobileStackScroll from "../components/Home/MobileStackScroll";
 import MobileFooter from "../components/MobileFooter";
 import EventsHosted from "../components/Home/EventsHosted";
 import OurProjects from "../components/Home/OurProjects";
 import Articles from "../components/Home/Articles";
-import StackScroll from "./StackScroll";
+import SideBar from "../components/SideBar";
 
 const clients = [
-  client1, client2, client3, client4, client5, client6, client7, client8, client9,
-  client10, client11, client12, client13, client14, client15, client16, client17,
-  client18, client19, client20
+  client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10,
+  client11,
+  client12,
+  client13,
+  client14,
+  client15,
+  client16,
+  client17,
+  client18,
+  client19,
+  client20,
 ];
 
-const proDetails = [
-  {
-    id: 1,
-    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
-  },
-  {
-    id: 2,
-    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
-  },
-  {
-    id: 3,
-    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
-  },
-  {
-    id: 4,
-    // background: 'linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)'
-  },
-]
-
 function HomePage() {
-
   useEffect(() => {
-    console.log("home useEffect rendered!!!");
-    console.log(process.env.REACT_APP_API);
-    // graphcms.request(QUERY_SLUG_CATEGORIES)
-    //   .then((res) => console.log(res.data))
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
       <NavBar />
+      <SideBar />
       {/* home */}
 
       <div className="home">
@@ -91,11 +83,10 @@ function HomePage() {
       {/* product */}
 
       <div className="stack-scroll-container">
-        {/* <StackScroll /> */}
+        <StackScroll />
       </div>
 
       <MobileStackScroll />
-
 
       {/* client */}
 
@@ -104,22 +95,41 @@ function HomePage() {
           <div className="clientText">Our Clients</div>
 
           <div className="one">
-            <div className="line"><div className="line1"></div></div>
-            <Marquee style={{ overflow: 'hidden' }} gradient={true} >
-              {
-                clients.map((img, index) => (
-                  <div className="marquee-margin" style={{ height: '60px', marginLeft: '50px', }} key={index}>
-                    <img src={img} alt="" className="client-marquee" />
-                  </div>
-                ))
-              }
+            <div className="line">
+              <div className="line1"></div>
+            </div>
+            <Marquee style={{ overflow: "hidden" }} gradient={true}>
+              {clients.map((img, index) => (
+                <div
+                  className="marquee-margin"
+                  style={{ height: "60px", marginLeft: "50px" }}
+                  key={index}
+                >
+                  <img src={img} alt="" className="client-marquee" />
+                </div>
+              ))}
             </Marquee>
-            <div className="line"><div className="line1"></div></div>
+            <div className="line">
+              <div className="line1"></div>
+            </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+              justifyContent: "center",
+            }}
+          >
             <p className="clientPara">
-              Lorem ipsum dolor sit amet consectetur. Nibh orci donec in ante cursus tempor adipiscing. A turpis vitae fermentum nulla ac in duis proin amet. Magna a amet sed imperdiet. Elit nisl nisl fermentum lectus id nibh at odio. Ullamcorper pellentesque faucibus egestas pulvinar imperdiet ut. Duis massa luctus imperdiet sit purus vulputate. Dui at euismod nunc turpis auctor lobortis.
+              Lorem ipsum dolor sit amet consectetur. Nibh orci donec in ante
+              cursus tempor adipiscing. A turpis vitae fermentum nulla ac in
+              duis proin amet. Magna a amet sed imperdiet. Elit nisl nisl
+              fermentum lectus id nibh at odio. Ullamcorper pellentesque
+              faucibus egestas pulvinar imperdiet ut. Duis massa luctus
+              imperdiet sit purus vulputate. Dui at euismod nunc turpis auctor
+              lobortis.
             </p>
           </div>
         </div>
@@ -145,17 +155,22 @@ function HomePage() {
         </div>
       </div> */}
 
-      <EventsHosted/>
+      {/* Events */}
+
+      {/* <EventsHosted /> */}
 
       {/* case study */}
 
-      <HomeCaseStudy />
+      {/* <HomeCaseStudy /> */}
 
-      <OurProjects/>
+      {/* Home Projects */}
 
+      {/* <OurProjects /> */}
+
+      {/* Home Articles  */}
+
+      <Articles />
       {/* foundation four */}
-      <Articles/>
-
       <Four />
 
       {/* testimonials */}
@@ -165,10 +180,8 @@ function HomePage() {
       <Footer />
 
       <MobileFooter />
-
     </>
   );
 }
 
 export default HomePage;
-

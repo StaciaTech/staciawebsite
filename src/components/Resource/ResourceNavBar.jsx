@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import "../../styles/Resource.css"
-import { useSearchParams } from 'react-router-dom';
-import CaseStudyCard from '../CaseStudy/CaseStudyCard';
-import { type } from '@testing-library/user-event/dist/type';
+import React, { useEffect, useState } from "react";
+import "../../styles/Resource.css";
+import { useSearchParams } from "react-router-dom";
+import CaseStudyCard from "../CaseStudy/CaseStudyCard";
+import { type } from "@testing-library/user-event/dist/type";
 import s1 from "../../assets/study1.png";
 import s2 from "../../assets/study2.png";
 import s3 from "../../assets/study3.png";
@@ -12,87 +12,98 @@ import s6 from "../../assets/study6.png";
 
 const data = [
   {
-    type: 'technology',
-    img: s1,
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "technology",
+    img: "https://media.cnn.com/api/v1/images/stellar/prod/211227135008-02-the-batman-trailer.jpg?q=h_1406,w_2500,x_0,y_0",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'technology',
+    type: "technology",
     img: s2,
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'culture',
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "culture",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'technology',
+    type: "technology",
     img: s3,
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'technology',
+    type: "technology",
     img: s4,
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'entertainment',
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "entertainment",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'agriculture',
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "agriculture",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'culture',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    title: 'Lorem ipsum dolor sit omet',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "culture",
+    tags: ["Lorem", "Loading", "Loading"],
+    title: "Lorem ipsum dolor sit omet",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'culture',
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "culture",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'agriculture',
-    title: 'Lorem ipsum dolor sit omet',
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    type: "agriculture",
+    title: "Lorem ipsum dolor sit omet",
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'technology',
-    title: 'Lorem ipsum dolor sit omet',
+    type: "technology",
+    title: "Lorem ipsum dolor sit omet",
     img: s5,
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
   {
-    type: 'technology',
-    title: 'Lorem ipsum dolor sit omet',
+    type: "technology",
+    title: "Lorem ipsum dolor sit omet",
     img: s6,
-    tags: ['Lorem', 'Loading', 'Loading'],
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.'
+    tags: ["Lorem", "Loading", "Loading"],
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa necessitatibus animi quia exercitationem, veritatis cum hic eveniet sapiente molestias eos! Totam recusandae facilis saepe? Vero aliquid reiciendis incidunt placeat.",
   },
+];
 
-]
-
-data.map((data) => console.log(data.tags[0]))
+data.map((data) => console.log(data.tags[0]));
 
 export default function ResourceNavBar() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -116,30 +127,48 @@ export default function ResourceNavBar() {
   //   console.log(data.type)
   // ))
 
-
-
   return (
     <>
       <div className="resource-nav-bar">
         <div className="resource-nav-links">
-          <div className="resource-link" onClick={() => setParams('technology')}>Technology</div>
-          <div className="resource-link" onClick={() => setParams('agriculture')}>Agriculture</div>
-          <div className="resource-link" onClick={() => setParams('culture')}>Culture</div>
-          <div className="resource-link" onClick={() => setParams('entertainment')}>Entertainment</div>
+          <div
+            className="resource-link"
+            onClick={() => setParams("technology")}
+          >
+            Technology
+          </div>
+          <div
+            className="resource-link"
+            onClick={() => setParams("agriculture")}
+          >
+            Agriculture
+          </div>
+          <div className="resource-link" onClick={() => setParams("culture")}>
+            Culture
+          </div>
+          <div
+            className="resource-link"
+            onClick={() => setParams("entertainment")}
+          >
+            Entertainment
+          </div>
         </div>
       </div>
 
       <div className="case-study-grid">
-        {
-          caseStudy.map((data, index) => (
-            <>
-              <CaseStudyCard key={index} content={data.content} type={data.type} img={data.img} tags={data.tags}
-                title={data.title}
-              />
-            </>
-          ))
-        }
+        {caseStudy.map((data, index) => (
+          <>
+            <CaseStudyCard
+              key={index}
+              content={data.content}
+              type={data.type}
+              img={data.img}
+              tags={data.tags}
+              title={data.title}
+            />
+          </>
+        ))}
       </div>
     </>
-  )
+  );
 }
