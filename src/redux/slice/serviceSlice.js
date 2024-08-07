@@ -1,9 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 export const fetchServices = createAsyncThunk("fetchservices", async () => {
-  const data = await fetch(`${apiUrl}/service/all-service`);
-  return data.json();
+  try {
+    const res = await axios(`${apiUrl}/service/all-service`);
+    console.log(res.data);
+
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 const serviceSlice = createSlice({
