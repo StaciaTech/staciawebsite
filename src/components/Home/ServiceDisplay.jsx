@@ -26,7 +26,7 @@ export default function ServiceDisplay() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (countRef.current === homeServiceData.length - 1) {
+      if (countRef.current === homeServiceData?.length - 1) {
         countRef.current = 0;
       } else {
         countRef.current += 1;
