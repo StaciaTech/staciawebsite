@@ -42,7 +42,10 @@ function StackCard({
           </div>
           <div
             className="learn-more"
-            onClick={() => navigateTo(`/product/${eachHomeProduct._id}`)}
+            onClick={() => {
+              navigateTo(`/product/${eachHomeProduct._id}`);
+              window.scrollTo(0, 0);
+            }}
             style={{ cursor: "pointer" }}
           >
             Learn more

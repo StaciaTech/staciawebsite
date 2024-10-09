@@ -134,7 +134,7 @@ export default function MobileFooter() {
       <div className="socialLinks">
         <div className="social-link">
           <a
-            href="https://www.instagram.com/stacia_corp"
+            href="https://www.instagram.com/stacia_corp_?igsh=MTA5MGdnZms5ZjhwMA=="
             target="_blank"
             rel="noreferrer"
           >

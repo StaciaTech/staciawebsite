@@ -183,7 +183,7 @@ function Footer() {
         <div className="footer-icons">
           <div>
             <a
-              href="https://www.instagram.com/stacia_corp"
+              href="https://www.instagram.com/stacia_corp_?igsh=MTA5MGdnZms5ZjhwMA=="
               target="_blank"
               rel="noreferrer"
             >
