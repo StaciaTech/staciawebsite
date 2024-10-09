@@ -1,0 +1,45 @@
+.reusable-art-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 5rem;
+}
+.reusable-art-card {
+  width: 100%;
+}
+.reusable-art-img-container {
+  width: 100%;
+  border-radius: 1rem;
+}
+.reusable-art-title {
+  font-family: EuclidSemiBold;
+  font-size: 2rem;
+}
+.reusable-art-des {
+  color: #6b6084;
+}
+.reusable-art-content-container {
+  padding: 1rem 0rem;
+}
+.reusable-art-know-more {
+  color: #0047ff;
+  font-weight: 600;
+  padding: 0.5rem 0rem;
+  width: fit-content;
+}
+.reusable-art-know-more:hover {
+  color: #fff;
+  background-color: #0047ff;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .reusable-art-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

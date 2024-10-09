@@ -6,28 +6,43 @@ import InstaIcon from "../assets/InstaIcon.svg";
 import TwitterIcon from "../assets/TwitterIcon.svg";
 import FBICon from "../assets/FBIcon.svg";
 import LinkedIcon from "../assets/LinkedIcon.svg";
+import { useNavigate } from "react-router-dom";
+import Contact from "./Contact";
 
 const footerAccordion = [
   {
     category: "Company",
-    links: ["Company", "Careers", "Contact"],
+    links: [
+      { name: "Company", path: "" },
+      { name: "Careers", path: "/career" },
+      { name: "Contact", path: "" },
+    ],
   },
   {
     category: "Product",
-    links: ["Services", "Products", "Projects"],
+    links: [
+      { name: "Services", path: "/services" },
+      { name: "Products", path: "/product" },
+      { name: "Projects", path: "/project" },
+    ],
   },
   {
     category: "Resources",
     links: [
-      "Community",
-      "Whats                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ",
-      "Projects",
+      { name: "Community", path: "" },
+      { name: "Whats", path: "" },
+      { name: "Project", path: "/project" },
     ],
   },
 ];
 
 function FooterAccordion({ data }) {
   const [accordion, setAccordion] = useState(0);
+  const navigate = useNavigate();
+  const [showContactForm, setShowContactForm] = useState(false);
+  const closeForm = () => {
+    setShowContactForm(false);
+  };
   return (
     <div className="footer-accordion">
       <div
@@ -40,14 +55,35 @@ function FooterAccordion({ data }) {
         </div>
       </div>
       {accordion
-        ? data.links.map((link) => <div className="mbfooter-links">{link}</div>)
+        ? data.links.map((link) => (
+            <div className="mbfooter-links">
+              <span
+                onClick={() => {
+                  if (link.path !== "") {
+                    navigate(link.path);
+                    window.scrollTo(0, 0);
+                  }
+                  if (link.name === "Contact") {
+                    setShowContactForm(true);
+                  }
+                }}
+              >
+                {link.name}
+              </span>
+            </div>
+          ))
         : ""}
-      <div className="foo-line"></div>
+      <div className="foo-line"></div>{" "}
+      {showContactForm && <Contact closeHandle={closeForm} />}
     </div>
   );
 }
 
 export default function MobileFooter() {
+  const [showContactForm, setShowContactForm] = useState(false);
+  const closeForm = () => {
+    setShowContactForm(false);
+  };
   return (
     <div className="mobile-footer">
       <div
@@ -61,16 +97,18 @@ export default function MobileFooter() {
         <img src={arrow} alt="" />
         <div className="contact-text">Contact</div>
       </div>
-
       <div style={{ marginLeft: "20px" }}>
         <div className="keep-text">Keep in touch</div>
-        <div className="contact-us-btn">Contact Us</div>
+        <div
+          className="contact-us-btn"
+          onClick={() => setShowContactForm(true)}
+        >
+          Contact Us
+        </div>
       </div>
-
       <div style={{ marginLeft: "20px" }}>
         <div className="start-conversation">Start a Conversation</div>
       </div>
-
       <div
         style={{
           marginLeft: "20px",
@@ -79,31 +117,54 @@ export default function MobileFooter() {
           gap: "20px",
         }}
       >
-        <div className="contact-mails">Contact@staciacorp.com</div>
-        <div className="contact-mails">+91-8754595641</div>
+        <div className="contact-mails">
+          <a href={`mailto:${"contactus@staciacorp.com"}`}>
+            contactus@staciacorp.com
+          </a>
+        </div>
+        <div className="contact-mails">
+          <a href={`tel:${9363034150}`}>+91-9363034150</a>
+        </div>
       </div>
-
       <div>
         {footerAccordion.map((data, index) => (
           <FooterAccordion key={index} data={data} />
         ))}
       </div>
-
       <div className="socialLinks">
         <div className="social-link">
-          <img src={InstaIcon} alt="" />
+          <a
+            href="https://www.instagram.com/stacia_corp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={InstaIcon} alt="" />
+          </a>
         </div>
         <div className="social-link">
-          <img src={TwitterIcon} alt="" />
+          <a href="https://x.com/StaciaCorp" target="_blank" rel="noreferrer">
+            <img src={TwitterIcon} alt="" />
+          </a>
         </div>
         <div className="social-link">
-          <img src={FBICon} alt="" />
+          <a
+            href="https://www.facebook.com/staciacorp/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={FBICon} alt="" />
+          </a>
         </div>
         <div className="social-link">
-          <img src={LinkedIcon} alt="" />
+          <a
+            href="https://www.linkedin.com/company/staciacorp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={LinkedIcon} alt="" />
+          </a>
         </div>
       </div>
-
       <div
         style={{
           display: "flex",
@@ -116,10 +177,10 @@ export default function MobileFooter() {
         <div className="dot"></div>
         <div className="terms">Privacy Policy</div>
       </div>
-
       <div className="copy-rights">
         © Copyright StaciaCorp. All Rights Reserved
       </div>
+      {showContactForm && <Contact closeHandle={closeForm} />}
     </div>
   );
 }

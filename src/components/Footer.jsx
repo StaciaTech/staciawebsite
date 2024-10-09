@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/footer.css";
 import ContactArrow from "../assets/ContactArrow.svg";
 import InstaIcon from "../assets/InstaIcon.svg";
 import TwitterIcon from "../assets/TwitterIcon.svg";
 import FBICon from "../assets/FBIcon.svg";
 import LinkedIcon from "../assets/LinkedIcon.svg";
+import { useNavigate } from "react-router-dom";
+import Contact from "./Contact";
 
 function Footer() {
+  const navigate = useNavigate();
+  const [showContactForm, setShowContactForm] = useState(false);
+  const closeForm = () => {
+    setShowContactForm(false);
+  };
   return (
     <div className="footer-contaier">
-      <div style={{ display: "flex", alignItems: "center" }}>
+      {/* <div style={{ display: "flex", alignItems: "center" }}>
         <img src={ContactArrow} alt="" />
         <span style={{ color: "#6B6084", marginLeft: "20px" }}>Contact</span>
-      </div>
+      </div> */}
       <div
         style={{
           display: "flex",
@@ -32,7 +39,10 @@ function Footer() {
             fontSize: "18px",
             border: "none",
             borderRadius: "10px",
+            fontFamily: "Helvetica",
+            cursor: "pointer",
           }}
+          onClick={() => setShowContactForm(true)}
         >
           Contact Us
         </button>
@@ -40,47 +50,113 @@ function Footer() {
       <div className="footer-tabs">
         <div>
           <div style={{ color: "#6b6084" }}>Start a Conversation</div>
-          <div className="footer-gradient-text" style={{ marginTop: "44px" }}>
-            Contact@staciacorp.com
+          <div
+            className="footer-gradient-text pointer"
+            style={{ marginTop: "44px" }}
+          >
+            <a href={`mailto:${"contactus@staciacorp.com"}`}>
+              contactus@staciacorp.com
+            </a>
           </div>
-          <div className="footer-gradient-text" style={{ marginTop: "30px" }}>
-            +91-8754595641
+          <div
+            className="footer-gradient-text pointer"
+            style={{ marginTop: "30px" }}
+          >
+            +91-9363034150
           </div>
         </div>
         <div className="footer-nav-tabs">
           <div>
             <div>Company</div>
-            <div className="footer-grey-tabs">Company</div>
-            <div className="footer-grey-tabs">Careers</div>
-            <div className="footer-grey-tabs">Contact</div>
+            <div className="footer-grey-tabs">About</div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => {
+                navigate("/career");
+                window.scrollTo(0, 0);
+              }}
+            >
+              Careers
+            </div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => setShowContactForm(true)}
+            >
+              Contact
+            </div>
           </div>
           <div>
             <div>Product</div>
-            <div className="footer-grey-tabs">Services</div>
-            <div className="footer-grey-tabs">Products</div>
-            <div className="footer-grey-tabs">Projects</div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => {
+                navigate("/services");
+                window.scrollTo(0, 0);
+              }}
+            >
+              Services
+            </div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => {
+                navigate("/product");
+                window.scrollTo(0, 0);
+              }}
+            >
+              Products
+            </div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => {
+                navigate("/project");
+                window.scrollTo(0, 0);
+              }}
+            >
+              Projects
+            </div>
           </div>
           <div>
             <div>Resources</div>
             <div className="footer-grey-tabs">Community</div>
             <div className="footer-grey-tabs">What's New</div>
-            <div className="footer-grey-tabs">Case Studies</div>
+            <div
+              className="footer-grey-tabs"
+              onClick={() => {
+                navigate("/case-study");
+                window.scrollTo(0, 0);
+              }}
+            >
+              Case Studies
+            </div>
           </div>
         </div>
         <div>
           <div>Reach Us</div>
-          <div className="footer-grey-tabs">
-            <div>1st Floor, C-53, Guindy Industrial Estate,</div>
-            <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-              Thiru Vi Ka Industrial Estate, SIDCO Industrial
-            </div>
-            <div>Estate, Guindy, Chennai - 32, Tamil Nadu</div>
+          <div className="footer-grey-tabs pointer">
+            <a
+              href="https://maps.app.goo.gl/subrLwPjRTJdTcRZ8"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="footer-grey-tabs pointer">
+                Ground Floor, C-53, Guindy Industrial Estate,
+              </div>
+              <div
+                style={{ marginTop: "10px", marginBottom: "10px" }}
+                className="footer-grey-tabs pointer"
+              >
+                Thiru Vi Ka Industrial Estate, SIDCO Industrial
+              </div>
+              <div className="footer-grey-tabs-child">
+                Estate, Guindy, Chennai - 32, Tamil Nadu
+              </div>
+            </a>
           </div>
         </div>
       </div>
       <div className="footer-others">
         <div>
-        ©Copyright Stacia<span style={{ color: "#0047FF" }}>Corp</span>. All
+          ©Copyright Stacia<span style={{ color: "#0047FF" }}>Corp</span>. All
           Rights Reserved
         </div>
         <div
@@ -106,19 +182,40 @@ function Footer() {
         </div>
         <div className="footer-icons">
           <div>
-            <img src={InstaIcon} alt="" />
+            <a
+              href="https://www.instagram.com/stacia_corp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={InstaIcon} alt="" />
+            </a>
           </div>
           <div style={{ marginLeft: "20px", marginRight: "20px" }}>
-            <img src={TwitterIcon} alt="" />
+            <a href="https://x.com/StaciaCorp" target="_blank" rel="noreferrer">
+              <img src={TwitterIcon} alt="" />
+            </a>
           </div>
           <div style={{ marginRight: "20px" }}>
-            <img src={FBICon} alt="" />
+            <a
+              href="https://www.facebook.com/staciacorp/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={FBICon} alt="" />
+            </a>
           </div>
           <div>
-            <img src={LinkedIcon} alt="" />
+            <a
+              href="https://www.linkedin.com/company/staciacorp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={LinkedIcon} alt="" />
+            </a>
           </div>
         </div>
       </div>
+      {showContactForm && <Contact closeHandle={closeForm} />}
     </div>
   );
 }

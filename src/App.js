@@ -17,6 +17,9 @@ import SpecificService from "./components/Services/SpecificService";
 import ArticlesPage from "./pages/ArticlesPage";
 // import StackScroll from "./pages/StackScroll";
 import PageNotFound from "./pages/PageNotFound";
+import SingleArticle from "./pages/SingleArticle";
+import SingleProject from "./pages/SingleProject";
+import SingleCaseStudy from "./pages/SingleCaseStudy";
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/product" element={<ProductPage />} />
         <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/single-article/:id" element={<SingleArticle />} />
+        <Route path="/single-project/:id" element={<SingleProject />} />
+        <Route path="/single-casestudy/:id" element={<SingleCaseStudy />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/case-study" element={<CaseStudy />} />
         <Route path="/services" element={<ServicePage />} />

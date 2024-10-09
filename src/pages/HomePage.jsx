@@ -36,6 +36,7 @@ import EventsHosted from "../components/Home/EventsHosted";
 import OurProjects from "../components/Home/OurProjects";
 import Articles from "../components/Home/Articles";
 import SideBar from "../components/SideBar";
+import Contact from "../components/Contact";
 
 const clients = [
   client1,
@@ -69,6 +70,7 @@ function HomePage() {
     <>
       <NavBar />
       <SideBar />
+      {/* <Contact /> */}
       {/* home */}
 
       <div className="home">
@@ -123,13 +125,15 @@ function HomePage() {
             }}
           >
             <p className="clientPara">
-              Lorem ipsum dolor sit amet consectetur. Nibh orci donec in ante
-              cursus tempor adipiscing. A turpis vitae fermentum nulla ac in
-              duis proin amet. Magna a amet sed imperdiet. Elit nisl nisl
-              fermentum lectus id nibh at odio. Ullamcorper pellentesque
-              faucibus egestas pulvinar imperdiet ut. Duis massa luctus
-              imperdiet sit purus vulputate. Dui at euismod nunc turpis auctor
-              lobortis.
+              We are honored to collaborate with a diverse range of clients,
+              from startups to established enterprises across industries like
+              agriculture, manufacturing, technology, and more. Our clients rely
+              on us for cutting-edge solutions that enhance efficiency, drive
+              innovation, and deliver measurable results. We value these
+              partnerships and are committed to exceeding expectations by
+              transforming ideas into impactful, real-world solutions. Together,
+              we empower businesses to reach new heights and achieve sustainable
+              growth through tailored technology and strategic insights.
             </p>
           </div>
         </div>

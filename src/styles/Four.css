@@ -1,97 +1,99 @@
 .four {
-    width: 100%;
-    min-height: 100vh;
-    margin-top: 60px;
-    margin-bottom: 5%;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 60px;
+  margin-bottom: 5%;
 }
 
 .four2 {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .four-text {
-    color: #E7E7E7;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  color: #e7e7e7;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .four-card {
-    width: 23%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
+  /* width: 23%; */
+  margin-top: 40px;
 }
 
 .four-img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  /* height: 100%; */
 }
 
-.four-img>img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+.four-img > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .four-pos {
-    color: #0D0225;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #0d0225;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1rem;
 }
 
 .four-name {
-    color: #0D0225;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  color: #0d0225;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 2rem 0rem 1rem 0rem;
 }
 
-.four-para>p {
-    color: #6B6084;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
+.four-para > p {
+  color: #6b6084;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
 }
 
-.four-grid{
+.four-grid {
+  display: grid;
+  /* justify-content: space-between; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .four {
+    margin-bottom: auto;
+  }
+
+  .four-text {
+    font-size: 24px;
+  }
+
+  .four-grid {
     display: flex;
-    justify-content: space-between;
-}
+    flex-direction: column;
+  }
 
-@media (max-width: 480px){
-    .four{
-        margin-bottom: auto;
-    }
+  .four-card {
+    width: 100%;
+  }
 
-    .four-text{
-        font-size: 24px;
-    }
+  .four-pos {
+    font-size: 12px;
+  }
 
-    .four-grid{
-        flex-direction: column;
-    }
+  .four-name {
+    font-size: 15px;
+  }
 
-    .four-card{
-        width: 100%;
-    }
-
-    .four-pos{
-        font-size: 12px;
-    }
-
-    .four-name{
-        font-size: 15px;
-    }
-
-    .four-para>p{
-        font-size: 12px;
-    }
+  .four-para > p {
+    font-size: 12px;
+  }
 }

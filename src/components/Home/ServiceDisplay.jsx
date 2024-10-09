@@ -68,7 +68,7 @@ export default function ServiceDisplay() {
               <div className="service-left">
                 <div className="service-img-box">
                   <img
-                    src={homeServiceData[currentSlide]?.image}
+                    src={homeServiceData[currentSlide]?.imageUrl}
                     alt={homeServiceData[currentSlide]?.title}
                   />
                 </div>
@@ -90,6 +90,11 @@ export default function ServiceDisplay() {
                         alignItems: "center",
                         justifyContent: "space-between",
                         width: "100%",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        navigateTo(`/services/${data.title}/${data._id}`);
+                        window.scrollTo(0, 0);
                       }}
                     >
                       {homeServiceData[currentSlide].title === data.title ? (
@@ -103,17 +108,19 @@ export default function ServiceDisplay() {
                         <img
                           src={activearrow}
                           alt=""
-                          onClick={() =>
-                            navigateTo(`/services/${data.title}/${data._id}`)
-                          }
+                          onClick={() => {
+                            navigateTo(`/services/${data.title}/${data._id}`);
+                            window.scrollTo(0, 0);
+                          }}
                         />
                       ) : (
                         <img
                           src={arrow}
                           alt=""
-                          onClick={() =>
-                            navigateTo(`/services/${data.title}/${data._id}`)
-                          }
+                          onClick={() => {
+                            navigateTo(`/services/${data.title}/${data._id}`);
+                            window.scrollTo(0, 0);
+                          }}
                         />
                       )}
                     </div>

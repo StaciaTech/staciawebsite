@@ -1,0 +1,16 @@
+.cardStacking {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 90%;
+}
+.stackCard {
+  border-radius: 30px;
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  padding: 60px 35px;
+  transform-origin: 50% -160%;
+}
+.spacer {
+  height: 1000px;
+}

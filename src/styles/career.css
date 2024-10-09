@@ -1,6 +1,9 @@
 .career-hero-section {
   width: 100%;
   min-height: 100vh;
+  /* padding-block: 10rem; */
+  display: flex;
+  align-items: center;
   background-color: #0d0225;
   color: #fff;
 }
@@ -15,13 +18,15 @@
 .career-info-section {
   height: 100%;
   width: 50%;
+  font-size: 2rem;
 }
 .career-hero-contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0rem 5rem;
-  padding-top: 6rem;
+  padding: 0 5rem;
+  /* margin: 0rem 5rem; */
+  /* padding-top: 6rem; */
 }
 
 .career-title {
@@ -42,24 +47,30 @@
 }
 
 .opportunities-container {
-  margin: 0px 200px;
+  padding: 0 5rem;
+  /* margin: 0px 200px; */
 }
-
+.careers-exp {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 .line-style {
   width: 100%;
   border: 1px solid #cadbea;
 }
 
 .opportunity-items {
-  margin: 40px 0px;
+  padding: 1.5rem 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .job-arrow {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #6b6084;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #6b6084;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -68,7 +79,7 @@
 }
 
 .opportunity-titles {
-  font-size: 26px;
+  font-size: 1.5vw;
   font-weight: 600;
 }
 .life-at-stacia {
@@ -187,13 +198,15 @@
 
 .culture-contents {
   width: 800px;
-  font-size: 22px;
+  font-size: 1.1rem;
   color: #6b6084;
+  line-height: 2.5rem;
 }
 .mobile-culture-contents {
   width: 100%;
   text-align: justify;
   text-justify: inter-word;
+  line-height: 2rem;
 }
 
 .career-seperator {
@@ -233,7 +246,8 @@
 }
 
 .career-apply {
-  color: #0047ff;
+  color: #c6c6c6;
+  /* color: #0047ff; */
   font-weight: 700;
   font-size: 20px;
   margin: 50px 0px;
@@ -434,7 +448,7 @@ input:focus {
     height: 80px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .image-layout-container {
     display: flex;
     flex-direction: column;
@@ -458,6 +472,10 @@ input:focus {
   /* .image-layout-container {
     flex-direction: column;
   } */
+  .career-hero-section {
+    min-height: 0;
+    padding-block: 3rem;
+  }
   .career-title {
     font-size: 2rem;
   }
@@ -484,5 +502,24 @@ input:focus {
   }
   .life-at-stacia {
     margin: 0rem 2rem;
+  }
+  .opportunities-container {
+    padding: 1.2rem;
+  }
+  .career-hero-contents {
+    padding: 1.5rem;
+    /* margin: 0rem 5rem; */
+    /* padding-top: 6rem; */
+  }
+  .careers-exp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  .opportunity-titles {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 }

@@ -10,15 +10,17 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .case-study-title1 {
-  color: rgba(255, 255, 255, 0.28);
+  color: #fff;
   font-size: 120px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  position: relative;
 }
 
 .case-study-text {

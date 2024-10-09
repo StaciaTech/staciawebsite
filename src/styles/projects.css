@@ -1,4 +1,4 @@
-.project-hero-section {
+/* .project-hero-section {
   height: 856px;
   max-height: 100vh;
   width: 100%;
@@ -46,4 +46,28 @@
   color: #6b6084;
   font-size: 22px;
   line-height: 180%;
+} */
+.project-section {
+  width: 100%;
+  min-height: calc(100vh - 109px);
+  /* background-color: #0d0225; */
+}
+
+.projecct-section-overlay {
+  width: 100%;
+  min-height: calc(100vh - 109px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projecct-title {
+  color: #fff;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
 }

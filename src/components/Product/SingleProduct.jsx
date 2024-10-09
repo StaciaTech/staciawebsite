@@ -21,16 +21,19 @@ import SideBar from "../SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/slice/productSlice";
 import LoadingStar from "../LoadingStar";
+import { useNavigate } from "react-router-dom";
 
 export default function SingleProduct() {
+  const navigateTo = useNavigate();
   const dispatch = useDispatch();
   const singleProductData = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
-  console.log();
   const eachProductData = singleProductData.data.productBasedPosition;
+
+  // console.log(eachProductData);
 
   const productDetails = [
     {
@@ -114,6 +117,11 @@ export default function SingleProduct() {
 
   const { id } = useParams();
 
+  const RemainigProducts = eachProductData.filter(
+    (eachProduct) => eachProduct._id !== id
+  );
+  // console.log(RemainigProducts);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
     setCurrentSlide((currentSlide + 1) % slides.length);
@@ -180,7 +188,7 @@ export default function SingleProduct() {
                       <div className="split">
                         <div className="image-area">
                           <img
-                            src={slides[currentSlide].image}
+                            src={slides[currentSlide].imageUrl}
                             alt={slides[currentSlide].alt}
                           />
                         </div>
@@ -246,6 +254,53 @@ export default function SingleProduct() {
                 </div>
               )
           )}
+          <>
+            <div className="remaining-products-card-container-holder">
+              <div>Other Products</div>
+              <div className="remaining-products-card-container">
+                {RemainigProducts.map((eachPro, i) => (
+                  <>
+                    {i < 6 && (
+                      <div key={i}>
+                        <div className="single-product-card">
+                          <div
+                            // style={{ width: "100%", height: "20rem" }}
+                            className="single-product-card-img-container pointer"
+                            onClick={() => {
+                              navigateTo(`/product/${eachPro._id}`);
+                              window.scrollTo(0, 0);
+                            }}
+                          >
+                            <img
+                              src={eachPro.imageUrl}
+                              alt=""
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "contain",
+                              }}
+                            />
+                          </div>
+                          <div
+                            className="single-product-card-title pointer"
+                            onClick={() => {
+                              navigateTo(`/product/${eachPro._id}`);
+                              window.scrollTo(0, 0);
+                            }}
+                          >
+                            {eachPro.title}
+                          </div>
+                          <p className="single-product-card-des">
+                            {eachPro.des}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ))}
+              </div>
+            </div>
+          </>
         </div>
       )}
       <Footer />

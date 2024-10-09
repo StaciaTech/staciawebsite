@@ -30,7 +30,9 @@ export default function ProductComponent2({
       <div className="pro2-container">
         <div className="pro2-left">
           <div className="pname">{productName}</div>
-          <p style={{ marginTop: "30px" }}>{des}</p>
+          <p style={{ marginTop: "30px" }} className="pro-comp-des">
+            {des}
+          </p>
           <Link
             className="learn-more-btn"
             to={`/product/${id}`}

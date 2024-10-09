@@ -43,7 +43,7 @@ function CareerPage() {
           </div>
         </div>
       </div>
-      {/* <div>
+      <div>
         <div
           style={{
             textAlign: "center",
@@ -60,7 +60,7 @@ function CareerPage() {
             setShowApplication={setShowApplication}
           />
         ))}
-      </div> */}
+      </div>
       <div className="life-at-stacia">
         <div className="career-headings">Life @ Stacia Corp</div>
         {/* <div className="career-image-box-full">
@@ -125,19 +125,24 @@ function CareerPage() {
             <div>
               <div className="culture-titles">Office Environment</div>
               <p className="culture-contents">
-                Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-                tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-                maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-                aliquam. Lorem ipsum dolor sit amet consectetur.
+                At Stacia Corp, our office environment is designed to inspire
+                innovation, creativity, foster collaboration, and support
+                productivity. We believe that where you work is just as
+                important as how you work, which is why we’ve created a dynamic
+                and welcoming space that reflects our commitment to innovation
+                and teamwork. Open, Collaborative Spaces.
               </p>
             </div>
             <div>
               <div className="culture-titles">Working Model</div>
               <p className="culture-contents">
-                Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-                tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-                maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-                aliquam. Lorem ipsum dolor sit amet consectetur.
+                At Stacia Corp, we believe that flexibility and collaboration
+                are key to driving innovation and productivity. Our working
+                model is built around agile principles. Teams are empowered to
+                move quickly, adapt to changing needs, and continuously improve
+                processes. With regular check-ins, feedback loops, and sprint
+                planning, we ensure that we remain responsive to both internal
+                and client needs.
               </p>
             </div>
           </div>
@@ -152,19 +157,24 @@ function CareerPage() {
             <div>
               <div className="culture-titles">Co-workers Environment</div>
               <p className="culture-contents">
-                Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-                tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-                maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-                aliquam. Lorem ipsum dolor sit amet consectetur.
+                At Stacia Corp, we pride ourselves on fostering a positive,
+                inclusive, and supportive co-worker environment where everyone
+                feels valued and empowered to succeed. Our team is more than
+                just colleagues—we are a community of talented individuals
+                working together to achieve great things.
               </p>
             </div>
             <div>
-              <div className="culture-titles">Yearly Trips</div>
+              <div className="culture-titles">Open Communication</div>
               <p className="culture-contents">
-                Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-                tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-                maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-                aliquam. Lorem ipsum dolor sit amet consectetur.
+                Transparent communication is key to our success. We maintain an
+                open-door policy that encourages feedback, discussion, and the
+                sharing of ideas. This approach ensures that every voice is
+                heard and valued, creating a more cohesive team. Our diverse
+                workforce brings a wealth of perspectives and experiences,
+                enriching our collaborative efforts. We embrace this diversity,
+                recognizing that it leads to more creative problem-solving and
+                innovative solutions
               </p>
             </div>
           </div>

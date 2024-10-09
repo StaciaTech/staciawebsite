@@ -2,8 +2,8 @@
   --card-height: 40vw;
   --card-margin: 4vw;
   --card-top-offset: 40px;
-  --numcards: 4;
-  --outline-width: 0px;
+  --numcards: 6;
+  /* --outline-width: 0px; */
 }
 
 #cards {
@@ -42,6 +42,7 @@
 
 .stack-scroll {
   width: 85vw;
+  /* min-height: 100vh; */
   margin: 0 auto;
 }
 
@@ -101,7 +102,7 @@
   width: 100%;
   height: 100%;
   border-radius: 40px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .loading {
   background: linear-gradient(
@@ -305,7 +306,7 @@ p {
   padding: 2px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .stack-scroll {
     display: none;
   }

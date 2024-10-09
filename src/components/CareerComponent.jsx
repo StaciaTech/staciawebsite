@@ -9,6 +9,7 @@ import ArrowUp from "../assets/arrowUP.svg";
 import ArrowDown from "../assets/arrowDown.svg";
 import FileLogo from "../assets/fileLogo.svg";
 import Flag from "../assets/flag.png";
+import JobForm from "./careers/JobForm";
 
 function CareerComponent({ data, showApplication, setShowApplication }) {
   const {
@@ -45,68 +46,75 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
     setFormValues({ ...formValues, [queId]: e.target.value });
   };
   return (
-    <div>
-      <div className="opportunities-container">
+    <div
+      className="opportunities-container"
+      onClick={() => {
+        setShowMore(!showMore);
+      }}
+    >
+      {/* <div> */}
+      <div className="opportunity-items">
+        <div className="opportunity-titles">{jobName}</div>
+        <div className="job-arrow">
+          <img src={showMore ? ArrowUp : ArrowDown} alt="" />
+          {}
+        </div>
+      </div>
+      {showMore && (
         <div>
-          <div className="opportunity-items">
-            <div className="opportunity-titles">{jobName}</div>
-            <div
-              className="job-arrow"
-              onClick={() => {
-                setShowMore(!showMore);
-              }}
-            >
-              <img src={showMore ? ArrowUp : ArrowDown} alt="" />
-              { }
+          <div className="careers-exp">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={ExpIcon} alt="" />
+              <span className="job-details">{experience}Years</span>
+            </div>
+            <div className="career-seperator" />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={PayIcon} alt="" />
+              <span className="job-details">{pay}Lakhs</span>
+            </div>
+            <div className="career-seperator" />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={ClockIcon} alt="" />
+              <span className="job-details">{type}</span>
+            </div>
+            <div className="career-seperator" />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={LocIcon} alt="" />
+              <span className="job-details">{location}</span>
+            </div>
+            <div className="career-seperator" />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={ModeIcon} alt="" />
+              <span className="job-details">{mode}</span>
             </div>
           </div>
-          {showMore && (
-            <div>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <img src={ExpIcon} alt="" />
-                  <span className="job-details">{experience}Years</span>
-                </div>
-                <div className="career-seperator" />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <img src={PayIcon} alt="" />
-                  <span className="job-details">{pay}Lakhs</span>
-                </div>
-                <div className="career-seperator" />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <img src={ClockIcon} alt="" />
-                  <span className="job-details">{type}</span>
-                </div>
-                <div className="career-seperator" />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <img src={LocIcon} alt="" />
-                  <span className="job-details">{location}</span>
-                </div>
-                <div className="career-seperator" />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <img src={ModeIcon} alt="" />
-                  <span className="job-details">{mode}</span>
-                </div>
-              </div>
-              <div className="job-description">{description}</div>
-              <div className="responsibility-title">Responsibilities</div>
-              {responsibilities.map((element, index) => {
-                return (
-                  <li key={index} className="responsibility-list">
-                    {element}
-                  </li>
-                );
-              })}
-              <div
-                className="career-apply"
-                onClick={() => {
-                  setShowApplication(true);
-                }}
-              >
-                Apply
-              </div>
-              {showApplication && (
-                <div className="application-overlay">
+          <div className="job-description">{description}</div>
+          <div className="responsibility-title">Responsibilities</div>
+          {responsibilities.map((element, index) => {
+            return (
+              <li key={index} className="responsibility-list">
+                {element}
+              </li>
+            );
+          })}
+          <div
+            className="career-apply"
+            // onClick={() => {
+            //   setShowApplication(true);
+            // }}
+          >
+            Apply
+          </div>
+          {/* {showApplication && (
+            <div
+              style={{
+                position: "relative",
+              }}
+            >
+              <JobForm />
+            </div>
+          )} */}
+          {/*} <div className="application-overlay">
                   <div className="application-box">
                     <div className="application-job-title">{jobName}</div>
                     <div className="application-info">
@@ -307,12 +315,11 @@ function CareerComponent({ data, showApplication, setShowApplication }) {
                     </div>
                   </div>
                 </div>
-              )}
-            </div>
-          )}
-          <div className="line-style" />
+              )} */}
         </div>
-      </div>
+      )}
+      <div className="line-style" />
+      {/* </div> */}
     </div>
   );
 }

@@ -47,8 +47,8 @@
   /* background-color: green; */
 }
 
-.service-section-left>p {
-  color: rgba(255, 255, 255, 0.60);
+.service-section-left > p {
+  color: rgba(255, 255, 255, 0.6);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -69,12 +69,11 @@
   /* background-color: aqua; */
 }
 
-.service-section-right-imgbox>img {
+.service-section-right-imgbox > img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
 
 .service-hero-content {
   width: 1022px;
@@ -155,7 +154,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .service-hero-container {
     /* padding: 30px; */
     padding: 24px;
@@ -190,8 +189,8 @@
     width: 100%;
   }
 
-  .service-section-left>p {
-    color: rgba(255, 255, 255, 0.60);
+  .service-section-left > p {
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

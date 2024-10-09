@@ -92,7 +92,7 @@ export default function MobileStackScroll() {
                   }}
                 >
                   <div className="mobile-card-stack-img-box">
-                    <img src={eachProduct.image} alt="" />
+                    <img src={eachProduct.imageUrl} alt="" />
                   </div>
                 </div>
 

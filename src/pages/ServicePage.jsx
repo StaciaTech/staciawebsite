@@ -88,19 +88,17 @@ function ServicePage() {
                 <div className="service-section-left">
                   <div className="service-overview-title">Overview</div>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Unde aspernatur omnis dolores. Laudantium quod ex veniam
-                    magnam. Officiis quibusdam accusantium sit, dolorum,
-                    sapiente dicta illo tempora veniam omnis magni ab? Expedita
-                    laborum fugiat esse, ratione est ipsum tempore, repellat
-                    minima a explicabo illo voluptate eius architecto odit.
-                    Eligendi, nam ea vitae exercitationem, expedita ducimus
-                    pariatur voluptatem, libero consequatur in nostrum!
+                    tacia Corp provides innovative, tailored solutions across
+                    various industries, including advanced machinery, custom
+                    software, and digital transformation. Our expert team
+                    delivers scalable, high-quality services designed to enhance
+                    efficiency and productivity, helping businesses stay
+                    competitive and grow.
                   </p>
                 </div>
                 <div className="service-section-right">
                   <div className="service-section-right-imgbox">
-                    <img src={ServiceHeroImg} alt="" />
+                    {/* <img src={ServiceHeroImg} alt="" /> */}
                   </div>
                 </div>
               </div>
@@ -108,7 +106,7 @@ function ServicePage() {
           </div>
 
           <div className="all-services">
-            {servData.map(
+            {/* {servData.map(
               (data) =>
                 data.position === 1 && (
                   <>
@@ -144,37 +142,31 @@ function ServicePage() {
                     </div>
                   </>
                 )
-            )}
+            )} */}
             {/* <AllServiceCard data={servData} /> */}
             <div className="all-service-box">
-              {servData.map(
-                (data, i) =>
-                  data.position !== 1 && (
-                    <div className="service-card" key={i}>
-                      <div className="service-card-img-box">
-                        <img src={data.image} alt="" />
-                      </div>
-                      <div className="service-content-box">
-                        <div className="feature-title">{data.title}</div>
+              {servData.map((data, i) => (
+                <div className="service-card" key={i}>
+                  <div className="service-card-img-box">
+                    <img src={data.imageUrl} alt="" />
+                  </div>
+                  <div className="service-content-box">
+                    <div className="feature-title">{data.title}</div>
 
-                        <div className="feature-para" style={{ width: "100%" }}>
-                          {data.des.split(/\s+/, 20).join(" ")}
-                        </div>
-                        <Link
-                          to={`${data.title}/${data._id}`}
-                          onClick={() => window.scrollTo(0, 0)}
-                        >
-                          <div
-                            className="know-more"
-                            style={{ marginTop: "30px" }}
-                          >
-                            Know-more
-                          </div>
-                        </Link>
-                      </div>
+                    <div className="feature-para" style={{ width: "100%" }}>
+                      {data.des.split(/\s+/, 20).join(" ")}
                     </div>
-                  )
-              )}
+                    <Link
+                      to={`${data.title}/${data._id}`}
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
+                      <div className="know-more" style={{ marginTop: "30px" }}>
+                        Know-more
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

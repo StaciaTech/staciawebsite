@@ -18,246 +18,135 @@ import { fetchServices } from "../../redux/slice/serviceSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../SideBar";
 import LoadingStar from "../LoadingStar";
-
-const services = [
-  {
-    feature: true,
-    whatWeDo: [
-      {
-        title: "Ready to Manufacture Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Innovative Machine Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Problem Solving",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "End-of-Arm Tooling",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Designers on Demand",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Concept Development",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-    ],
-    img: s1,
-    serviceTitle: "Project Documentation",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-  },
-  {
-    feature: false,
-    whatWeDo: [
-      {
-        title: "Ready to Manufacture Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Innovative Machine Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Problem Solving",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "End-of-Arm Tooling",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Designers on Demand",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Concept Development",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-    ],
-    img: s2,
-    serviceTitle: "Machine Design",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-  },
-  {
-    feature: false,
-    whatWeDo: [
-      {
-        title: "Ready to Manufacture Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Innovative Machine Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Problem Solving",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "End-of-Arm Tooling",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Designers on Demand",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Concept Development",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-    ],
-    img: s3,
-    serviceTitle: "Cad Modeling",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-  },
-  {
-    feature: false,
-    whatWeDo: [
-      {
-        title: "Ready to Manufacture Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Innovative Machine Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Problem Solving",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "End-of-Arm Tooling",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Designers on Demand",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Concept Development",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-    ],
-    img: s4,
-    serviceTitle: "3D Modeling",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-  },
-  {
-    feature: false,
-    whatWeDo: [
-      {
-        title: "Ready to Manufacture Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Innovative Machine Design",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Problem Solving",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "End-of-Arm Tooling",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Designers on Demand",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-      {
-        title: "Concept Development",
-        desc: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-      },
-    ],
-    img: s5,
-    serviceTitle: "Ansys",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et maecenas praesent congue ac. Blandit in sagittis sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur. ",
-  },
-];
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function SpecificService() {
+  const { id } = useParams();
+  const navigateTo = useNavigate();
+  // console.log(id);
+  // const dispatch = useDispatch();
   const dispatch = useDispatch();
   // const [loading, setLoading] = useState(true);
-  const specificServData = useSelector((state) => state.service);
+  const serviceData = useSelector((state) => state.service);
   useEffect(() => {
     dispatch(fetchServices());
-    // setLoading(specificServData.isLoading);
+    // setLoading(serviceData.isLoading);
   }, []);
 
-  const servDataEach = specificServData.data.serviceBasedPosition;
-  console.log(servDataEach);
-  console.log(specificServData.isLoading);
+  const servData = serviceData.data.serviceBasedPosition;
 
-  const { id } = useParams();
+  const [singleService, setSingleService] = useState();
 
   const [accordion, setAccordion] = useState(0);
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+  const FetchEachService = async () => {
+    try {
+      const res = await axios.get(`${apiUrl}/service/findService/${id}`);
+      // console.log(res.data.selectedService);
+      setSingleService(res.data.selectedService);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    FetchEachService();
+  }, []);
+
+  const RemainingServices = servData?.filter((eachServ) => eachServ._id !== id);
 
   return (
     <>
       <NavBar />
       <SideBar />
 
-      {specificServData.isLoading ? (
-        <div>
-          <LoadingStar />
-        </div>
-      ) : (
-        <div>
-          {servDataEach.map(
-            (reqObj) =>
-              reqObj._id === id && (
-                <div>
-                  <div className="service-hero-container">
-                    <div className="service-hero-section">
-                      <div className="service-title">{reqObj.title}</div>
-                      <div className="service-section1-content-box">
-                        <div className="service-section-left">
-                          <div className="service-overview-title">Overview</div>
-                          <p>{reqObj.des}</p>
-                          <div className="get-a-free-quote">
-                            Get a free quote
-                          </div>
-                        </div>
-                        <div className="service-section-right">
-                          <div className="service-section-right-imgbox">
-                            <img src={reqObj.image} alt="" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="specific-service-section2">
-                    <div className="whatwedo">What We Do ?</div>
-                    <div className="what-we-do-grid">
-                      {/* {thisService.whatWeDo.map((data) => (
-            <WhatWeDoCard title={data.title} desc={data.desc} />
-          ))} */}
-                    </div>
-                    <div className="what-we-do-accordion-container">
-                      {/* {thisService.whatWeDo.map((data) => (
-            <WhatWeDoAccordion title={data.title} desc={data.desc} />
-          ))} */}
-                    </div>
-                  </div>
+      <div>
+        <div className="service-hero-container">
+          <div className="service-hero-section">
+            <div className="service-title">{singleService?.title}</div>
+            <div className="service-section1-content-box">
+              <div className="service-section-left">
+                <div className="service-overview-title">Overview</div>
+                <p>{singleService?.des}</p>
+                {/* <div className="get-a-free-quote">Get a free quote</div> */}
+              </div>
+              <div className="service-section-right">
+                <div className="service-section-right-imgbox">
+                  {/* <img src={singleService?.image} alt="" /> */}
                 </div>
-              )
-          )}
+              </div>
+            </div>
+          </div>
         </div>
-      )}
 
+        <div className="specific-service-section2">
+          <div className="whatwedo">What We Do ?</div>
+          <div className="what-we-do-grid">
+            {singleService?.form.map((data, i) => (
+              <WhatWeDoCard
+                key={i}
+                title={data?.heading}
+                desc={data?.description}
+              />
+            ))}
+          </div>
+          <div className="what-we-do-accordion-container">
+            {singleService?.form.map((data, i) => (
+              <WhatWeDoAccordion
+                key={i}
+                title={data?.heading}
+                desc={data?.description}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <>
+        <div className="remaining-products-card-container-holder">
+          <div>Other Products</div>
+          <div className="remaining-products-card-container">
+            {RemainingServices?.map((eachPro, i) => (
+              <>
+                {i < 6 && (
+                  // <div key={i}>
+                  <div className="single-product-card" key={i}>
+                    <div
+                      // style={{ width: "100%", height: "20rem" }}
+                      className="single-product-card-img-container pointer"
+                      onClick={() => {
+                        navigateTo(`/product/${eachPro._id}`);
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      <img
+                        src={eachPro.imageUrl}
+                        alt=""
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </div>
+                    <div
+                      className="single-product-card-title pointer"
+                      onClick={() => {
+                        navigateTo(`/product/${eachPro._id}`);
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      {eachPro.title}
+                    </div>
+                    <p className="single-product-card-des">{eachPro.des}</p>
+                  </div>
+                  // </div>
+                )}
+              </>
+            ))}
+          </div>
+        </div>
+      </>
       <Footer />
       <MobileFooter />
     </>

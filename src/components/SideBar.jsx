@@ -7,6 +7,7 @@ import MoibileNav from "../assets/MobileNav.png";
 import ContactIcon from "../assets/ContactIcon.svg";
 import Cancle from "../assets/close-delete-remove-3_svgrepo.com.svg";
 import ArrowUp from "../assets/arrowUP.svg";
+import Contact from "./Contact";
 
 function SideBar() {
   const navigateTo = useNavigate();
@@ -30,6 +31,10 @@ function SideBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [showDropdown]);
+  const [showContact, setShowContact] = useState(false);
+  const closeHandle = () => {
+    setShowContact(false);
+  };
 
   return (
     <div
@@ -93,7 +98,9 @@ function SideBar() {
                     // objectFit: "cover",
                     // backgroundColor: "red",
                   }}
+                  onClick={() => setShowContact(true)}
                 />
+                {showContact && <Contact closeHandle={closeHandle} />}
               </div>
             )}
           </div>
@@ -125,6 +132,17 @@ function SideBar() {
         <div
           className="side-bar-item-containers"
           onClick={() => {
+            navigateTo("/project");
+            window.scrollTo(0, 0);
+          }}
+        >
+          <div className="side-bar-items">Projects</div>
+          <img src={ArrowUp} alt="" className="arrow" />
+        </div>
+        <div className="horizontal-line" />
+        <div
+          className="side-bar-item-containers"
+          onClick={() => {
             navigateTo("/product");
             window.scrollTo(0, 0);
           }}
@@ -140,7 +158,29 @@ function SideBar() {
             window.scrollTo(0, 0);
           }}
         >
-          <div className="side-bar-items">career</div>
+          <div className="side-bar-items">Career</div>
+          <img src={ArrowUp} alt="" className="arrow" />
+        </div>
+        <div className="horizontal-line" />
+        <div
+          className="side-bar-item-containers"
+          onClick={() => {
+            navigateTo("/article");
+            window.scrollTo(0, 0);
+          }}
+        >
+          <div className="side-bar-items">Article</div>
+          <img src={ArrowUp} alt="" className="arrow" />
+        </div>
+        <div className="horizontal-line" />
+        <div
+          className="side-bar-item-containers"
+          onClick={() => {
+            navigateTo("/case-study");
+            window.scrollTo(0, 0);
+          }}
+        >
+          <div className="side-bar-items">Case Study</div>
           <img src={ArrowUp} alt="" className="arrow" />
         </div>
       </div>

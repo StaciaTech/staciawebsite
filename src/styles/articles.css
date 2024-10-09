@@ -17,9 +17,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .article-title1 {
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255);
   font-size: 120px;
   font-style: normal;
   font-weight: 600;
@@ -134,4 +135,9 @@
   border-radius: 30px;
   padding: 3px 10px;
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .article-title1 {
+    font-size: 3rem;
+  }
 }

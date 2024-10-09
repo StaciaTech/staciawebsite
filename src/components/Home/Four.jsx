@@ -1,43 +1,42 @@
 import React from "react";
 import "../../styles/Four.css";
 import FourCard from "./FourCard";
-import p1 from "../../assets/p1.png";
-import p2 from "../../assets/p2.png";
-import p3 from "../../assets/p3.png";
-import p4 from "../../assets/p4.png";
+import p1 from "../../assets/sarabesh.png";
+import p2 from "../../assets/lakshman.png";
+import p3 from "../../assets/revanth.png";
+import p4 from "../../assets/prahalad.png";
 
 const fourData = [
   {
     id: 1,
-    pos: "Position",
+    pos: "Founder Partner, CEO",
     img: p1,
     name: "Sarabesh Sriram",
-    about:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, pariatur molestiae cupiditate aut tempora delectus maiores suscipit, incidunt perferendis odio nobis soluta unde quo natus magni dolorum doloribus veritatis dignissimos?",
+    about: `Founder of Stacia Corp, Sastem Global, and Stacia Tech. Expert in mechanical engineering and data science, leading innovations in agriculture and smart homes. His "OneDril" machine revolutionized farming and earned government recognition.`,
   },
   {
     id: 2,
-    pos: "Position",
+    pos: "Founder Partner, COO",
     img: p2,
-    name: "Reveanth",
+    name: "Lakshman PV",
     about:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, pariatur molestiae cupiditate aut tempora delectus maiores suscipit, incidunt perferendis odio nobis soluta unde quo natus magni dolorum doloribus veritatis dignissimos?",
+      "Founder of Stacia Corp and Director at SASTEM Global. Expert in mechanical engineering and business analytics. Leads AI-powered ERP solutions and innovative machinery development for food processing and agriculture sectors.",
   },
   {
     id: 3,
-    pos: "Position",
+    pos: "Founder Partner, CTO",
     img: p3,
-    name: "Lakshmanan",
+    name: "Revanth S",
     about:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, pariatur molestiae cupiditate aut tempora delectus maiores suscipit, incidunt perferendis odio nobis soluta unde quo natus magni dolorum doloribus veritatis dignissimos?",
+      "Co-founder of Stacia Tech. Specializes in mechanical engineering, software development, and DevOps. Drives ERP systems and digital transformation in manufacturing with a focus on efficient, scalable solutions.",
   },
   {
     id: 4,
-    pos: "Position",
+    pos: "US Regional Director",
     img: p4,
-    name: "Gowtham",
+    name: "Prahlad Saravanapriyan",
     about:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, pariatur molestiae cupiditate aut tempora delectus maiores suscipit, incidunt perferendis odio nobis soluta unde quo natus magni dolorum doloribus veritatis dignissimos?",
+      "Mentor and US Regional Director at StaciaCorp. Expert in robotics, semiconductor systems, and sustainable energy. Founder of FUTURE HQ, educating 1,100+ members on technology. DECA award-winner and Carnatic violinist.",
   },
 ];
 

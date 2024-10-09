@@ -56,16 +56,19 @@ function ProductPage() {
           <LoadingStar />
         </div>
       ) : (
-        <div>
+        <>
           <div className="product_container">
             <div className="product_section p-section">
               <div className="product_text">Stacia Corp Products</div>
               <div className="product_description">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Error consectetur dolores possimus quasi accusantium, suscipit
-                  doloribus placeat rerum corrupti. Laudantium illo sunt dolore,
-                  similique repellendus blanditiis ex dolorem facere quasi?
+                  At Stacia Corp, we develop cutting-edge products that drive
+                  innovation across industries. From advanced agricultural
+                  machinery to smart home solutions and industrial automation,
+                  our products are designed to enhance efficiency,
+                  sustainability, and user convenience. Each product is crafted
+                  with precision to meet the unique needs of our customers,
+                  ensuring quality and performance at every level.
                 </p>
               </div>
             </div>
@@ -91,7 +94,7 @@ function ProductPage() {
                         <div
                           className="p-mask"
                           style={{
-                            backgroundImage: `url(${eachProduct.image})`,
+                            backgroundImage: `url(${eachProduct.imageUrl})`,
                             backgroundSize: "contain",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
@@ -110,25 +113,30 @@ function ProductPage() {
             </div>
 
             <div>
-              {proData.map((data, index) => (
-                <div style={{ position: "sticky", top: "11%" }}>
-                  {data.position !== 1 && (
-                    <ProductComponent2
-                      bigText1={data.title}
-                      productName={data.title}
-                      productImg={data.image}
-                      bigText2={data.title}
-                      des={data.des}
-                      id={data._id}
-                      bgColor={productBg[index % productBg.length]}
-                    />
-                  )}
-                </div>
-              ))}
+              {proData.map((data, index) => {
+                const wordArr = data?.title.split(" ");
+                // console.log(wordArr);
+
+                return (
+                  <div style={{ position: "sticky", top: "80px" }}>
+                    {data.position !== 1 && (
+                      <ProductComponent2
+                        bigText1={wordArr[0]}
+                        productName={data.title}
+                        productImg={data.imageUrl}
+                        bigText2={wordArr[1] || wordArr[0]}
+                        des={data.des}
+                        id={data._id}
+                        bgColor={productBg[index % productBg.length]}
+                      />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
           <MobileProduct productData={proData} isLoading={data.isLoading} />
-        </div>
+        </>
       )}
       <Footer />
       <MobileFooter />
