@@ -109,10 +109,10 @@
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .single-casestudy-title,
   .single-casestudy-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
   }
   .single-casestudy-content-container {
@@ -158,5 +158,8 @@
   }
   .single-casestudy-layout2 > *:nth-child(4) {
     grid-column: span 2;
+  }
+  .single-casestudy-layout1-title {
+    font-size: 2rem;
   }
 }

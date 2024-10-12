@@ -17,6 +17,11 @@
 }
 .reusable-art-des {
   color: #6b6084;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .reusable-art-content-container {
   padding: 1rem 0rem;
@@ -35,7 +40,7 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .reusable-art-container {
     display: grid;
     grid-template-columns: 1fr;

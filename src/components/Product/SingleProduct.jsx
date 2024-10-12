@@ -188,7 +188,7 @@ export default function SingleProduct() {
                       <div className="split">
                         <div className="image-area">
                           <img
-                            src={slides[currentSlide].imageUrl}
+                            src={slides[currentSlide].image}
                             alt={slides[currentSlide].alt}
                           />
                         </div>

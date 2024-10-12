@@ -1,7 +1,7 @@
 .working-text {
   font-size: 1.5rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .working-text {
     font-size: 0.75rem;
   }

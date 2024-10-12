@@ -14,6 +14,8 @@ export default function ServiceDisplay() {
   const dispatch = useDispatch();
 
   const homeServData = useSelector((state) => state.service);
+  console.log(homeServData);
+
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);

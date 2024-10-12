@@ -76,16 +76,13 @@ export default function MobileProduct({ productData, isLoading }) {
         <div className="mobile-product-overview">
           <div className="mobile-overview--title">Overview</div>
           <p>
-            Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-            tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-            maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-            aliquam. Lorem ipsum dolor sit amet consectetur. Blandit in sagittis
-            sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur.
-            Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas
-            tempor nunc nec habitant. Dolor vulputate tempor sagittis et
-            maecenas praesent congue ac. Blandit in sagittis sem quis lectus
-            aliquam. Lorem ipsum dolor sit amet consectetur. Blandit in sagittis
-            sem quis lectus aliquam. Lorem ipsum dolor sit amet consectetur.{" "}
+            At Stacia Corp, we develop cutting-edge products that drive
+            innovation across industries. From advanced agricultural machinery
+            to smart home solutions and industrial automation, our products are
+            designed to enhance efficiency, sustainability, and user
+            convenience. Each product is crafted with precision to meet the
+            unique needs of our customers, ensuring quality and performance at
+            every level.{" "}
           </p>
         </div>
       </div>
@@ -93,7 +90,7 @@ export default function MobileProduct({ productData, isLoading }) {
         {productData.map((data) => (
           <MobileProductCard
             proName={data.title}
-            proImg={data.image}
+            proImg={data.imageUrl}
             // color={data.color}
             proDesc={data.des}
             proId={data._id}

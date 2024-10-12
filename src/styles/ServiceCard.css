@@ -31,7 +31,7 @@
   margin-top: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .all-service-box {
     flex-direction: column;
   }

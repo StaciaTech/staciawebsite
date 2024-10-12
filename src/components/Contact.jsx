@@ -7,6 +7,8 @@ import PhoneInput from "react-phone-number-input";
 import axios from "axios";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const titles = [
   "Information Technology",
@@ -32,8 +34,14 @@ function Contact({ closeHandle }) {
       !phoneValue ||
       organization === "Select Your Organization*"
     ) {
-      alert("Please fill all required fields!");
-      // return;
+      // alert("Please fill all required fields!");
+      toast.success("Fill all fields", {
+        style: {
+          backgroundColor: "red",
+          color: "white",
+          textAlign: "center",
+        },
+      });
     } else {
       formPost();
     }
@@ -55,12 +63,18 @@ function Contact({ closeHandle }) {
       );
       console.log(response);
       if (response.data.success) {
-        alert("Form submitted successfully!");
         setNameValue("");
         setMailValue("");
         setPhoneValue("");
         setMessageValue("");
         setOrganization("Select Your Organization*");
+        toast.success("🎉 Successfully Message Sent!!", {
+          style: {
+            backgroundColor: "#008e2f",
+            color: "white",
+            textAlign: "center",
+          },
+        });
       }
     } catch (error) {
       console.log(error);
@@ -190,6 +204,13 @@ function Contact({ closeHandle }) {
           </div>
         </div>
       </div>
+      <ToastContainer
+        autoClose={1000}
+        position="top-center"
+        closeButton={false}
+        hideProgressBar={true}
+        icon={false}
+      />
     </div>
   );
 }

@@ -83,3 +83,51 @@
 .article-learn-more-link {
   color: #0047ff;
 }
+
+/* Mobile Article styles*/
+.mobile-article {
+  padding: 1.5rem;
+}
+.mobile-article-title {
+  color: #e0e0e0;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 2rem auto;
+}
+.mobile-article-card-container {
+  display: flex;
+  overflow-x: auto;
+  column-gap: 1.5rem;
+}
+.mobile-article-card-container::-webkit-scrollbar {
+  display: none;
+}
+.mobile-article-card {
+  min-width: 90%;
+  background-image: linear-gradient(to bottom, #0d022500, #0d0225cc),
+    url("../../assets/artHomeImg.png");
+  border-radius: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem;
+}
+.mobile-article-card-content {
+  margin-top: 30%;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .article-outline-holder,
+  .article-slider,
+  .articles-title {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobile-article {
+    display: none;
+  }
+}

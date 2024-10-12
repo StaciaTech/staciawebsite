@@ -20,6 +20,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  width: fit-content;
   position: relative;
 }
 
@@ -115,4 +116,10 @@
   border-radius: 30px;
   padding: 3px 10px;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .case-study-title1 {
+    font-size: 2rem;
+  }
 }

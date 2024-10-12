@@ -12,6 +12,7 @@ import { allJobs } from "../data/JobsData";
 import CareerMobileCulture from "../components/careers/careerMobileCulture";
 import MobileFooter from "../components/MobileFooter";
 import SideBar from "../components/SideBar";
+import Star from "../components/Star";
 
 function CareerPage() {
   const [Jobs] = useState(allJobs);
@@ -24,7 +25,10 @@ function CareerPage() {
       <div className="career-hero-section">
         <div className="career-hero-contents">
           <div className="career-title-section">
-            <div className="career-title">Careers</div>
+            <div className="career-title">
+              <span>Careers</span>
+              <Star />
+            </div>
             <div style={{ opacity: "0.6", fontSize: "30px", fontWeight: 500 }}>
               In Stacia Corp
             </div>

@@ -7,25 +7,7 @@ import ReUsableArticle from "../components/ReUsableComp/ReUsableArticle";
 import axios from "axios";
 import MobileFooter from "../components/MobileFooter";
 import SideBar from "../components/SideBar";
-
-const ArtData = [
-  {
-    title: "lorem ipsum",
-    des: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et",
-  },
-  {
-    title: "lorem ipsum",
-    des: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et",
-  },
-  {
-    title: "lorem ipsum",
-    des: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et",
-  },
-  {
-    title: "lorem ipsum",
-    des: "Lorem ipsum dolor sit amet consectetur. Ullamcorper eu egestas tempor nunc nec habitant. Dolor vulputate tempor sagittis et",
-  },
-];
+import Star from "../components/Star";
 
 function ArticlesPage() {
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -52,7 +34,10 @@ function ArticlesPage() {
       {/* Articles Intro*/}
       <div className="article-section1">
         <div className="article-section-overlay">
-          <div className="article-title1">Articles</div>
+          <div className="article-title1">
+            <span>Articles</span>
+            <Star />
+          </div>
         </div>
       </div>
       {/* <div className="article-section2" style={{ marginBottom: 100 }}>

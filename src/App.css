@@ -258,6 +258,7 @@ p {
 .mobile-card-stack-img-box > img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .mobile-card-stack-title {
@@ -303,10 +304,15 @@ p {
   border-radius: 8px;
   opacity: 0.5;
   background: rgba(255, 255, 255, 0.15);
-  padding: 2px;
+  padding: 0.5rem 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .stack-scroll {
     display: none;
   }

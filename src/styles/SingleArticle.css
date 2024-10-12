@@ -158,10 +158,11 @@
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .single-article-title,
   .single-article-heading {
     font-size: 2rem;
+    text-align: center;
   }
   .single-article-content-card-container {
     padding: 1rem;
@@ -176,6 +177,7 @@
   .single-article-main-content-content,
   .single-article-layout-2-content-container {
     width: 100%;
+    box-sizing: border-box;
   }
   .single-article-main-content-image,
   .single-article-layout-2-image-contain {

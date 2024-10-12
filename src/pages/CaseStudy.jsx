@@ -9,6 +9,7 @@ import ReUsableArticle from "../components/ReUsableComp/ReUsableArticle";
 import SideBar from "../components/SideBar";
 import MobileFooter from "../components/MobileFooter";
 import CsImg from "../assets/csimg2.png";
+import Star from "../components/Star";
 
 const ArtData = [
   {
@@ -29,6 +30,7 @@ export default function CaseStudy() {
         <div className="case-study-section-overlay">
           <div className="case-study-title1">
             <span>Case Study</span>
+            <Star />
           </div>
           {/* <div className="case-study-text">Case Study</div>
           <div className="case-study-text">Lorem</div> */}

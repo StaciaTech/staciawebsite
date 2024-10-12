@@ -178,7 +178,7 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* .specific-service-content {
         flex-direction: column-reverse;
         padding: 30px;

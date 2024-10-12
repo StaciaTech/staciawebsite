@@ -25,6 +25,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  width: fit-content;
+  position: relative;
 }
 .article-text {
   color: #fff;
@@ -136,7 +138,7 @@
   padding: 3px 10px;
   color: #fff;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .article-title1 {
     font-size: 3rem;
   }

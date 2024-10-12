@@ -22,6 +22,7 @@ import { fetchProducts } from "../redux/slice/productSlice";
 // import { styled } from "styled-components";
 import SideBar from "../components/SideBar";
 import LoadingStar from "../components/LoadingStar";
+import Star from "../components/Star";
 
 const productBg = [
   "#F0F3FD",
@@ -59,7 +60,10 @@ function ProductPage() {
         <>
           <div className="product_container">
             <div className="product_section p-section">
-              <div className="product_text">Stacia Corp Products</div>
+              <div className="product_text">
+                <span>Stacia Corp Products</span>
+                <Star />
+              </div>
               <div className="product_description">
                 <p>
                   At Stacia Corp, we develop cutting-edge products that drive

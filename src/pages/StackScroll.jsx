@@ -12,7 +12,7 @@ const StackScroll = () => {
     },
     {
       id: 2,
-      background: "linear-gradient(259deg, #7AA00C -8.27%, #FCDF00 86.58%)",
+      background: "linear-gradient(259deg, #8566ea -8.27%, #d296fa 86.58%)",
     },
     {
       id: 3,
@@ -24,11 +24,11 @@ const StackScroll = () => {
     },
     {
       id: 5,
-      background: "linear-gradient(259deg, #2A35B3 4.78%, #1485CB 94.3%)",
+      background: "linear-gradient(259deg, #260931 4.78%, #C9B0CE 94.3%)",
     },
     {
       id: 6,
-      background: "linear-gradient(259deg, #CB2B5E -8.27%, #773987 86.58%)",
+      background: "linear-gradient(259deg, #232131 -8.27%, #8C87A4 86.58%)",
     },
   ];
   const dispatch = useDispatch();

@@ -132,22 +132,22 @@ function SideBar() {
         <div
           className="side-bar-item-containers"
           onClick={() => {
-            navigateTo("/project");
+            navigateTo("/product");
             window.scrollTo(0, 0);
           }}
         >
-          <div className="side-bar-items">Projects</div>
+          <div className="side-bar-items">Products</div>
           <img src={ArrowUp} alt="" className="arrow" />
         </div>
         <div className="horizontal-line" />
         <div
           className="side-bar-item-containers"
           onClick={() => {
-            navigateTo("/product");
+            navigateTo("/project");
             window.scrollTo(0, 0);
           }}
         >
-          <div className="side-bar-items">Products</div>
+          <div className="side-bar-items">Projects</div>
           <img src={ArrowUp} alt="" className="arrow" />
         </div>
         <div className="horizontal-line" />

@@ -102,7 +102,10 @@ export default function MobileStackScroll() {
                   </div>
                   <div
                     className="mobile-card-stack-learn-more"
-                    onClick={() => navigateTo(`/product/${eachProduct._id}`)}
+                    onClick={() => {
+                      navigateTo(`/product/${eachProduct._id}`);
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     Learn more
                   </div>

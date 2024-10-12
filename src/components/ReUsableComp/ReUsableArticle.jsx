@@ -25,7 +25,7 @@ function ReUsableArticle({ data, path }) {
               <div className="reusable-art-title">{eachItem.mainTitle}</div>
               <p className="reusable-art-des">{eachItem.mainDesc}</p>
               <div
-                className="reusable-art-know-more"
+                className="reusable-art-know-more pointer"
                 onClick={() => {
                   navigate(`${path}/${eachItem._id}`);
                   window.scrollTo(0, 0);

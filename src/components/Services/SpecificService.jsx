@@ -44,7 +44,7 @@ export default function SpecificService() {
   const FetchEachService = async () => {
     try {
       const res = await axios.get(`${apiUrl}/service/findService/${id}`);
-      // console.log(res.data.selectedService);
+      console.log(res.data.selectedService);
       setSingleService(res.data.selectedService);
     } catch (error) {
       console.log(error);

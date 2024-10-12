@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
@@ -37,6 +37,8 @@ import OurProjects from "../components/Home/OurProjects";
 import Articles from "../components/Home/Articles";
 import SideBar from "../components/SideBar";
 import Contact from "../components/Contact";
+import MobileArticle from "../components/Home/MobileArticle";
+import Star from "../components/Star";
 
 const clients = [
   client1,
@@ -67,7 +69,7 @@ function HomePage() {
   }, []);
 
   return (
-    <>
+    <div>
       <NavBar />
       <SideBar />
       {/* <Contact /> */}
@@ -76,8 +78,21 @@ function HomePage() {
       <div className="home">
         <div className="homeSection">
           <div className="texts">
-            <div className="heroText">Stacia Corp Partners For</div>
-            <div className="changingText">Focused</div>
+            <div className="heroText">
+              <span>Stacia Corp Redefining</span> <Star />
+            </div>
+            <div className="changingText">
+              <div className="changing-word">Innovation</div>
+              <div className="changing-word">Growth</div>
+              <div className="changing-word">Productivity</div>
+              <div className="changing-word">Efficiency</div>
+              <div className="changing-word">Development</div>
+              <div className="changing-word">Transformation</div>
+              <div className="changing-word">Optimization</div>
+              <div className="changing-word">Progress</div>
+              <div className="changing-word">Sustainability</div>
+              <div className="changing-word">Scalability</div>
+            </div>
           </div>
         </div>
       </div>
@@ -174,6 +189,7 @@ function HomePage() {
       {/* Home Articles  */}
 
       <Articles />
+      <MobileArticle />
       {/* foundation four */}
       <Four />
 
@@ -184,7 +200,7 @@ function HomePage() {
       <Footer />
 
       <MobileFooter />
-    </>
+    </div>
   );
 }
 

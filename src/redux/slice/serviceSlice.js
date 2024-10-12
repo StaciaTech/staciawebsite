@@ -6,7 +6,6 @@ export const fetchServices = createAsyncThunk("fetchservices", async () => {
   try {
     const res = await axios(`${apiUrl}/service/all-service`);
     console.log(res.data);
-
     return res.data;
   } catch (error) {
     console.log(error);

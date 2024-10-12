@@ -11,6 +11,10 @@
   z-index: 9;
 }
 
+/* .logo-rotate {
+  animation: rotate 5s ease-in-out;
+} */
+
 .nav-left {
   display: flex;
   align-items: center;
@@ -269,7 +273,7 @@ a.active {
   line-height: normal;
 } */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-container {
     height: 70px;
   }
@@ -313,5 +317,14 @@ a.active {
   }
   .nav-container {
     display: none;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }

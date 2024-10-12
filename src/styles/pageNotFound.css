@@ -30,7 +30,7 @@
   margin: 20px;
   font-size: 1.5rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .number-style {
     font-size: 4rem;
     font-weight: 600;

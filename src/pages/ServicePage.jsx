@@ -19,44 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchServices } from "../redux/slice/serviceSlice";
 import { Link } from "react-router-dom";
 import LoadingStar from "../components/LoadingStar";
-
-const services = [
-  {
-    feature: true,
-    img: s1,
-    serviceTitle: "Project Documentation",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod alias facilis nihil placeat odio ipsum, esse nam est dicta quisquam mollitia, nobis suscipit quasi architecto incidunt numquam repudiandae aut.Nemo ipsam accusamus minima incidunt quibusdam, qui omnis quos aut? Illum quod quisquam hic perspiciatis tenetur provident quasi ad tempore nulla libero enim ipsa, aut impedit numquam, nesciunt dolorum inventore! Perferendis laboriosam dolorum impedit numquam magni corporis ipsum quo inventore et soluta reiciendis asperiores, dolore nihil dignissimos nulla recusandae natus eius adipisci itaque quae dicta libero voluptate deserunt! Dolore, sint! Natus error debitis iste, soluta sapiente dignissimos? Doloremque asperiores delectus iste odit molestiae, quo et aperiam dolorem incidunt cumque repellat ipsam rem vitae! Maiores eum sunt asperiores aspernatur est a.",
-  },
-  {
-    feature: false,
-    img: s2,
-    serviceTitle: "Machine Design",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod alias facilis nihil placeat odio ipsum, esse nam est dicta quisquam mollitia, nobis suscipit quasi architecto incidunt numquam repudiandae aut.Nemo ipsam accusamus minima incidunt quibusdam, qui omnis quos aut? Illum quod quisquam hic perspiciatis tenetur provident quasi ad tempore nulla libero enim ipsa, aut impedit numquam, nesciunt dolorum inventore! Perferendis laboriosam dolorum impedit numquam magni corporis ipsum quo inventore et soluta reiciendis asperiores, dolore nihil dignissimos nulla recusandae natus eius adipisci itaque quae dicta libero voluptate deserunt! Dolore, sint! Natus error debitis iste, soluta sapiente dignissimos? Doloremque asperiores delectus iste odit molestiae, quo et aperiam dolorem incidunt cumque repellat ipsam rem vitae! Maiores eum sunt asperiores aspernatur est a.",
-  },
-  {
-    feature: false,
-    img: s3,
-    serviceTitle: "Cad Modeling",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod alias facilis nihil placeat odio ipsum, esse nam est dicta quisquam mollitia, nobis suscipit quasi architecto incidunt numquam repudiandae aut.Nemo ipsam accusamus minima incidunt quibusdam, qui omnis quos aut? Illum quod quisquam hic perspiciatis tenetur provident quasi ad tempore nulla libero enim ipsa, aut impedit numquam, nesciunt dolorum inventore! Perferendis laboriosam dolorum impedit numquam magni corporis ipsum quo inventore et soluta reiciendis asperiores, dolore nihil dignissimos nulla recusandae natus eius adipisci itaque quae dicta libero voluptate deserunt! Dolore, sint! Natus error debitis iste, soluta sapiente dignissimos? Doloremque asperiores delectus iste odit molestiae, quo et aperiam dolorem incidunt cumque repellat ipsam rem vitae! Maiores eum sunt asperiores aspernatur est a.",
-  },
-  {
-    feature: false,
-    img: s4,
-    serviceTitle: "3D Modeling",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod alias facilis nihil placeat odio ipsum, esse nam est dicta quisquam mollitia, nobis suscipit quasi architecto incidunt numquam repudiandae aut.Nemo ipsam accusamus minima incidunt quibusdam, qui omnis quos aut? Illum quod quisquam hic perspiciatis tenetur provident quasi ad tempore nulla libero enim ipsa, aut impedit numquam, nesciunt dolorum inventore! Perferendis laboriosam dolorum impedit numquam magni corporis ipsum quo inventore et soluta reiciendis asperiores, dolore nihil dignissimos nulla recusandae natus eius adipisci itaque quae dicta libero voluptate deserunt! Dolore, sint! Natus error debitis iste, soluta sapiente dignissimos? Doloremque asperiores delectus iste odit molestiae, quo et aperiam dolorem incidunt cumque repellat ipsam rem vitae! Maiores eum sunt asperiores aspernatur est a.",
-  },
-  {
-    feature: false,
-    img: s5,
-    serviceTitle: "Ansys",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod alias facilis nihil placeat odio ipsum, esse nam est dicta quisquam mollitia, nobis suscipit quasi architecto incidunt numquam repudiandae aut.Nemo ipsam accusamus minima incidunt quibusdam, qui omnis quos aut? Illum quod quisquam hic perspiciatis tenetur provident quasi ad tempore nulla libero enim ipsa, aut impedit numquam, nesciunt dolorum inventore! Perferendis laboriosam dolorum impedit numquam magni corporis ipsum quo inventore et soluta reiciendis asperiores, dolore nihil dignissimos nulla recusandae natus eius adipisci itaque quae dicta libero voluptate deserunt! Dolore, sint! Natus error debitis iste, soluta sapiente dignissimos? Doloremque asperiores delectus iste odit molestiae, quo et aperiam dolorem incidunt cumque repellat ipsam rem vitae! Maiores eum sunt asperiores aspernatur est a.",
-  },
-];
+import Star from "../components/Star";
 
 function ServicePage() {
   const dispatch = useDispatch();
@@ -80,29 +43,32 @@ function ServicePage() {
           <LoadingStar />
         </div>
       ) : (
-        <div>
+        <>
           <div className="service-hero-container">
-            <div className="service-hero-section">
-              <div className="service-title">Our Services</div>
-              <div className="service-section1-content-box">
-                <div className="service-section-left">
-                  <div className="service-overview-title">Overview</div>
-                  <p>
-                    tacia Corp provides innovative, tailored solutions across
-                    various industries, including advanced machinery, custom
-                    software, and digital transformation. Our expert team
-                    delivers scalable, high-quality services designed to enhance
-                    efficiency and productivity, helping businesses stay
-                    competitive and grow.
-                  </p>
-                </div>
-                <div className="service-section-right">
-                  <div className="service-section-right-imgbox">
-                    {/* <img src={ServiceHeroImg} alt="" /> */}
-                  </div>
+            {/* <div className="service-hero-section"> */}
+            <div className="service-title">
+              <span>Our Services</span>
+              <Star />
+            </div>
+            <div className="service-section1-content-box">
+              <div className="service-section-left">
+                <div className="service-overview-title">Overview</div>
+                <p>
+                  Stacia Corp provides innovative, tailored solutions across
+                  various industries, including advanced machinery, custom
+                  software, and digital transformation. Our expert team delivers
+                  scalable, high-quality services designed to enhance efficiency
+                  and productivity, helping businesses stay competitive and
+                  grow.
+                </p>
+              </div>
+              <div className="service-section-right">
+                <div className="service-section-right-imgbox">
+                  {/* <img src={ServiceHeroImg} alt="" /> */}
                 </div>
               </div>
             </div>
+            {/* </div> */}
           </div>
 
           <div className="all-services">
@@ -169,7 +135,7 @@ function ServicePage() {
               ))}
             </div>
           </div>
-        </div>
+        </>
       )}
 
       <Footer />
