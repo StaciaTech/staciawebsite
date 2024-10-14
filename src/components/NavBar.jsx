@@ -11,18 +11,18 @@ import ActiveStar from "../assets/ActiveStar.png";
 import WhatsNew from "./WhatsNew";
 import Modal from "react-modal";
 import Contact from "./Contact";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation, motion, AnimatePresence } from "framer-motion";
 function NavBar() {
   const [openWhatsNew, setOpenWhatsNew] = useState(0);
   const [showContact, setShowContact] = useState(false);
   const [logo, setLogo] = useState(StaciaLogo);
-  const closeHandle = () => {
-    setShowContact(false);
-  };
-
   const controls = useAnimation();
   const [scrollY, setScrollY] = useState(0);
   const animationStarted = useRef(false);
+  const [text, setText] = useState("Innovating for you");
+  const closeHandle = () => {
+    setShowContact(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,20 +83,31 @@ function NavBar() {
       },
     },
   };
-
-  const text = "Innovating for you";
-
-  const changeLogo = () => {
-    if (logo == StaciaLogo) {
-      setLogo(five);
-    } else {
-      setLogo(StaciaLogo);
-    }
+  const flipVariants = {
+    hidden: {
+      rotateY: 90,
+      opacity: 0,
+      transition: { duration: 0.5 },
+    },
+    visible: {
+      rotateY: 0,
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
   };
 
-  setInterval(() => {
-    changeLogo();
-  }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLogo((prevLogo) => (prevLogo === StaciaLogo ? five : StaciaLogo));
+      setText((prevText) =>
+        prevText === "Innovating for you"
+          ? "Celebrating 5th Anniversary"
+          : "Innovating for you"
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="nav-container">
@@ -118,8 +129,9 @@ function NavBar() {
               columnGap: "0.75rem",
             }}
           >
-            <img
-              src={StaciaLogo}
+            <motion.img
+              key={logo} // Key changes to trigger animation
+              src={logo}
               alt=""
               className="logo-rotate"
               style={{
@@ -127,6 +139,10 @@ function NavBar() {
                 width: "3rem",
                 objectFit: "contain",
               }}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={flipVariants}
             />
             <div
               style={{
@@ -140,25 +156,32 @@ function NavBar() {
                 style={{ width: "90%", height: "100%", objectFit: "contain" }}
               />
               <motion.div
-                style={{ display: "flex" }} // Flex container to align letters
-                initial="visible"
-                animate={controls}
+                style={{ display: "flex" }}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
                 variants={containerVariants}
                 className="nav-logo-text"
+                key={text} // This ensures the text animation is triggered on change
               >
-                {text.split("").map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    style={{
-                      display: "inline-block",
-                      fontFamily: "Euclid",
-                    }}
-                    variants={letterVariants}
-                  >
-                    {letter === " " ? "\u00A0" : letter}{" "}
-                    {/* Add non-breaking space for spaces */}
-                  </motion.span>
-                ))}
+                <AnimatePresence>
+                  {text.split("").map((letter, index) => (
+                    <motion.span
+                      key={`${letter}-${index}-${text}`}
+                      style={{
+                        display: "inline-block",
+                        fontFamily: "Euclid",
+                        fontSize: "12px",
+                      }}
+                      variants={letterVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </motion.span>
+                  ))}
+                </AnimatePresence>
               </motion.div>
             </div>
           </Link>

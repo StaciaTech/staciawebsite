@@ -13,6 +13,7 @@ const fourData = [
     img: p1,
     name: "Sarabesh Sriram",
     about: `Founder of Stacia Corp, Sastem Global, and Stacia Tech. Expert in mechanical engineering and data science, leading innovations in agriculture and smart homes. His "OneDril" machine revolutionized farming and earned government recognition.`,
+    proId: "https://www.linkedin.com/in/sarabeshsriram/",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const fourData = [
     name: "Lakshman PV",
     about:
       "Founder of Stacia Corp and Director at SASTEM Global. Expert in mechanical engineering and business analytics. Leads AI-powered ERP solutions and innovative machinery development for food processing and agriculture sectors.",
+    proId: "https://www.linkedin.com/in/lakshman-p-v-50522a168/",
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const fourData = [
     name: "Revanth S",
     about:
       "Co-founder of Stacia Tech. Specializes in mechanical engineering, software development, and DevOps. Drives ERP systems and digital transformation in manufacturing with a focus on efficient, scalable solutions.",
+    proId: "https://www.linkedin.com/in/revanth-s-36b2bb18a/",
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ const fourData = [
     name: "Prahlad Saravanapriyan",
     about:
       "Mentor and US Regional Director at StaciaCorp. Expert in robotics, semiconductor systems, and sustainable energy. Founder of FUTURE HQ, educating 1,100+ members on technology. DECA award-winner and Carnatic violinist.",
+    proId: "https://www.linkedin.com/in/prahlad-s/",
   },
 ];
 

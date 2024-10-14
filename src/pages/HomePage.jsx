@@ -39,6 +39,7 @@ import SideBar from "../components/SideBar";
 import Contact from "../components/Contact";
 import MobileArticle from "../components/Home/MobileArticle";
 import Star from "../components/Star";
+import { motion, AnimatePresence } from "framer-motion";
 
 const clients = [
   client1,
@@ -62,10 +63,32 @@ const clients = [
   client19,
   client20,
 ];
+const words = [
+  "Innovation",
+  "Growth",
+  "Productivity",
+  "Efficiency",
+  "Development",
+  "Transformation",
+  "Optimization",
+  "Progress",
+  "Sustainability",
+  "Scalability",
+];
 
 function HomePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000); // Change word every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return (
@@ -82,16 +105,18 @@ function HomePage() {
               <span>Stacia Corp Redefining</span> <Star />
             </div>
             <div className="changingText">
-              <div className="changing-word">Innovation</div>
-              <div className="changing-word">Growth</div>
-              <div className="changing-word">Productivity</div>
-              <div className="changing-word">Efficiency</div>
-              <div className="changing-word">Development</div>
-              <div className="changing-word">Transformation</div>
-              <div className="changing-word">Optimization</div>
-              <div className="changing-word">Progress</div>
-              <div className="changing-word">Sustainability</div>
-              <div className="changing-word">Scalability</div>
+              {/* <AnimatePresence wait> */}
+              <motion.div
+                key={currentWordIndex} // Change key to trigger remount
+                initial={{ opacity: 0, y: 20 }} // Start position and opacity
+                animate={{ opacity: 1, y: 0 }} // End position and opacity
+                exit={{ opacity: 0, y: -20 }} // Exit position and opacity
+                transition={{ duration: 0.5 }} // Animation duration
+                className="changing-word"
+              >
+                {words[currentWordIndex]}
+              </motion.div>
+              {/* </AnimatePresence> */}
             </div>
           </div>
         </div>

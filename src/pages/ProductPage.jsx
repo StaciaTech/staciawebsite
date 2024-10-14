@@ -52,96 +52,129 @@ function ProductPage() {
         <NavBar />
         <SideBar />
       </div>
-      {data.isLoading ? (
-        <div>
-          <LoadingStar />
-        </div>
-      ) : (
-        <>
-          <div className="product_container">
-            <div className="product_section p-section">
-              <div className="product_text">
-                <span>Stacia Corp Products</span>
-                <Star />
+      <div>
+        {data.isLoading ? (
+          <div>
+            <LoadingStar />
+          </div>
+        ) : (
+          <>
+            <div className="product_container">
+              <div className="product_section p-section">
+                <div className="product_text">
+                  <span>Stacia Corp Products</span>
+                  <Star />
+                </div>
+                <div className="product_description">
+                  <p>
+                    At Stacia Corp, we develop cutting-edge products that drive
+                    innovation across industries. From advanced agricultural
+                    machinery to smart home solutions and industrial automation,
+                    our products are designed to enhance efficiency,
+                    sustainability, and user convenience. Each product is
+                    crafted with precision to meet the unique needs of our
+                    customers, ensuring quality and performance at every level.
+                  </p>
+                </div>
               </div>
-              <div className="product_description">
-                <p>
-                  At Stacia Corp, we develop cutting-edge products that drive
-                  innovation across industries. From advanced agricultural
-                  machinery to smart home solutions and industrial automation,
-                  our products are designed to enhance efficiency,
-                  sustainability, and user convenience. Each product is crafted
-                  with precision to meet the unique needs of our customers,
-                  ensuring quality and performance at every level.
-                </p>
-              </div>
-            </div>
 
-            {/* product 1 */}
-            <div className="p-section">
-              {proData.map((eachProduct, index) => (
-                <div key={index}>
-                  {eachProduct.position === 1 && (
-                    <div>
-                      <div className="p-top">
-                        <div className="p-name">{eachProduct.title}</div>
-                        <p>{eachProduct.des}</p>
-                        <Link
-                          to={`/product/${eachProduct._id}`}
-                          onClick={() => window.scrollTo(0, 0)}
-                          className="learn-more-btn"
-                        >
-                          Learn more
-                        </Link>
-                      </div>
-                      <div className="p-bottom">
-                        <div
-                          className="p-mask"
-                          style={{
-                            backgroundImage: `url(${eachProduct.imageUrl})`,
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                          }}
-                        >
-                          {/* <img src={onedrilup} alt=""  /> */}
-                          <div className="product-name">
-                            {eachProduct.title}
+              <div className="p-section">
+                {proData.map((eachProduct, index) => (
+                  <div key={index}>
+                    {eachProduct.position === 1 && (
+                      <div>
+                        <div className="p-top">
+                          <div className="p-name">{eachProduct.title}</div>
+                          <p>{eachProduct.des}</p>
+                          <Link
+                            to={`/product/${eachProduct._id}`}
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="learn-more-btn"
+                          >
+                            Learn more
+                          </Link>
+                        </div>
+                        <div className="p-bottom">
+                          <div
+                            className="p-mask"
+                            style={{
+                              backgroundImage: `url(${eachProduct.imageUrl})`,
+                              backgroundSize: "contain",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat",
+                            }}
+                          >
+                            <div className="product-name">
+                              {eachProduct.title}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div>
-              {proData.map((data, index) => {
-                const wordArr = data?.title.split(" ");
-                // console.log(wordArr);
-
-                return (
-                  <div style={{ position: "sticky", top: "80px" }}>
-                    {data.position !== 1 && (
-                      <ProductComponent2
-                        bigText1={wordArr[0]}
-                        productName={data.title}
-                        productImg={data.imageUrl}
-                        bigText2={wordArr[1] || wordArr[0]}
-                        des={data.des}
-                        id={data._id}
-                        bgColor={productBg[index % productBg.length]}
-                      />
                     )}
                   </div>
-                );
-              })}
+                ))}
+              </div>
+
+              <div>
+                {proData.map((data, index) => {
+                  const wordArr = data?.title.split(" ");
+
+                  return (
+                    <div
+                      style={{ position: "sticky", top: "80px", zIndex: "-1" }}
+                    >
+                      {data.position !== 1 && (
+                        <ProductComponent2
+                          bigText1={wordArr[0]}
+                          productName={data.title}
+                          productImg={data.imageUrl}
+                          bigText2={wordArr[1] || wordArr[0]}
+                          des={data.des}
+                          id={data._id}
+                          bgColor={productBg[index % productBg.length]}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <MobileProduct productData={proData} isLoading={data.isLoading} />
+          </>
+        )}
+      </div>
+      {/* <div>
+        {data.isLoading ? (
+          <div>
+            <LoadingStar />
+          </div>
+        ) : (
+          <div
+            style={{
+              position: "sticky",
+              top: "80px",
+              background: "#fff",
+              zIndex: "-1",
+            }}
+          >
+            <div className="">
+              <span>Stacia Corp Products</span>
+              <Star />
+            </div>
+            <div className="">
+              <p>
+                At Stacia Corp, we develop cutting-edge products that drive
+                innovation across industries. From advanced agricultural
+                machinery to smart home solutions and industrial automation, our
+                products are designed to enhance efficiency, sustainability, and
+                user convenience. Each product is crafted with precision to meet
+                the unique needs of our customers, ensuring quality and
+                performance at every level.
+              </p>
             </div>
           </div>
-          <MobileProduct productData={proData} isLoading={data.isLoading} />
-        </>
-      )}
+        )}
+      </div> */}
       <Footer />
       <MobileFooter />
     </>

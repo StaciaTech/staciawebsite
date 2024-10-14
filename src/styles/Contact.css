@@ -109,6 +109,7 @@
 }
 .org-text-selected {
   font-family: EuclidMedium;
+  color: #000;
 }
 .PhoneInput {
   border: none; /* Remove the border */

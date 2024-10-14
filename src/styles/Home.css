@@ -22,6 +22,17 @@
   font-size: 2em;
   color: #fff;
 } */
+/* .scroll-snap-container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow-y: hidden;
+} */
 
 .home {
   width: 100%;
@@ -32,6 +43,7 @@
   align-items: center;
   background-color: #0d0225;
   position: relative;
+  /* scroll-snap-align: start; */
 }
 
 .homeSection {
@@ -53,11 +65,10 @@
   letter-spacing: 1px;
 }
 
-.changingText {
+/* .changingText {
   margin-top: 20px;
   color: #0047ff;
   text-transform: capitalize;
-  /* font-size: 25px; */
   font-weight: bolder;
   overflow: hidden;
   height: 9vh;
@@ -68,10 +79,25 @@
   font-size: 5vw;
 }
 .changingText > .changing-word {
-  /* color: #e880f5; */
   height: 10vh;
   font-weight: bolder;
   animation: float 20s infinite alternate;
+} */
+.changingText {
+  position: relative; /* Positioning context for absolute children */
+  height: 100px; /* Adjust height based on your font size */
+  overflow: hidden; /* Hide overflow to maintain clean animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.changing-word {
+  height: 20px; /* Match this with changingText height */
+  display: flex;
+  font-size: 5vw;
+  color: #0047ff;
+  align-items: center; /* Center text vertically */
 }
 /* products */
 
@@ -305,7 +331,8 @@
 }
 .service-img-box > img {
   width: 60%;
-  height: 25rem;
+  height: 29rem;
+  max-height: 100%;
   object-fit: cover;
 }
 
@@ -541,7 +568,7 @@
   animation: float 10s infinite alternate;
 } */
 
-@keyframes float {
+/* @keyframes float {
   0% {
     transform: translateY(0);
   }
@@ -575,4 +602,4 @@
   100% {
     transform: translateY(-104vh);
   }
-}
+} */
