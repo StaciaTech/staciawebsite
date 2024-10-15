@@ -62,11 +62,6 @@ function ServicePage() {
                   grow.
                 </p>
               </div>
-              <div className="service-section-right">
-                <div className="service-section-right-imgbox">
-                  {/* <img src={ServiceHeroImg} alt="" /> */}
-                </div>
-              </div>
             </div>
             {/* </div> */}
           </div>

@@ -14,11 +14,13 @@
   top: 80px;
   z-index: -1;
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
   height: calc(100vh-80px);
   /* background-color: #fff; */
   background-color: #f9f6ff;
   overflow: hidden;
+  padding: 5rem;
+  box-sizing: border-box;
 }
 
 .product_section {
@@ -55,6 +57,13 @@
   font-size: 20px;
   color: #6b6084;
   /* background-color: aqua; */
+}
+.product_description > p > div {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: EuclidMedium;
+  margin-left: none;
+  margin-bottom: 0.25rem;
 }
 
 /* product 1 */

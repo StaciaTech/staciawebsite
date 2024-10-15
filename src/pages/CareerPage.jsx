@@ -7,7 +7,7 @@ import CareerComponent from "../components/CareerComponent";
 import LifeStaciaImg1 from "../assets/life@staciaImg1.png";
 import LifeStaciaImg2 from "../assets/life@staciaImg2.png";
 import LifeStaciaImg3 from "../assets/life@staciaImg3.png";
-import LifeStaciaImg4 from "../assets/life@staciaImg4.png";
+import LifeStaciaImg4 from "../assets/careerGroup.png";
 import { allJobs } from "../data/JobsData";
 import CareerMobileCulture from "../components/careers/careerMobileCulture";
 import MobileFooter from "../components/MobileFooter";
@@ -34,7 +34,7 @@ function CareerPage() {
             </div>
           </div>
           <div className="career-info-section">
-            <p>
+            <p className="career-info-section-heading">
               Come, join us!
               <span style={{ color: "#0047FF" }}>We're hiring.</span>
             </p>

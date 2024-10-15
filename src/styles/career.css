@@ -20,6 +20,9 @@
   width: 50%;
   font-size: 2rem;
 }
+.career-info-section-heading {
+  font-size: 2rem;
+}
 .career-hero-contents {
   display: flex;
   justify-content: space-between;
@@ -521,7 +524,23 @@ input:focus {
   }
 
   .opportunity-titles {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 600;
+  }
+  .career-info-section-heading {
+    font-size: 1.5rem;
+  }
+  .career-hero-info {
+    font-size: 1rem;
+  }
+  .responsibility-list,
+  .job-description {
+    font-size: 1rem;
+  }
+  .responsibility-title {
+    font-size: 1.25rem;
+  }
+  .career-seperator {
+    display: none;
   }
 }

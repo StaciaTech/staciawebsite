@@ -51,10 +51,10 @@ function CareerMobileCulture() {
         </div>
 
         <div>
-          <div className="mobile-culture-titles">
+          <div className="mobile-culture-titles" onClick={officeShowHandler}>
             <div>Office Environment</div>
             <div>
-              <img src={arrow} alt="" onClick={officeShowHandler} />
+              <img src={arrow} alt="" />
             </div>
           </div>
           <p
@@ -71,10 +71,10 @@ function CareerMobileCulture() {
         </div>
         <hr />
         <div>
-          <div className="mobile-culture-titles">
+          <div className="mobile-culture-titles" onClick={workHandler}>
             <div>Working Model</div>
             <div>
-              <img src={arrow} alt="" onClick={workHandler} />
+              <img src={arrow} alt="" />
             </div>
           </div>
           <p
@@ -90,8 +90,8 @@ function CareerMobileCulture() {
           </p>
         </div>
         <hr />
-        <div>
-          <div className="mobile-culture-titles" onClick={coWorkerHandler}>
+        <div onClick={coWorkerHandler}>
+          <div className="mobile-culture-titles">
             <div>Co-workers Environment</div>
             <div>
               <img src={arrow} alt="" />
@@ -110,10 +110,10 @@ function CareerMobileCulture() {
         </div>
         <hr />
         <div>
-          <div className="mobile-culture-titles">
-            <div>Yearly Trips</div>
+          <div className="mobile-culture-titles" onClick={yearlyHandler}>
+            <div>Open Communication</div>
             <div>
-              <img src={arrow} alt="" onClick={yearlyHandler} />
+              <img src={arrow} alt="" />
             </div>
           </div>
           <p

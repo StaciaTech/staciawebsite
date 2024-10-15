@@ -14,6 +14,8 @@
 .reusable-art-title {
   font-family: EuclidSemiBold;
   font-size: 2rem;
+  text-align: justify;
+  text-align-last: left;
 }
 .reusable-art-des {
   color: #6b6084;
@@ -46,5 +48,8 @@
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
+  }
+  .reusable-art-title {
+    font-size: 1.5rem;
   }
 }
